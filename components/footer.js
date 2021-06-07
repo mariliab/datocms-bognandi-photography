@@ -1,29 +1,29 @@
-import Container from './container'
+import Container from "./container";
+import BlockTitle from "./block-title";
 
 export default function Footer() {
   return (
-    <footer className="bg-accent-1 border-t border-accent-2">
+    <footer className="bg-yellow-900 text-white">
       <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
+        <div className="py-28 flex flex-col flex-col-reverse lg:flex-row items-center">
+          <div className="flex flex-col w-1/3">
+            <h6 className="font-bold leading-tight text-2xl">BOGNANDI</h6>{" "}
+            <h6 className="leading-tight text-2xl">PHOTOGRAPHY</h6>
+          </div>
+          <div className="flex flex-col">
+            <BlockTitle
+              title="Kontakt"
+              subtitle="Vill du göra en bokning? Eller har du några frågor eller funderingar? Säg gärna hej!"
+            />
             <a
-              href="https://www.datocms.com/docs/next-js"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
+              href="mailto:hello@bognandiphotography.com"
+              className="text-2xl lg:text-6xl"
             >
-              Read Documentation
-            </a>
-            <a
-              href="https://github.com/datocms/nextjs-demo"
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
+              hello@bognandiphotography.com
             </a>
           </div>
         </div>
       </Container>
     </footer>
-  )
+  );
 }

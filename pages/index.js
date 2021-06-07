@@ -5,6 +5,9 @@ import HeroPost from "../components/hero-post";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
 import MoreStories from "../components/more-stories";
+import PhotographyServices from "../components/photography-services";
+import Hero from "../components/hero";
+import Navbar from "../components/navbar";
 import { request } from "../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
 
@@ -17,9 +20,20 @@ export async function getStaticProps({ preview }) {
             ...metaTagsFragment
           }
         }
-        blog {
+        startpage {
           seo: _seoMetaTags {
             ...metaTagsFragment
+          }
+          backgroundImage {
+            url
+          }
+          title
+          text
+        }
+        allPhotoServices(orderBy: _createdAt_ASC) {
+          title
+          image {
+            url
           }
         }
         allPosts(orderBy: date_DESC, first: 20) {
@@ -66,29 +80,24 @@ export async function getStaticProps({ preview }) {
 
 export default function Index({ subscription }) {
   const {
-    data: { allPosts, site, blog },
+    data: { allPosts, site, startpage, allPhotoServices },
   } = useQuerySubscription(subscription);
 
-  const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
-  const metaTags = blog.seo.concat(site.favicon);
+  const metaTags = startpage.seo.concat(site.favicon);
 
   return (
     <>
       <Layout preview={subscription.preview}>
         <Head>{renderMetaTags(metaTags)}</Head>
+        <Navbar />
+        <Hero
+          title={startpage?.title}
+          text={startpage?.text}
+          backgroundImage={startpage?.backgroundImage?.url}
+        />
+        <PhotographyServices data={allPhotoServices} />
         <Container>
-          <Intro />
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
       </Layout>
