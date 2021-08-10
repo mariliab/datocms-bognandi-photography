@@ -4,7 +4,7 @@ import Container from "./container";
 
 export default function Hero({ title = "", text = "", backgroundImage }) {
   return (
-    <section className="bg-gray-200 py-12 lg:py-24 is-sticky">
+    <section className="bg-gray-200 py-12 lg:py-24">
       <Container>
         <div className="flex justify-center content-center flex-col lg:flex-row">
           <div className="lg:w-1/3">

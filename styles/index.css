@@ -17,9 +17,3 @@ h6,
 button {
   font-family: "Playfair Display", serif;
 }
-
-.is-sticky {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-}
