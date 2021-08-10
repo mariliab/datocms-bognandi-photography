@@ -83,7 +83,6 @@ export default function Index({ subscription }) {
     data: { allPosts, site, startpage, allPhotoServices },
   } = useQuerySubscription(subscription);
 
-  const morePosts = allPosts.slice(1);
   const metaTags = startpage.seo.concat(site.favicon);
 
   return (
@@ -98,7 +97,7 @@ export default function Index({ subscription }) {
         />
         <PhotographyServices data={allPhotoServices} />
         <Container>
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          {allPosts.length > 0 && <MoreStories posts={allPosts} />}
         </Container>
       </Layout>
     </>
