@@ -7,11 +7,11 @@ export default function Navbar() {
       <Container>
         <div className="flex justify-between items-center py-4">
           <Link href="/">
-            <div className="flex flex-col">
-              <h6 className="font-bold leading-tight text-2xl cursor-pointer">
+            <div className="grid">
+              <h6 className="font-bold text-xl md:text-2xl cursor-pointer leading-tight md:leading-tight">
                 BOGNANDI
-              </h6>{" "}
-              <h6 className="leading-tight text-2xl cursor-pointer">
+              </h6>
+              <h6 className="text-xl md:text-2xl cursor-pointer leading-tight md:leading-tight font-thin">
                 PHOTOGRAPHY
               </h6>
             </div>
