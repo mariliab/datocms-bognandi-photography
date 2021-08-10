@@ -6,6 +6,7 @@ import Intro from "../components/intro";
 import Layout from "../components/layout";
 import MoreStories from "../components/more-stories";
 import PhotographyServices from "../components/photography-services";
+import Testamonials from "../components/testamonials";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
 import { request } from "../lib/datocms";
@@ -35,6 +36,15 @@ export async function getStaticProps({ preview }) {
           image {
             url
           }
+        }
+        allTestamonials {
+          id
+          image {
+            url
+          }
+          name
+          text
+          title
         }
         allPosts(orderBy: date_DESC, first: 20) {
           title
@@ -80,7 +90,7 @@ export async function getStaticProps({ preview }) {
 
 export default function Index({ subscription }) {
   const {
-    data: { allPosts, site, startpage, allPhotoServices },
+    data: { allPosts, site, startpage, allPhotoServices, allTestamonials },
   } = useQuerySubscription(subscription);
 
   const metaTags = startpage.seo.concat(site.favicon);
@@ -95,6 +105,7 @@ export default function Index({ subscription }) {
           text={startpage?.text}
           backgroundImage={startpage?.backgroundImage?.url}
         />
+        <Testamonials data={allTestamonials} />
         <PhotographyServices data={allPhotoServices} />
         <Container>
           {allPosts.length > 0 && <MoreStories posts={allPosts} />}
