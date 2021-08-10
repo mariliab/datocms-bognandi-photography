@@ -3,7 +3,7 @@ import Container from "./container";
 
 export default function PhotographyServices({ data }) {
   return (
-    <section className="bg-gray-300 py-12 lg:py-24">
+    <section className="bg-gray-900 text-gray-100 py-12 lg:py-24 sticky top-0">
       <Container>
         <BlockTitle
           title="Fototjänster"
@@ -14,10 +14,12 @@ export default function PhotographyServices({ data }) {
             return (
               <div
                 key={index}
-                className="w-full h-96 bg-cover flex justify-center items-center"
-                style={{ backgroundImage: `url(${item.image.url})` }}
+                className="flex justify-center items-center relative"
               >
-                <p className="font-bold text-white text-3xl">{item.title}</p>
+                <img src={item.image.url} className="filter grayscale" />
+                <p className="font-bold text-white text-3xl absolute">
+                  {item.title}
+                </p>
               </div>
             );
           })}

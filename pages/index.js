@@ -7,6 +7,7 @@ import Layout from "../components/layout";
 import MoreStories from "../components/more-stories";
 import PhotographyServices from "../components/photography-services";
 import Testamonials from "../components/testamonials";
+import ImageGallery from "../components/image-gallery";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
 import { request } from "../lib/datocms";
@@ -30,6 +31,9 @@ export async function getStaticProps({ preview }) {
           }
           title
           text
+          gallery {
+            url
+          }
         }
         allPhotoServices(orderBy: _createdAt_ASC) {
           title
@@ -105,11 +109,10 @@ export default function Index({ subscription }) {
           text={startpage?.text}
           backgroundImage={startpage?.backgroundImage?.url}
         />
-        <Testamonials data={allTestamonials} />
         <PhotographyServices data={allPhotoServices} />
-        <Container>
-          {allPosts.length > 0 && <MoreStories posts={allPosts} />}
-        </Container>
+        <ImageGallery data={startpage?.gallery} />
+        <Testamonials data={allTestamonials} />
+        {allPosts.length > 0 && <MoreStories posts={allPosts} />}
       </Layout>
     </>
   );

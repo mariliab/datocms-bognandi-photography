@@ -3,8 +3,8 @@ import Container from "./container";
 
 export default function Testamonials({ data }) {
   return (
-    <section className="bg-gray-900 py-12">
-      <div className="container mx-auto pl-5 md:px-5">
+    <section className="bg-gray-900 py-12 relative">
+      <div className="container mx-auto pl-5 md:px-4">
         <div className="flex gap-x-12 gap-y-12 text-white overflow-auto">
           <div className="w-2/3 md:w-1/3">
             <BlockTitle title="Vad mina kunder säger" />
