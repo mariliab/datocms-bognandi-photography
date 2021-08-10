@@ -3,7 +3,7 @@ import Container from "./container";
 
 export default function PhotographyServices({ data }) {
   return (
-    <section className="bg-gray-900 text-gray-100 py-12 lg:py-24 sticky top-0">
+    <section className="bg-gray-900 text-gray-100 py-12 lg:py-24 relative">
       <Container>
         <BlockTitle
           title="Fototjänster"
