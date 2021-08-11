@@ -9,6 +9,11 @@ module.exports = {
         "accent-7": "#333",
         success: "#0070f3",
         cyan: "#79FFE1",
+        beige: {
+          light: "#ddcdc1",
+          DEFAULT: "#ac8266",
+          dark: "#5B4B3F",
+        },
       },
       spacing: {
         28: "7rem",
@@ -33,12 +38,12 @@ module.exports = {
         lg: {
           css: {
             img: {
-              marginTop: '0',
-              marginBottom: '0',
+              marginTop: "0",
+              marginBottom: "0",
             },
           },
         },
-      }
+      },
     },
   },
   variants: {

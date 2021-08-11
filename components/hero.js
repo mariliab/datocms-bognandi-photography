@@ -4,21 +4,24 @@ import Container from "./container";
 
 export default function Hero({ title = "", text = "", backgroundImage }) {
   return (
-    <section className="bg-gray-200 py-12 lg:py-24">
+    <section className="bg-beige-light py-8 lg:py-24">
       <Container>
-        <div className="flex justify-center content-center flex-col lg:flex-row">
-          <div className="lg:w-1/3">
+        <div className="flex flex-col lg:flex-row">
+          <div className="w-full lg:w-1/2">
             <img
               src={backgroundImage}
               className="object-cover w-full max-h-56 lg:max-h-full"
             />
           </div>
-          <div className="flex flex-col self-center p-4 lg:w-1/2 bg-white md:p-12 lg:-ml-24">
+          <div className="flex flex-col self-center p-4 lg:w-1/2 bg-white md:p-12">
             <PageTitle title={title} />
             <p className="mb-8 font-light">{text}</p>
-            <button className="py-4 border text-xs tracking-widest font-bold">
+            <a
+              href="mailto:hello@bognandiphotography.com"
+              className="py-4 border text-xs tracking-widest font-bold text-center text-black bg-gray-900 hover:bg-white text-white hover:text-black"
+            >
               KONTAKTA MIG
-            </button>
+            </a>
           </div>
         </div>
       </Container>
