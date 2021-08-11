@@ -1,9 +1,10 @@
 import BlockTitle from "../components/block-title";
 import Container from "./container";
+import Image from "next/image";
 
 export default function PhotographyServices({ data }) {
   return (
-    <section className="bg-beige-dark text-gray-100 py-8 lg:py-24 relative">
+    <section className="bg-beige-dark text-beige-light py-8 lg:py-24 relative">
       <Container>
         <BlockTitle
           title="Fototjänster"
@@ -20,11 +21,16 @@ export default function PhotographyServices({ data }) {
                   src={item.image.url}
                   className="filter grayscale opacity-75"
                 />
-                <p className="font-bold text-white text-3xl absolute">
+                <p className="text-white text-base font-bold absolute uppercase tracking-widest">
                   {item.title}
                 </p>
-                <p className="text-white text-xs absolute bottom-4 right-4">
-                  SE MER
+                <p className="text-xs absolute bottom-4 right-4">
+                  <Image
+                    src="/images/arrow-thin-right.svg"
+                    alt="se mer"
+                    width="14"
+                    height="14"
+                  />
                 </p>
               </div>
             );

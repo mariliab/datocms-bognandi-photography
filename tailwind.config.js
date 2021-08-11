@@ -13,6 +13,7 @@ module.exports = {
           light: "#ddcdc1",
           DEFAULT: "#ac8266",
           dark: "#5B4B3F",
+          darkest: "#2d251f",
         },
       },
       spacing: {

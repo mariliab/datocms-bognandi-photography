@@ -15,10 +15,10 @@ export default function Hero({ title = "", text = "", backgroundImage }) {
           </div>
           <div className="flex flex-col self-center p-4 lg:w-1/2 bg-white md:p-12">
             <PageTitle title={title} />
-            <p className="mb-8 font-light">{text}</p>
+            <p className="mb-8 font-light text-beige-darkest">{text}</p>
             <a
               href="mailto:hello@bognandiphotography.com"
-              className="py-4 border text-xs tracking-widest font-bold text-center text-black bg-gray-900 hover:bg-white text-white hover:text-black"
+              className="py-4 text-xs tracking-widest font-bold text-center bg-beige-darkest hover:bg-beige-light text-white hover:text-beige-darkest"
             >
               KONTAKTA MIG
             </a>
