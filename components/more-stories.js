@@ -10,7 +10,7 @@ export default function MoreStories({ posts }) {
           title="Blogg"
           subtitle="Här delar jag med mig av mina erfarenheter från fotograferingar samt en massa fototips."
         />
-        <div className="flex gap-x-4 overflow-scroll">
+        <div className="flex gap-x-4 overflow-x-scroll">
           {posts.map((post) => (
             <PostPreview
               key={post.slug}

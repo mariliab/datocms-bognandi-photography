@@ -5,8 +5,8 @@ export default function Testamonials({ data }) {
   return (
     <section className="bg-beige-dark py-12 relative">
       <div className="container mx-auto pl-5 md:px-4">
-        <div className="flex gap-x-8 gap-y-8 text-white overflow-auto">
-          <div className="w-2/3 md:w-1/3">
+        <div className="flex gap-x-8 gap-y-8 text-white overflow-x-scroll">
+          <div className="min-w-1/4 md:min-w-0 w-2/4 md:w-1/3 lg:w-1/3">
             <BlockTitle
               title="Vad mina kunder säger"
               subtitle="Mina kunder är främst företagare som behöver bilder i marknadsföringssyfte och kan variera från personal branding till produktfotografering."
@@ -14,7 +14,10 @@ export default function Testamonials({ data }) {
           </div>
           {data.map((item, index) => {
             return (
-              <div className="w-screen md:w-1/3" key={index}>
+              <div
+                className="min-w-1/2 md:min-w-1/4 w-3/4 md:w-1/3 lg:w-1/3"
+                key={index}
+              >
                 <p className="text-sm font-light text-justify">{item.text}</p>
                 <div className="flex items-center mt-4">
                   <img
