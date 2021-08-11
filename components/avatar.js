@@ -3,10 +3,10 @@ export default function Avatar({ name, picture }) {
     <div className="flex items-center">
       <img
         src={picture.url}
-        className="w-12 h-12 rounded-full mr-4"
+        className="w-14 h-14 rounded-full mr-4"
         alt={name}
       />
-      <h6 className="text-xl font-bold">{name}</h6>
+      <h6 className="text-base font-bold leading-tight">/{name}</h6>
     </div>
   );
 }
