@@ -10,7 +10,7 @@ export default function Hero({ title = "", text = "", backgroundImage }) {
           <div className="w-full lg:w-1/2">
             <img
               src={backgroundImage}
-              className="object-cover w-full max-h-64 lg:max-h-800px rounded-t-full"
+              className="object-cover w-full h-64 max-h-64 lg:h-auto lg:max-h-800px rounded-t-full"
             />
           </div>
           <div className="p-4 lg:w-1/2 bg-white md:p-12">
