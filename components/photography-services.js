@@ -15,7 +15,7 @@ export default function PhotographyServices({ data }) {
             return (
               <div
                 key={index}
-                className="flex justify-center items-center relative bg-black"
+                className="flex justify-center items-center relative bg-black rounded-t-full"
               >
                 <img
                   src={item.image.url}

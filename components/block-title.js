@@ -7,7 +7,7 @@ export default function BlockTitle({ title = "", subtitle }) {
       >
         {title}
       </h2>
-      <div className="text-current h-1 w-12 border-2 border-current mb-4"></div>
+      <div className="text-current h-1 w-12 border-2 border-current mb-4 rounded-full"></div>
       {subtitle && <p>{subtitle}</p>}
     </div>
   );
