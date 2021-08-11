@@ -26,7 +26,7 @@ export default function PhotographyServices({ data }) {
                 </p>
                 <p className="text-xs absolute bottom-4 right-4">
                   <Image
-                    src="/images/arrow-thin-right.svg"
+                    src="/images/arrow-thin-right-white.svg"
                     alt="se mer"
                     width="14"
                     height="14"
