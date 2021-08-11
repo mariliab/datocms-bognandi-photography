@@ -2,15 +2,15 @@ import Layout from "../components/layout";
 import Container from "../components/container";
 import Navbar from "../components/navbar";
 import PageTitle from "../components/page-title";
-function About() {
+import About from "../components/about";
+
+function Om() {
   return (
     <Layout>
       <Navbar />
-      <Container>
-        <PageTitle title="Om oss" />
-      </Container>
+      <About />
     </Layout>
   );
 }
 
-export default About;
+export default Om;
