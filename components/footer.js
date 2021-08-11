@@ -3,7 +3,7 @@ import BlockTitle from "./block-title";
 
 export default function Footer() {
   return (
-    <footer className="bg-beige-dark text-beige-light">
+    <footer className="bg-beige-darkest text-beige-light">
       <Container>
         <div className="py-28 flex flex-col flex-col-reverse lg:flex-row lg:items-center">
           <div className="flex flex-col w-1/3">
