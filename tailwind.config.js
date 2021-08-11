@@ -51,7 +51,7 @@ module.exports = {
       "1/2": "50%",
       "3/4": "75%",
     },
-    maxWidth: {
+    maxHeight: {
       "800px": "800px",
     },
   },
