@@ -5,7 +5,7 @@ import Container from "../components/container";
 export default function MoreStories({ posts }) {
   return (
     <section className="py-8 lg:py-24 relative bg-beige-light">
-      <Container>
+      <div className="container mx-auto pl-4 lg:px-4">
         <BlockTitle
           title="Blogg"
           subtitle="Här delar jag med mig av mina erfarenheter från fotograferingar samt en massa fototips."
@@ -23,7 +23,7 @@ export default function MoreStories({ posts }) {
             />
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
