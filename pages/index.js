@@ -35,9 +35,10 @@ export async function getStaticProps({ preview }) {
             url
           }
         }
-        allPhotoServices(orderBy: _createdAt_ASC) {
+        allPhotoServicesPages(orderBy: _createdAt_ASC) { 
+          slug
           title
-          image {
+          featuredImage {
             url
           }
         }
@@ -94,7 +95,7 @@ export async function getStaticProps({ preview }) {
 
 export default function Index({ subscription }) {
   const {
-    data: { allPosts, site, startpage, allPhotoServices, allTestamonials },
+    data: { allPosts, site, startpage, allPhotoServicesPages, allTestamonials },
   } = useQuerySubscription(subscription);
 
   const metaTags = startpage.seo.concat(site.favicon);
@@ -109,7 +110,7 @@ export default function Index({ subscription }) {
           text={startpage?.text}
           backgroundImage={startpage?.backgroundImage?.url}
         />
-        <PhotographyServices data={allPhotoServices} />
+        <PhotographyServices data={allPhotoServicesPages} />
         <ImageGallery data={startpage?.gallery} />
         <Testamonials data={allTestamonials} />
         {allPosts.length > 0 && <MoreStories posts={allPosts} />}

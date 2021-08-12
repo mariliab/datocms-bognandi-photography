@@ -1,6 +1,10 @@
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
 import { request } from "../../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
+import Layout from "../../components/layout";
+import Navbar from "../../components/navbar";
+import PageTitle from "../../components/page-title";
+import Container from "../../components/container";
 
 export async function getStaticPaths() {
   const data = await request({ query: `{ allPhotoServicesPages { slug } }` });
@@ -20,6 +24,9 @@ export async function getStaticProps({ params, preview = false }) {
         photoServicesPage(filter: {slug: {eq: $slug}}) {
           slug
           title
+          featuredImage {
+            url
+          }
         }
       }
     `,
@@ -51,8 +58,13 @@ export default function PhotoService({ subscription, preview }) {
   } = useQuerySubscription(subscription);
 
   return (
-    <div>
-      <h1>{photoServicesPage.title}</h1>
-    </div>
+    <Layout>
+      <Navbar />
+      <section className="bg-beige-lightest py-8 lg:py-24 relative text-beige-darkest">
+        <Container>
+          <PageTitle title={photoServicesPage.title} />
+        </Container>
+      </section>
+    </Layout>
   );
 }
