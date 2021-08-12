@@ -31,14 +31,14 @@ export default function PostPreview({
             <p className="text-md mb-4 font-light">{excerpt}</p>
             <Avatar name={author.name} picture={author.picture} />
           </div>
-          <p className="text-xs absolute bottom-4 right-4">
+          <div className="text-xs absolute bottom-4 right-4">
             <Image
               src="/images/arrow-thin-right-black.svg"
               alt="se mer"
               width="14"
               height="14"
             />
-          </p>
+          </div>
         </div>
       </Link>
     </div>

@@ -24,14 +24,14 @@ export default function PhotographyServices({ data }) {
                 <p className="text-white text-base font-bold absolute uppercase tracking-widest">
                   {item.title}
                 </p>
-                <p className="text-xs absolute bottom-4 right-4">
+                <div className="text-xs absolute bottom-4 right-4">
                   <Image
                     src="/images/arrow-thin-right-white.svg"
                     alt="se mer"
                     width="14"
                     height="14"
                   />
-                </p>
+                </div>
               </div>
             );
           })}
