@@ -17,7 +17,7 @@ export default function PhotographyServices({ data }) {
               <Link href={`/fototjanster/${item.slug}`}>
                 <div
                   key={index}
-                  className="flex justify-center items-center relative bg-black rounded-t-full"
+                  className="flex justify-center items-center relative bg-black rounded-t-full cursor-pointer"
                 >
                   <img
                     src={item.featuredImage.url}

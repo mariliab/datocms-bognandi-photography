@@ -19,8 +19,7 @@ export default function Navbar() {
           <div>
             <ul className="flex gap-x-4">
               <Link href="/om">Om mig</Link>
-              <Link href="/om">Blogg</Link>
-              <Link href="/om">Kontakt</Link>
+              <Link href="mailto:hello@bognandiphotography.com">Kontakt</Link>
             </ul>
           </div>
         </div>

@@ -30,7 +30,7 @@ export async function getStaticProps({ preview }) {
             url
           }
           title
-          text
+          text(markdown: true)
           gallery {
             url
           }
