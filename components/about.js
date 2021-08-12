@@ -4,7 +4,7 @@ import Container from "./container";
 
 export default function About({ data }) {
   return (
-    <section className="bg-white py-8 lg:py-24 relative text-beige-darkest">
+    <section className="bg-beige-lightest py-8 lg:py-24 relative text-beige-darkest">
       <Container>
         <div className="flex flex-col lg:flex-row items-center">
           <div className="w-full lg:w-1/2 mb-8 lg:mb-0">

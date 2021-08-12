@@ -10,6 +10,7 @@ module.exports = {
         success: "#0070f3",
         cyan: "#79FFE1",
         beige: {
+          lightest: "#f6f2ef",
           light: "#ddcdc1",
           DEFAULT: "#ac8266",
           dark: "#5B4B3F",
