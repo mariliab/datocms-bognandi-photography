@@ -8,6 +8,7 @@ import BlockTitle from "../../components/block-title";
 import Container from "../../components/container";
 import PhotographyServices from "../../components/photography-services";
 import { Image } from "react-datocms";
+import Link from "next/link";
 
 export async function getStaticPaths() {
   const data = await request({ query: `{ allPhotoServicesPages { slug } }` });
@@ -34,6 +35,7 @@ export async function getStaticProps({ params, preview = false }) {
         photoServicesPage(filter: {slug: {eq: $slug}}) {
           slug
           title
+          description
           featuredImage {
             responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 800 }) {
               srcSet
@@ -97,19 +99,28 @@ export default function PhotoService({ subscription, preview }) {
     data: { photoServicesPage, allPhotoServicesPages },
   } = useQuerySubscription(subscription);
 
-  const { title, featuredImage, portfolioItem } = photoServicesPage;
+  const {
+    title,
+    description,
+    featuredImage,
+    portfolioItem,
+  } = photoServicesPage;
 
   console.log("portfolioItem ", JSON.stringify(portfolioItem, null, 2));
   return (
     <Layout>
       <Navbar />
-      <section className="bg-beige-lightest relative text-beige-darkest mb-8 lg:mb-4">
+      <section className="bg-beige-lightest relative text-beige-darkest">
         <Image data={featuredImage.responsiveImage} />
-        <div className="absolute -bottom-6 left-0 md:left-20">
+        <div className="py-8 lg:py-12">
           <Container>
-            <h1 className="text-3xl md:text-6xl leading-none text-black uppercase font-bold bg-beige-light px-4 py-2">
+            <h1 className="text-3xl md:text-6xl leading-none text-black uppercase font-bold w-min mb-4 md:mb-8">
               {title}
             </h1>
+            <div className="text-current h-1 w-24 border-2 border-beige mb-4 lg:mb-8 rounded-full"></div>
+            <p className="mt-4 text-xl leading-relaxed tracking-widest font-light">
+              {description}
+            </p>
           </Container>
         </div>
       </section>
@@ -133,6 +144,16 @@ export default function PhotoService({ subscription, preview }) {
           </section>
         );
       })}
+      <Container>
+        <div className="my-8 text-right">
+          <p>
+            Behöver du hjälp med att ta liknande bilder?{" "}
+            <Link href="mailto:hello@bognandiphotography.com">
+              Kontakta mig
+            </Link>
+          </p>
+        </div>
+      </Container>
       <PhotographyServices data={allPhotoServicesPages} />
     </Layout>
   );
