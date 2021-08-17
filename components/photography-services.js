@@ -11,19 +11,16 @@ export default function PhotographyServices({ data }) {
           title="Fototjänster"
           subtitle="Kika in under kategorierna nedan för att se vilka typer av fotograferingar jag erbjuder."
         />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-1 gap-y-1 md:gap-x-4 md:gap-y-4">
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-x-1 gap-y-1 md:gap-x-4 md:gap-y-4">
           {data.map((item, index) => {
             return (
-              <Link href={`/fototjanster/${item.slug}`}>
-                <div
-                  key={index}
-                  className="flex justify-center items-center relative bg-black cursor-pointer"
-                >
+              <Link href={`/fototjanster/${item.slug}`} key={index}>
+                <div className="flex justify-center items-center relative bg-black cursor-pointer">
                   <img
                     src={item.featuredImage.url}
                     className="filter grayscale opacity-75"
                   />
-                  <p className="text-white text-base font-bold absolute uppercase tracking-widest">
+                  <p className="text-white text-xs lg:text-xl font-bold absolute uppercase tracking-widest">
                     {item.title}
                   </p>
                   <div className="text-xs absolute bottom-4 right-4">
