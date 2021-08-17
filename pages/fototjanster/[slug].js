@@ -9,6 +9,7 @@ import Container from "../../components/container";
 import PhotographyServices from "../../components/photography-services";
 import { Image } from "react-datocms";
 import Link from "next/link";
+import { createMarkup } from "../../utils/help";
 
 export async function getStaticPaths() {
   const data = await request({ query: `{ allPhotoServicesPages { slug } }` });
@@ -53,6 +54,7 @@ export async function getStaticProps({ params, preview = false }) {
           portfolioItem {
             id
             title
+            labels
             description(markdown: true)
             images {
               responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 400, h: 600 }) {
@@ -106,7 +108,6 @@ export default function PhotoService({ subscription, preview }) {
     portfolioItem,
   } = photoServicesPage;
 
-  console.log("portfolioItem ", JSON.stringify(portfolioItem, null, 2));
   return (
     <Layout>
       <Navbar />
@@ -130,7 +131,21 @@ export default function PhotoService({ subscription, preview }) {
             <Container>
               <div className="grid gap-1 md:gap-4 grid-cols-2 md:grid-cols-3">
                 <div className="pr-3">
-                  <BlockTitle title={item.title} subtitle={item.description} />
+                  <BlockTitle title={item.title} />
+                  {item?.labels && (
+                    <div className="flex mb-4 gap-x-4 gap-y-2">
+                      {item.labels.map((label, j) => {
+                        return (
+                          <p key={j} className="text-xs uppercase font-bold">
+                            {label}
+                          </p>
+                        );
+                      })}
+                    </div>
+                  )}
+                  <div
+                    dangerouslySetInnerHTML={createMarkup(item.description)}
+                  />
                 </div>
                 {item.images.map((image, index) => {
                   return (
