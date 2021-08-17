@@ -17,7 +17,7 @@ export default function Footer() {
             />
             <a
               href="mailto:hello@bognandiphotography.com"
-              className="text-2xl lg:text-4xl text-white hover:text-beige-light flex items-center"
+              className="text-base lg:text-4xl text-white hover:text-beige-light flex items-center"
             >
               hello@bognandiphotography.com
             </a>
