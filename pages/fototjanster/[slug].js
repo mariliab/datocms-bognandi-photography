@@ -133,7 +133,7 @@ export default function PhotoService({ subscription, preview }) {
                 <div className="pr-3">
                   <BlockTitle title={item.title} />
                   {item?.labels && (
-                    <div className="flex mb-4 gap-x-4 gap-y-2">
+                    <div className="flex flex-wrap mb-4 gap-x-4 gap-y-2">
                       {item.labels.map((label, j) => {
                         return (
                           <p key={j} className="text-xs uppercase font-bold">
@@ -145,6 +145,7 @@ export default function PhotoService({ subscription, preview }) {
                   )}
                   <div
                     dangerouslySetInnerHTML={createMarkup(item.description)}
+                    className="mb-4"
                   />
                 </div>
                 {item.images.map((image, index) => {
