@@ -3,7 +3,7 @@ export default function BlockTitle({ title = "", subtitle }) {
     <div className="mb-8">
       <h2
         id={title.toLowerCase()}
-        className="text-3xl lg:text-6xl mb-4 leading-tight"
+        className="text-3xl lg:text-6xl mb-4 leading-tight break-words lg:break-normal"
       >
         {title}
       </h2>
