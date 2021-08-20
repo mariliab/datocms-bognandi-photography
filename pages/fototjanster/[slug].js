@@ -57,7 +57,7 @@ export async function getStaticProps({ params, preview = false }) {
             labels
             description(markdown: true)
             images {
-              responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 400, h: 600 }) {
+              responsiveImage(imgixParams: {fm: jpg, fit: crop, fit: max }) {
                 srcSet
                 webpSrcSet
                 sizes
