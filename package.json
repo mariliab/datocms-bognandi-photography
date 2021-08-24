@@ -8,6 +8,7 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.2.1",
     "classnames": "2.3.1",
     "date-fns": "2.21.1",
     "next": "^10.1.3",
