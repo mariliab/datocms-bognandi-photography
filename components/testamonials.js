@@ -5,8 +5,6 @@ import React, { useState } from "react";
 function TestamonialItem({ data }) {
   const [isLongText, setIsLongText] = useState(false);
 
-  console.log(data.text.length);
-
   return (
     <div className="min-w-1/2 md:min-w-1/4 w-3/4 md:w-1/3 lg:w-1/3">
       <p
