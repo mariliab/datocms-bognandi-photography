@@ -129,8 +129,8 @@ export default function PhotoService({ subscription, preview }) {
         return (
           <section key={index} className="py-8 lg:py-24 text-beige-darkest">
             <Container>
-              <div className="grid gap-1 md:gap-4 grid-cols-2 md:grid-cols-3">
-                <div className="pr-3">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-4">
+                <div className="col-span-2 md:col-span-1">
                   <BlockTitle title={item.title} />
                   {item?.labels && (
                     <div className="flex flex-wrap mb-4 gap-x-4 gap-y-2">
@@ -150,7 +150,15 @@ export default function PhotoService({ subscription, preview }) {
                 </div>
                 {item.images.map((image, index) => {
                   return (
-                    <div key={index}>
+                    <div
+                      key={index}
+                      className={
+                        image.responsiveImage.width >
+                        image.responsiveImage.height
+                          ? "col-span-2 md:col-span-1"
+                          : "col-span-1"
+                      }
+                    >
                       <Image data={image?.responsiveImage} />
                     </div>
                   );
