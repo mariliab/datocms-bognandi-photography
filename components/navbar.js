@@ -88,9 +88,10 @@ function MobileMenuBody({ isOpen }) {
           </h6>
         </div>
       </Link>
-      <div className="pt-8">
+      <div className="pt-8 flex flex-col gap-y-4">
         <p>Se mer</p>
         <Link href="/om">Om mig</Link>
+        <Link href="mailto:hello@bognandiphotography.com">Kontakt</Link>
       </div>
     </div>
   );
