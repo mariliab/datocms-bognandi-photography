@@ -4,7 +4,7 @@ import CoverImage from "./cover-image";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function PostPreview({
+export default function BlogPostPreview({
   title,
   coverImage,
   date,
@@ -13,7 +13,7 @@ export default function PostPreview({
   slug,
 }) {
   return (
-    <div className="bg-white w-1/2 lg:w-1/3 text-beige-darkest relative">
+    <div className="bg-white text-beige-darkest relative">
       <Link as={`/blogg/${slug}`} href="/blogg/[slug]">
         <div className="cursor-pointer">
           <CoverImage

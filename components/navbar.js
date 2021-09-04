@@ -18,6 +18,7 @@ function DesktopMenu() {
       <div>
         <ul className="flex gap-x-4">
           <Link href="/om">Om mig</Link>
+          <Link href="/blogg">Blogg</Link>
           <Link href="mailto:hello@bognandiphotography.com">Kontakt</Link>
         </ul>
       </div>
@@ -27,8 +28,6 @@ function DesktopMenu() {
 
 function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
-
-  console.log("Is open: ", isOpen);
 
   return (
     <div className="flex justify-between items-center lg:hidden py-4">
@@ -91,6 +90,7 @@ function MobileMenuBody({ isOpen }) {
       <div className="pt-8 flex flex-col gap-y-4">
         <p>Se mer</p>
         <Link href="/om">Om mig</Link>
+        <Link href="/blogg">Blogg</Link>
         <Link href="mailto:hello@bognandiphotography.com">Kontakt</Link>
       </div>
     </div>
