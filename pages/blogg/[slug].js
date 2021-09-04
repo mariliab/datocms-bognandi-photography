@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
 import Container from "../../components/container";
-import Header from "../../components/header";
 import Layout from "../../components/layout";
 import MoreStories from "../../components/more-stories";
 import PostBody from "../../components/post-body";
@@ -15,7 +14,7 @@ export async function getStaticPaths() {
   const data = await request({ query: `{ allPosts { slug } }` });
 
   return {
-    paths: data.allPosts.map((post) => `/posts/${post.slug}`),
+    paths: data.allPosts.map((post) => `/blogg/${post.slug}`),
     fallback: false,
   };
 }

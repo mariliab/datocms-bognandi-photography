@@ -14,7 +14,7 @@ export default function PostPreview({
 }) {
   return (
     <div className="bg-white w-60 lg:w-1/3 text-beige-darkest relative">
-      <Link as={`/posts/${slug}`} href="/posts/[slug]">
+      <Link as={`/blogg/${slug}`} href="/blogg/[slug]">
         <div className="cursor-pointer">
           <CoverImage
             slug={slug}
