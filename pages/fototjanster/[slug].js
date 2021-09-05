@@ -9,6 +9,7 @@ import Container from "../../components/container";
 import PhotographyServices from "../../components/photography-services";
 import { Image } from "react-datocms";
 import Link from "next/link";
+import Head from "next/head";
 import { createMarkup } from "../../utils/help";
 
 export async function getStaticPaths() {
@@ -26,6 +27,11 @@ export async function getStaticProps({ params, preview = false }) {
   const graphqlRequest = {
     query: `
       query PortfolioPageBySlug($slug: String) {
+        site: _site {
+          favicon: faviconMetaTags {
+            ...metaTagsFragment
+          }
+        }
         allPhotoServicesPages(orderBy: _createdAt_ASC) { 
           slug
           title
@@ -34,11 +40,14 @@ export async function getStaticProps({ params, preview = false }) {
           }
         }
         photoServicesPage(filter: {slug: {eq: $slug}}) {
+          seo: _seoMetaTags {
+            ...metaTagsFragment
+          }
           slug
           title
           description
           featuredImage {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 800 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1600, h: 900 }) {
               srcSet
               webpSrcSet
               sizes
@@ -73,6 +82,7 @@ export async function getStaticProps({ params, preview = false }) {
           }
         }
       }
+      ${metaTagsFragment}
     `,
     preview,
     variables: {
@@ -98,8 +108,10 @@ export async function getStaticProps({ params, preview = false }) {
 
 export default function PhotoService({ subscription, preview }) {
   const {
-    data: { photoServicesPage, allPhotoServicesPages },
+    data: { site, photoServicesPage, allPhotoServicesPages },
   } = useQuerySubscription(subscription);
+
+  const metaTags = photoServicesPage.seo.concat(site.favicon);
 
   const {
     title,
@@ -110,18 +122,32 @@ export default function PhotoService({ subscription, preview }) {
 
   return (
     <Layout>
+      <Head>{renderMetaTags(metaTags)}</Head>
       <Navbar />
       <section className="bg-beige-lightest relative text-beige-darkest">
         <Image data={featuredImage.responsiveImage} />
-        <div className="py-8 lg:py-12">
+        <div className="hidden lg:flex justify-center items-center absolute top-0 w-full h-full">
+          <Container>
+            <div className="w-1/3 bg-beige-lightest p-8">
+              <h1 className="text-3xl md:text-6xl leading-none text-black uppercase font-bold w-min mb-4 md:mb-8">
+                {title}
+              </h1>
+              <div className="text-current h-1 w-24 border-2 border-beige mb-4 lg:mb-8 rounded-full"></div>
+              <h2 className="mt-4 text-xl leading-relaxed font-light">
+                {description}
+              </h2>
+            </div>
+          </Container>
+        </div>
+        <div className="py-8 lg:py-12 lg:hidden">
           <Container>
             <h1 className="text-3xl md:text-6xl leading-none text-black uppercase font-bold w-min mb-4 md:mb-8">
               {title}
             </h1>
             <div className="text-current h-1 w-24 border-2 border-beige mb-4 lg:mb-8 rounded-full"></div>
-            <p className="mt-4 text-xl leading-relaxed tracking-widest font-light">
+            <h2 className="mt-4 text-xl leading-relaxed font-light">
               {description}
-            </p>
+            </h2>
           </Container>
         </div>
       </section>
