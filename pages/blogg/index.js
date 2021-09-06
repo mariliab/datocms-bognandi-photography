@@ -16,7 +16,7 @@ export async function getStaticProps({ preview = false }) {
           excerpt
           date
           coverImage {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1600, h: 900 }) {
               ...responsiveImageFragment
             }
           }

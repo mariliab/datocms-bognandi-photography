@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
 import Layout from "../../components/layout";
+import Container from "../../components/container";
 import MoreStories from "../../components/more-stories";
 import PostBody from "../../components/post-body";
 import PostHeader from "../../components/post-header";
@@ -40,7 +41,7 @@ export async function getStaticProps({ params, preview = false }) {
               ...on ImageBlockRecord {
                 id
                 image {
-                  responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
+                  responsiveImage(imgixParams: {fm: jpg, fit: max, w: 2000, h: 1000 }) {
                     ...responsiveImageFragment
                   }
                 }
@@ -126,9 +127,10 @@ export default function Post({ subscription, preview }) {
           date={post.date}
           author={post.author}
         />
-        <PostBody content={post.content} />
+        <Container>
+          <PostBody content={post.content} />
+        </Container>
       </article>
-      <SectionSeparator />
       {morePosts.length > 0 && <MoreStories posts={morePosts} />}
     </Layout>
   );
