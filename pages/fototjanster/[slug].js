@@ -182,6 +182,8 @@ export default function PhotoService({ subscription, preview }) {
                         image.responsiveImage.width >
                         image.responsiveImage.height
                           ? "col-span-2 md:col-span-1"
+                          : index % 3 == 0
+                          ? "col-span-2 md:col-span-1"
                           : "col-span-1"
                       }
                     >
