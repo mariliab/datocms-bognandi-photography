@@ -8,9 +8,9 @@ export default function ImageGallery({ data }) {
       <Container>
         <BlockTitle
           title="Portfolio"
-          subtitle="Här är lite exempel på bilder som jag älskar att fota"
+          subtitle="Utvalda favoriter för att visa på bredden av arbeten som jag skapar!"
         ></BlockTitle>
-        <div className="grid gap-1 md:gap-4 grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-1 md:gap-4 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4">
           {data.map((item, index) => {
             return (
               <div

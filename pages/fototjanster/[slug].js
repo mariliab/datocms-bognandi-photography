@@ -47,7 +47,7 @@ export async function getStaticProps({ params, preview = false }) {
           title
           description
           featuredImage {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1600, h: 900 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, crop: faces, w: 1600, h: 900 }) {
               srcSet
               webpSrcSet
               sizes
@@ -60,29 +60,15 @@ export async function getStaticProps({ params, preview = false }) {
               base64
             }
           }
-          portfolioItem {
-            id
-            title
-            labels
-            description(markdown: true)
-            images {
-              responsiveImage(imgixParams: {fm: jpg, fit: crop, fit: max }) {
-                srcSet
-                webpSrcSet
-                sizes
-                src
-                width
-                height
-                aspectRatio
-                alt
-                title
-                base64
-              }
+          gallery {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, fit: max }) {
+              ...responsiveImageFragment
             }
           }
         }
       }
       ${metaTagsFragment}
+      ${responsiveImageFragment}
     `,
     preview,
     variables: {
@@ -113,12 +99,7 @@ export default function PhotoService({ subscription, preview }) {
 
   const metaTags = photoServicesPage.seo.concat(site.favicon);
 
-  const {
-    title,
-    description,
-    featuredImage,
-    portfolioItem,
-  } = photoServicesPage;
+  const { title, description, featuredImage, gallery } = photoServicesPage;
 
   return (
     <Layout>
@@ -132,7 +113,7 @@ export default function PhotoService({ subscription, preview }) {
               <h1 className="text-3xl md:text-6xl leading-none text-black uppercase font-bold w-min mb-4 md:mb-8">
                 {title}
               </h1>
-              <div className="text-current h-1 w-24 border-2 border-beige mb-4 lg:mb-8 rounded-full"></div>
+              <div className="text-current bg-current h-1 w-24 border-2 border-beige mb-4 lg:mb-8 rounded-full"></div>
               <h2 className="mt-4 text-xl leading-relaxed font-light">
                 {description}
               </h2>
@@ -144,58 +125,37 @@ export default function PhotoService({ subscription, preview }) {
             <h1 className="text-3xl md:text-6xl leading-none text-black uppercase font-bold w-min mb-4 md:mb-8">
               {title}
             </h1>
-            <div className="text-current h-1 w-24 border-2 border-beige mb-4 lg:mb-8 rounded-full"></div>
+            <div className="text-current bg-current h-1 w-24 border-2 border-beige mb-4 lg:mb-8 rounded-full"></div>
             <h2 className="mt-4 text-xl leading-relaxed font-light">
               {description}
             </h2>
           </Container>
         </div>
       </section>
-      {portfolioItem.map((item, index) => {
-        return (
-          <section key={index} className="py-8 lg:py-24 text-beige-darkest">
-            <Container>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-4">
-                <div className="col-span-2 md:col-span-1">
-                  <BlockTitle title={item.title} />
-                  {item?.labels && (
-                    <div className="flex flex-wrap mb-4 gap-x-4 gap-y-2">
-                      {item.labels.map((label, j) => {
-                        return (
-                          <p key={j} className="text-xs uppercase font-bold">
-                            {label}
-                          </p>
-                        );
-                      })}
-                    </div>
-                  )}
+      {gallery.length > 0 && (
+        <section className="py-8 lg:py-24 text-beige-darkest">
+          <Container>
+            <div className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-1 md:gap-4">
+              {gallery.map((image, index) => {
+                return (
                   <div
-                    dangerouslySetInnerHTML={createMarkup(item.description)}
-                    className="mb-4"
-                  />
-                </div>
-                {item.images.map((image, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className={
-                        image.responsiveImage.width >
-                        image.responsiveImage.height
-                          ? "col-span-2 md:col-span-1"
-                          : index % 3 == 0
-                          ? "col-span-2 md:col-span-1"
-                          : "col-span-1"
-                      }
-                    >
-                      <Image data={image?.responsiveImage} />
-                    </div>
-                  );
-                })}
-              </div>
-            </Container>
-          </section>
-        );
-      })}
+                    key={index}
+                    className={
+                      image.responsiveImage.width > image.responsiveImage.height
+                        ? "col-span-2 md:col-span-1"
+                        : index % 3 == 0
+                        ? "col-span-2 md:col-span-1"
+                        : "col-span-1"
+                    }
+                  >
+                    <Image data={image?.responsiveImage} />
+                  </div>
+                );
+              })}
+            </div>
+          </Container>
+        </section>
+      )}
       <Container>
         <div className="my-8 text-right">
           <p>
