@@ -14,7 +14,7 @@ export default function Hero({ title = "", text = "", backgroundImage }) {
               className="object-cover w-full h-64 max-h-64 lg:h-auto lg:max-h-800px"
             />
           </div>
-          <div className="p-4 lg:w-1/2 bg-white md:p-12">
+          <div className="p-4 lg:w-1/2 bg-white md:p-12 2xl:p-24">
             <PageTitle title={title} />
             <div
               className="mb-8 font-light text-beige-darkest"

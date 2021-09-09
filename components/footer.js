@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="flex flex-col mb-8 lg:mb-0">
             <BlockTitle
               title="Kontakt"
-              subtitle="Vill du göra en bokning? Eller har du några frågor eller funderingar? Säg gärna hej!"
+              subtitle="Är du intresserad av att boka mig och mina tjänster, eller har du några frågor och funderingar? Tveka inte på att höra av dig!"
             />
             <a
               href="mailto:hello@bognandiphotography.com"

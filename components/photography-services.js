@@ -9,7 +9,7 @@ export default function PhotographyServices({ data }) {
       <Container>
         <BlockTitle
           title="Fototjänster"
-          subtitle="Kika in under kategorierna nedan för att se vilka typer av fotograferingar jag erbjuder."
+          subtitle="Jag erbjuder tre olika typer av fotograferingar. Detaljbilder på dina produkter, streetstyle, porträtt, eller behöver du kanske en professionell bild tagen i din arbetsmiljö? Oavsett ditt behov hjälper jag dig att förverkliga din vision!"
         />
         <div className="grid grid-cols-3 md:grid-cols-3 gap-x-1 gap-y-1 md:gap-x-4 md:gap-y-4">
           {data.map((item, index) => {
@@ -18,7 +18,7 @@ export default function PhotographyServices({ data }) {
                 <div className="flex justify-center items-center relative bg-black cursor-pointer">
                   <img
                     src={item.featuredImage.url}
-                    className="filter grayscale opacity-75"
+                    className="filter opacity-75"
                   />
                   <p className="text-white text-xs lg:text-xl font-bold absolute uppercase tracking-widest">
                     {item.title}

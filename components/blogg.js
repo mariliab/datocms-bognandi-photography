@@ -9,7 +9,7 @@ export default function Blogg({ posts }) {
       <Container>
         <PageTitle
           title="Blogg"
-          subtitle="Här delar jag med mig av mina erfarenheter från fotograferingar samt en massa fototips."
+          subtitle="Intresserad av att veta mer om mig, mina tidigare jobb och olika fototips? Bläddra igenom mina blogginlägg för att hålla dig uppdaterad och för att veta mer om den kreativa fotovärlden."
         />
         <BlogPosts posts={posts} />
       </Container>

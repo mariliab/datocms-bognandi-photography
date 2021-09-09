@@ -4,16 +4,11 @@ import Container from "../components/container";
 
 export default function MoreStories({ posts }) {
   return (
-    <section
-      className="py-8 lg:py-24 relative bg-beige-light text-beige-darkest"
-      style={{
-        backgroundImage: `url("images/photo-texture.jpeg")`,
-      }}
-    >
+    <section className="py-8 lg:py-24 relative bg-beige-light text-beige-darkest bg-beige-lightest">
       <div className="container mx-auto pl-4 lg:px-4">
         <BlockTitle
           title="Blogg"
-          subtitle="Här delar jag med mig av mina erfarenheter från fotograferingar samt en massa fototips."
+          subtitle="Intresserad av att veta mer om mig, mina tidigare jobb och olika fototips? Bläddra igenom mina blogginlägg för att hålla dig uppdaterad och för att veta mer om den kreativa fotovärlden."
         />
         <div className="flex gap-x-4 overflow-x-scroll">
           {posts.map((post) => (
