@@ -10,6 +10,11 @@ export default function PostBody({ content }) {
             if (record.__typename === "ImageBlockRecord") {
               return (
                 <div className="mb-4">
+                  {record.image.responsiveImage.title && (
+                    <p className="text-xs italic">
+                      {record.image.responsiveImage.title}
+                    </p>
+                  )}
                   <Image data={record.image.responsiveImage} />
                 </div>
               );

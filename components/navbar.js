@@ -17,7 +17,7 @@ function DesktopMenu() {
       </Link>
       <div>
         <ul className="flex gap-x-4">
-          <Link href="/om">Om mig</Link>
+          <Link href="/om-mig">Om mig</Link>
           <Link href="/blogg">Blogg</Link>
           <Link href="mailto:hello@bognandiphotography.com">Kontakt</Link>
         </ul>
@@ -89,7 +89,7 @@ function MobileMenuBody({ isOpen }) {
       </Link>
       <div className="pt-8 flex flex-col gap-y-4">
         <p>Se mer</p>
-        <Link href="/om">Om mig</Link>
+        <Link href="/om-mig">Om mig</Link>
         <Link href="/blogg">Blogg</Link>
         <Link href="mailto:hello@bognandiphotography.com">Kontakt</Link>
       </div>

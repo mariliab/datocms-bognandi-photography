@@ -5,7 +5,6 @@ import Container from "../../components/container";
 import MoreStories from "../../components/more-stories";
 import PostBody from "../../components/post-body";
 import PostHeader from "../../components/post-header";
-import SectionSeparator from "../../components/section-separator";
 import Navbar from "../../components/navbar";
 import { request } from "../../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";

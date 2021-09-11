@@ -1,8 +1,7 @@
 import Head from "next/head";
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
-import Container from "../components/container";
-import HeroPost from "../components/hero-post";
-import Intro from "../components/intro";
+import { request } from "../lib/datocms";
+import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
 import Layout from "../components/layout";
 import MoreStories from "../components/more-stories";
 import PhotographyServices from "../components/photography-services";
@@ -10,8 +9,6 @@ import Testamonials from "../components/testamonials";
 import ImageGallery from "../components/image-gallery";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
-import { request } from "../lib/datocms";
-import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
 
 export async function getStaticProps({ preview }) {
   const graphqlRequest = {
