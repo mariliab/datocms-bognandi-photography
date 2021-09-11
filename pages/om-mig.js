@@ -24,7 +24,6 @@ export async function getStaticProps({ preview }) {
           id
           content {
             subtitle
-            text(markdown: true)
             title
             image {
               responsiveImage {
@@ -32,6 +31,9 @@ export async function getStaticProps({ preview }) {
               }
             }
             cta
+            description {
+              value
+            }
           }
           featuredImage {
             responsiveImage {
