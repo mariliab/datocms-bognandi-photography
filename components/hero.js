@@ -11,7 +11,7 @@ export default function Hero({ title = "", text = "", backgroundImage }) {
           <div className="w-full lg:w-1/2">
             <img
               src={backgroundImage}
-              className="object-cover w-full h-64 max-h-64 lg:h-auto lg:max-h-800px"
+              className="object-cover w-full h-64 max-h-64 lg:h-auto lg:max-h-800px filter grayscale"
             />
           </div>
           <div className="p-4 lg:w-1/2 bg-white md:p-12 2xl:p-24">
