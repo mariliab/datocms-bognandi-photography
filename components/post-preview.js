@@ -22,13 +22,15 @@ export default function PostPreview({
             responsiveImage={coverImage.responsiveImage}
           />
           <div className="p-4">
-            <h3 className="text-2xl md:text-3xl mb-4 leading-tight break-words">
+            <h3 className="text-2xl md:text-3xl mb-4 leading-tight break-words line-clamp-6 lg:line-clamp-3">
               <a className="hover:underline">{title}</a>
             </h3>
             <div className="text-xs mb-4 uppercase">
               <Date dateString={date} />
             </div>
-            <p className="text-md mb-4 font-light">{excerpt}</p>
+            <p className="text-md mb-4 font-light line-clamp-3 lg:line-clamp-6">
+              {excerpt}
+            </p>
             <Avatar name={author.name} picture={author.picture} />
           </div>
           <div className="text-xs absolute bottom-4 right-4">
