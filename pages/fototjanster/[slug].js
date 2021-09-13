@@ -3,14 +3,11 @@ import { request } from "../../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
 import Layout from "../../components/layout";
 import Navbar from "../../components/navbar";
-import PageTitle from "../../components/page-title";
-import BlockTitle from "../../components/block-title";
 import Container from "../../components/container";
 import PhotographyServices from "../../components/photography-services";
 import { Image } from "react-datocms";
 import Link from "next/link";
 import Head from "next/head";
-import { createMarkup } from "../../utils/help";
 
 export async function getStaticPaths() {
   const data = await request({ query: `{ allPhotoServicesPages { slug } }` });
