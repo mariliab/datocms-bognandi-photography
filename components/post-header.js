@@ -1,7 +1,6 @@
 import Avatar from "../components/avatar";
 import Date from "../components/date";
 import CoverImage from "../components/cover-image";
-import PostTitle from "../components/post-title";
 import PageTitle from "../components/page-title";
 import Container from "../components/container";
 

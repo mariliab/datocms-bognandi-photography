@@ -1,5 +1,3 @@
-import Image from "next/image";
-import PageTitle from "../components/page-title";
 import TextAndImageBlock from "../components/text-and-image-block";
 import Container from "./container";
 
