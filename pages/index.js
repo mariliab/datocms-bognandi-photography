@@ -30,6 +30,9 @@ export async function getStaticProps({ preview }) {
           text(markdown: true)
           gallery {
             url
+            responsiveImage(imgixParams: {fm: jpg, fit: max, w: 2000, h: 1000 }) {
+              ...responsiveImageFragment
+            }
           }
         }
         allPhotoServicesPages(orderBy: _createdAt_ASC) { 

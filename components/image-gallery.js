@@ -19,7 +19,12 @@ export default function ImageGallery({ data }) {
                   index % 5 == 0 ? "col-span-2 md:col-span-1" : "col-span-1"
                 }
               >
-                <img src={item.url} />
+                <Image
+                  data={{
+                    ...item?.responsiveImage,
+                    alt: item?.responsiveImage.title,
+                  }}
+                />
               </div>
             );
           })}

@@ -106,7 +106,12 @@ export default function PhotoService({ subscription, preview }) {
       <Head>{renderMetaTags(metaTags)}</Head>
       <Navbar />
       <section className="bg-beige-lightest relative text-beige-darkest">
-        <Image data={featuredImage.responsiveImage} />
+        <Image
+          data={{
+            ...featuredImage.responsiveImage,
+            alt: featuredImage.responsiveImage.title,
+          }}
+        />
         <div className="hidden lg:flex justify-center items-center absolute top-0 w-full h-full">
           <Container>
             <div className="w-1/3 bg-beige-lightest p-8">
@@ -148,7 +153,12 @@ export default function PhotoService({ subscription, preview }) {
                         : "col-span-1"
                     }
                   >
-                    <Image data={image?.responsiveImage} />
+                    <Image
+                      data={{
+                        ...image?.responsiveImage,
+                        alt: image?.responsiveImage.title,
+                      }}
+                    />
                   </div>
                 );
               })}

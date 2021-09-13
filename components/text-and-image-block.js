@@ -22,7 +22,12 @@ export default function TextAndImageBlock({ data }) {
         )}
       </div>
       <div className="w-full lg:w-1/3 xl:w-1/2 relative flex justify-center shadow-lg">
-        <Image data={image?.responsiveImage} />
+        <Image
+          data={{
+            ...image?.responsiveImage,
+            alt: image?.responsiveImage.title,
+          }}
+        />
       </div>
     </div>
   );
