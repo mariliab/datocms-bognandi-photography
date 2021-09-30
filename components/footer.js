@@ -16,10 +16,10 @@ export default function Footer() {
               subtitle="Är du intresserad av att boka mig och mina tjänster, eller har du några frågor och funderingar? Tveka inte på att höra av dig!"
             />
             <a
-              href="mailto:hello@bognandiphotography.com"
+              href="mailto:marilia@bognandiphotography.com"
               className="text-base lg:text-4xl text-white hover:text-beige-light flex items-center"
             >
-              hello@bognandiphotography.com
+              marilia@bognandiphotography.com
             </a>
             <p className="mt-8">
               Kolla in min{" "}

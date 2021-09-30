@@ -22,7 +22,7 @@ export default function Hero({ title = "", text = "", backgroundImage }) {
             />
             <div className="py-4 flex">
               <a
-                href="mailto:hello@bognandiphotography.com"
+                href="mailto:marilia@bognandiphotography.com"
                 className="py-4 text-xs tracking-widest font-bold text-center bg-beige-darkest hover:bg-beige-light text-white hover:text-beige-darkest flex-1 rounded-full"
               >
                 KONTAKTA MIG

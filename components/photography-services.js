@@ -24,6 +24,7 @@ export default function PhotographyServices({ data }) {
                     {item.title}
                   </p>
                   <div className="text-xs absolute bottom-4 right-4">
+                    {/* change to import {Image} from "react-datocms"; */}
                     <Image
                       src="/images/arrow-thin-right-white.svg"
                       alt="se mer"

@@ -167,7 +167,7 @@ export default function PhotoService({ subscription, preview }) {
         <div className="my-8 text-right">
           <p>
             Behöver du hjälp med att ta liknande bilder?{" "}
-            <Link href="mailto:hello@bognandiphotography.com">
+            <Link href="mailto:marilia@bognandiphotography.com">
               Kontakta mig
             </Link>
           </p>
