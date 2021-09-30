@@ -23,7 +23,7 @@ export default function PostPreview({
           />
           <div className="p-4">
             <h3 className="text-2xl md:text-3xl mb-4 leading-tight break-words line-clamp-6 lg:line-clamp-3">
-              <a className="hover:underline">{title}</a>
+              <p className="hover:underline">{title}</p>
             </h3>
             <div className="text-xs mb-4 uppercase">
               <Date dateString={date} />
