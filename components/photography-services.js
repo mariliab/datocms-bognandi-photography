@@ -15,10 +15,10 @@ export default function PhotographyServices({ data }) {
           {data.map((item, index) => {
             return (
               <Link href={`/fototjanster/${item.slug}`} key={index}>
-                <div className="flex justify-center items-center relative bg-black cursor-pointer">
+                <div className="flex justify-center items-center relative bg-black cursor-pointer overflow:hidden">
                   <img
                     src={item.featuredImage.url}
-                    className="filter opacity-75"
+                    className="filter opacity-75 transform transition duration-300 ease-in-out hover:opacity-100 hover:scale-101"
                   />
                   <p className="text-white text-xs lg:text-xl font-bold absolute uppercase tracking-widest">
                     {item.title}

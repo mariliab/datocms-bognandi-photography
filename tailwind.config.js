@@ -46,6 +46,9 @@ module.exports = {
           },
         },
       },
+      scale: {
+        101: "1.01",
+      },
     },
     minWidth: {
       "1/4": "25%",
