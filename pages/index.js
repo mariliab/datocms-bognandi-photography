@@ -24,7 +24,9 @@ export async function getStaticProps({ preview }) {
             ...metaTagsFragment
           }
           backgroundImage {
-            url
+            responsiveImage(imgixParams: {fm: jpg, fit: max, w: 800, h: 1200 }) {
+              ...responsiveImageFragment
+            }
           }
           title
           text(markdown: true)
@@ -108,7 +110,7 @@ export default function Index({ subscription }) {
         <Hero
           title={startpage?.title}
           text={startpage?.text}
-          backgroundImage={startpage?.backgroundImage?.url}
+          image={startpage?.backgroundImage?.responsiveImage}
         />
         <PhotographyServices data={allPhotoServicesPages} />
         <ImageGallery data={startpage?.gallery} />
