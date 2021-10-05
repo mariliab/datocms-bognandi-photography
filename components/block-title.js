@@ -20,7 +20,7 @@ export default function BlockTitle({ title = "", subtitle }) {
       {!isLongText && subtitle && subtitle.length > 100 && (
         <button
           onClick={() => setIsLongText(true)}
-          className="flex lg:hidden text-xs uppercase font-bold hover:text-beige-light"
+          className="flex lg:hidden text-xs uppercase font-bold hover:text-beige-light mt-2"
         >
           läs mer
         </button>
