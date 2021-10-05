@@ -20,7 +20,7 @@ export default function PhotographyServices({ data }) {
                     src={item.featuredImage.url}
                     className="filter opacity-75 transform transition duration-300 ease-in-out hover:opacity-100 hover:scale-101"
                   />
-                  <p className="text-white text-xs lg:text-xl font-bold absolute uppercase tracking-widest">
+                  <p className="text-white text-xs lg:text-xl font-bold absolute uppercase tracking-widest pointer-events-none">
                     {item.title}
                   </p>
                   <div className="text-xs absolute bottom-4 right-4">
