@@ -40,7 +40,7 @@ export async function getStaticProps({ params, preview = false }) {
               ...on ImageBlockRecord {
                 id
                 image {
-                  responsiveImage(imgixParams: {fm: jpg, fit: max, w: 2000, h: 1000 }) {
+                  responsiveImage(imgixParams: {fm: webp, fit: max, w: 800, h: 600 }) {
                     ...responsiveImageFragment
                   }
                 }
@@ -49,17 +49,17 @@ export async function getStaticProps({ params, preview = false }) {
           }
           date
           ogImage: coverImage{
-            url(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 })
+            url(imgixParams: {fm: webp, fit: crop, w: 1600, h: 1200 })
           }
           coverImage {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
+            responsiveImage(imgixParams: {fm: webp, fit: crop, w: 1600, h: 1200, q: 100 }) {
               ...responsiveImageFragment
             }
           }
           author {
             name
             picture {
-              url(imgixParams: {fm: jpg, fit: crop, w: 100, h: 100, sat: -100})
+              url(imgixParams: {fm: webp, fit: crop, w: 100, h: 100, sat: -100})
             }
           }
         }
@@ -70,14 +70,14 @@ export async function getStaticProps({ params, preview = false }) {
           excerpt
           date
           coverImage {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
+            responsiveImage(imgixParams: {fm: webp, fit: crop, w: 600, h: 400 }) {
               ...responsiveImageFragment
             }
           }
           author {
             name
             picture {
-              url(imgixParams: {fm: jpg, fit: crop, w: 100, h: 100, sat: -100})
+              url(imgixParams: {fm: webp, fit: crop, w: 100, h: 100, sat: -100})
             }
           }
         }

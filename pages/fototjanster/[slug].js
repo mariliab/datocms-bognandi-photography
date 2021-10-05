@@ -44,7 +44,7 @@ export async function getStaticProps({ params, preview = false }) {
           title
           description
           featuredImage {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, crop: faces, w: 1600, h: 900 }) {
+            responsiveImage(imgixParams: {fm: webp, fit: crop, crop: faces, w: 800, h: 450 }) {
               srcSet
               webpSrcSet
               sizes
@@ -58,7 +58,7 @@ export async function getStaticProps({ params, preview = false }) {
             }
           }
           gallery {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, fit: max }) {
+            responsiveImage(imgixParams: {fm: webp, fit: crop, fit: max, w: 600 }) {
               ...responsiveImageFragment
             }
           }

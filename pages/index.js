@@ -24,7 +24,7 @@ export async function getStaticProps({ preview }) {
             ...metaTagsFragment
           }
           backgroundImage {
-            responsiveImage(imgixParams: {fm: jpg, fit: max, w: 800, h: 1200 }) {
+            responsiveImage(imgixParams: {fm: webp, fit: max, w: 400, h: 600 }) {
               ...responsiveImageFragment
             }
           }
@@ -32,7 +32,7 @@ export async function getStaticProps({ preview }) {
           text(markdown: true)
           gallery {
             url
-            responsiveImage(imgixParams: {fm: jpg, fit: max, w: 2000, h: 1000 }) {
+            responsiveImage(imgixParams: {fm: webp, fit: max, w: 600 }) {
               ...responsiveImageFragment
             }
           }
@@ -59,14 +59,14 @@ export async function getStaticProps({ preview }) {
           excerpt
           date
           coverImage {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
+            responsiveImage(imgixParams: {fm: webp, fit: crop, w: 600, h: 400 }) {
               ...responsiveImageFragment
             }
           }
           author {
             name
             picture {
-              url(imgixParams: {fm: jpg, fit: crop, w: 100, h: 100, sat: -100})
+              url(imgixParams: {fm: webp, fit: crop, w: 100, h: 100, sat: -100})
             }
           }
         }

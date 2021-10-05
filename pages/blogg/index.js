@@ -16,14 +16,14 @@ export async function getStaticProps({ preview = false }) {
           excerpt
           date
           coverImage {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1600, h: 900 }) {
+            responsiveImage(imgixParams: {fm: webp, fit: crop, w: 800, h: 450 }) {
               ...responsiveImageFragment
             }
           }
           author {
             name
             picture {
-              url(imgixParams: {fm: jpg, fit: crop, w: 100, h: 100, sat: -100})
+              url(imgixParams: {fm: webp, fit: crop, w: 100, h: 100, sat: -100})
             }
           }
         }
