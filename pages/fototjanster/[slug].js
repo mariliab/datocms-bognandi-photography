@@ -44,7 +44,7 @@ export async function getStaticProps({ params, preview = false }) {
           title
           description
           featuredImage {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, crop: faces, w: 800, h: 450 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, crop: focalpoint, w: 1600, h: 900 }) {
               srcSet
               webpSrcSet
               sizes
