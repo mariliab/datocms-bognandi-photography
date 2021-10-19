@@ -13,7 +13,11 @@ export default function BlockTitle({ title = "", subtitle }) {
       </h2>
       <div className="text-current bg-current h-1 w-12 border-2 border-beige mb-4 rounded-full"></div>
       {subtitle && (
-        <p className={`${!isLongText && "line-clamp-2 lg:line-clamp-6"}`}>
+        <p
+          className={`${
+            !isLongText && "line-clamp-2 lg:line-clamp-6 max-w-screen-lg"
+          }`}
+        >
           {subtitle}
         </p>
       )}
