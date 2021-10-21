@@ -4,7 +4,7 @@ import Container from "./container";
 
 export default function ImageGallery({ data }) {
   return (
-    <section className="bg-white py-8 lg:py-24 relative text-beige-darkest">
+    <section className="bg-white py-12 lg:py-24 relative text-beige-darkest">
       <Container>
         <BlockTitle
           title="Portfolio"

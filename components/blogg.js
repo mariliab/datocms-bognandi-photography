@@ -5,7 +5,7 @@ import BlogPosts from "../components/blog-posts";
 
 export default function Blogg({ posts }) {
   return (
-    <section className="bg-beige-lightest py-8 lg:py-24 relative text-beige-darkest">
+    <section className="bg-beige-lightest py-12 lg:py-24 relative text-beige-darkest">
       <Container>
         <PageTitle
           title="Blogg"

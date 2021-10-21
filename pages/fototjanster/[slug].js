@@ -122,7 +122,7 @@ export default function PhotoService({ subscription, preview }) {
             </div>
           </Container>
         </div>
-        <div className="py-8 lg:py-12 lg:hidden">
+        <div className="py-12 lg:hidden">
           <Container>
             <h1 className="text-3xl md:text-6xl leading-none text-black uppercase font-bold w-min mb-4 md:mb-8">
               {title}
@@ -135,7 +135,7 @@ export default function PhotoService({ subscription, preview }) {
         </div>
       </section>
       {gallery.length > 0 && (
-        <section className="py-8 lg:py-24 text-beige-darkest">
+        <section className="py-12 lg:py-24 text-beige-darkest">
           <Container>
             <div className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-1 md:gap-4">
               {gallery.map((image, index) => {

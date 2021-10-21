@@ -8,7 +8,7 @@ export default function PostHeader({ title, coverImage, date, author }) {
   return (
     <>
       <CoverImage title={title} responsiveImage={coverImage.responsiveImage} />
-      <div className="bg-beige-lightest py-8 mb-8">
+      <div className="bg-beige-lightest py-12 mb-8">
         <Container>
           <PageTitle title={title} />
           <div className="flex justify-between items-center">

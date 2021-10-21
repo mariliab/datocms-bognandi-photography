@@ -5,7 +5,7 @@ import { createMarkup } from "../utils/help";
 
 export default function Hero({ title = "", text = "", image }) {
   return (
-    <section className="bg-beige-light py-8 sm:py-24">
+    <section className="bg-beige-light py-12 sm:py-24">
       <Container>
         <div className="flex flex-col sm:flex-row items-center">
           <div className="w-full sm:w-1/2 h-72 max-h-72 sm:h-auto sm:max-h-800px overflow-hidden">

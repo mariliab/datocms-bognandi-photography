@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function PhotographyServices({ data }) {
   return (
-    <section className="bg-beige-dark text-beige-light py-8 lg:py-24 relative">
+    <section className="bg-beige-dark text-beige-light py-12 lg:py-24 relative">
       <Container>
         <BlockTitle
           title="Fototjänster"
