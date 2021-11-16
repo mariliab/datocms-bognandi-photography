@@ -53,7 +53,7 @@ export async function getStaticProps({ preview }) {
           text
           title
         }
-        allPosts(orderBy: date_DESC, first: 20) {
+        allPosts(orderBy: date_DESC, first: 3) {
           title
           slug
           excerpt

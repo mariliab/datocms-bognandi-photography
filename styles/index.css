@@ -18,3 +18,7 @@ button,
 a {
   font-family: "Playfair Display", serif;
 }
+
+.post-body a {
+  color: #ac8266;
+}
