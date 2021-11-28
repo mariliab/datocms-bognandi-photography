@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function BlockTitle({ title = "", subtitle }) {
-  const [isLongText, setIsLongText] = useState(false);
-
   return (
     <div className="mb-8">
       <h2
@@ -13,22 +11,9 @@ export default function BlockTitle({ title = "", subtitle }) {
       </h2>
       <div className="text-current bg-current h-1 w-12 border-2 border-beige mb-4 rounded-full"></div>
       {subtitle && (
-        <p
-          className={`${
-            !isLongText &&
-            "line-clamp-2 lg:line-clamp-6 max-w-screen-lg text-base 2xl:text-xl"
-          }`}
-        >
-          {subtitle}
-        </p>
-      )}
-      {!isLongText && subtitle && subtitle.length > 100 && (
-        <button
-          onClick={() => setIsLongText(true)}
-          className="flex lg:hidden text-xs uppercase font-bold hover:text-beige-light mt-2"
-        >
-          läs mer
-        </button>
+        <div>
+          <p className="text-base 2xl:text-xl">{subtitle}</p>
+        </div>
       )}
     </div>
   );

@@ -7,11 +7,19 @@ export default function PhotographyServices({ data }) {
   return (
     <section className="bg-beige-light text-beige-darkest pb-12 lg:pb-24 relative">
       <Container>
-        <BlockTitle
-          title="Fototjänster"
-          subtitle="Jag erbjuder tre olika typer av fotograferingar. Detaljbilder på dina produkter, streetstyle, porträtt, eller behöver du kanske en professionell bild tagen i din arbetsmiljö? Oavsett ditt behov hjälper jag dig att förverkliga din vision!"
-        />
-        <div className="grid grid-cols-3 md:grid-cols-3 gap-x-1 gap-y-1 md:gap-x-4 md:gap-y-4">
+        <div className="block lg:hidden">
+          <BlockTitle
+            title="Fototjänster"
+            subtitle="Jag erbjuder tre olika typer av fotograferingar. Detaljbilder på dina produkter, streetstyle, porträtt, eller behöver du kanske en professionell bild tagen i din arbetsmiljö? Oavsett ditt behov hjälper jag dig att förverkliga din vision!"
+          />
+        </div>
+        <div className="grid grid-cols-3 md:grid-cols-4 gap-x-1 gap-y-1 md:gap-x-4 md:gap-y-4">
+          <div className="hidden lg:block">
+            <BlockTitle
+              title="Fototjänster"
+              subtitle="Jag erbjuder tre olika typer av fotograferingar. Detaljbilder på dina produkter, streetstyle, porträtt, eller behöver du kanske en professionell bild tagen i din arbetsmiljö? Oavsett ditt behov hjälper jag dig att förverkliga din vision!"
+            />
+          </div>
           {data.map((item, index) => {
             return (
               <Link href={`/fototjanster/${item.slug}`} key={index}>
