@@ -4,7 +4,7 @@ import Container from "../components/container";
 
 export default function MoreStories({ posts }) {
   return (
-    <section className="py-12 lg:py-24 relative bg-beige-light text-beige-darkest bg-beige-lightest">
+    <section className="py-12 lg:py-24 relative bg-beige-dark text-beige-light">
       <div className="container mx-auto pl-4 lg:px-4">
         <BlockTitle
           title="Blogg"

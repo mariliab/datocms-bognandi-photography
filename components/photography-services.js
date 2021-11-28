@@ -5,7 +5,12 @@ import Link from "next/link";
 
 export default function PhotographyServices({ data }) {
   return (
-    <section className="bg-beige-light text-beige-darkest pb-12 lg:pb-24 relative">
+    <section
+      className="text-beige-darkest relative"
+      style={{
+        background: "linear-gradient(0deg, #ffffff 20%, #ddcdc1 20%)",
+      }}
+    >
       <Container>
         <div className="block lg:hidden">
           <BlockTitle
@@ -14,7 +19,7 @@ export default function PhotographyServices({ data }) {
           />
         </div>
         <div className="grid grid-cols-3 md:grid-cols-4 gap-x-1 gap-y-1 md:gap-x-4 md:gap-y-4">
-          <div className="hidden lg:block">
+          <div className="hidden lg:block pr-4">
             <BlockTitle
               title="Fototjänster"
               subtitle="Jag erbjuder tre olika typer av fotograferingar. Detaljbilder på dina produkter, streetstyle, porträtt, eller behöver du kanske en professionell bild tagen i din arbetsmiljö? Oavsett ditt behov hjälper jag dig att förverkliga din vision!"

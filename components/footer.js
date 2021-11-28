@@ -30,8 +30,8 @@ export default function Footer() {
           </div>
         </div>
       </Container>
-      <div className="text-center py-4 bg-white">
-        <p className="text-beige-darkest">© 2021 Bognandi Photography</p>
+      <div className="bg-beige-darkest text-center py-4 border-t-2 border-beige-dark">
+        <p className="text-white">© 2021 Bognandi Photography</p>
       </div>
     </footer>
   );

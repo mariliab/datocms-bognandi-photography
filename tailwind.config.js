@@ -2,6 +2,9 @@ module.exports = {
   //purge: ["./src/**/*.html", "./components/**/*.js"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    borderWidth: {
+      1: "1px",
+    },
     extend: {
       colors: {
         "accent-1": "#FAFAFA",
