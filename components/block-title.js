@@ -15,7 +15,8 @@ export default function BlockTitle({ title = "", subtitle }) {
       {subtitle && (
         <p
           className={`${
-            !isLongText && "line-clamp-2 lg:line-clamp-6 max-w-screen-lg"
+            !isLongText &&
+            "line-clamp-2 lg:line-clamp-6 max-w-screen-lg text-base 2xl:text-xl"
           }`}
         >
           {subtitle}
