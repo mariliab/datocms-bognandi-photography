@@ -173,7 +173,14 @@ export default function PhotoService({ subscription, preview }) {
           </p>
         </div>
       </Container>
-      <PhotographyServices data={allPhotoServicesPages} />
+      <div
+        className="py-12"
+        style={{
+          background: "linear-gradient(0deg, #ffffff 20%, #ddcdc1 20%)",
+        }}
+      >
+        <PhotographyServices data={allPhotoServicesPages} />
+      </div>
     </Layout>
   );
 }
