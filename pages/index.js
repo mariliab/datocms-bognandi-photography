@@ -106,7 +106,7 @@ export default function Index({ subscription }) {
     <>
       <Layout preview={subscription.preview}>
         <Head>{renderMetaTags(metaTags)}</Head>
-        <Navbar />
+        <Navbar data={site} />
         <Hero
           title={startpage?.title}
           text={startpage?.text}

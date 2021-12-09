@@ -2,44 +2,37 @@ import Container from "./container";
 import Link from "next/link";
 import { useState } from "react";
 
-function DesktopMenu() {
+function DesktopMenu({ logo = "" }) {
   return (
-    <div className="hidden lg:flex justify-between items-center py-4">
-      <Link href="/">
-        <div className="grid">
-          <h6 className="font-bold text-xl md:text-2xl cursor-pointer leading-tight md:leading-tight">
-            BOGNANDI
-          </h6>
-          <h6 className="text-xl md:text-2xl cursor-pointer leading-tight md:leading-tight font-thin">
-            PHOTOGRAPHY
-          </h6>
-        </div>
-      </Link>
-      <div>
-        <ul className="flex gap-x-4">
-          <Link href="/om-mig">Om mig</Link>
-          <Link href="/blogg">Blogg</Link>
-          <Link href="mailto:marilia@bognandiphotography.com">Kontakt</Link>
-        </ul>
+    <div className="hidden lg:flex justify-around items-center py-4">
+      <div className="flex gap-x-4">
+        <Link href="/om-mig">
+          <span className="font-light">PORTFOLIO</span>
+        </Link>
+        <Link href="/om-mig">
+          <span className="font-light">OM MIG</span>
+        </Link>
+        <Link href="/blogg">
+          <span className="font-light">BLOGG</span>
+        </Link>
       </div>
+      <Link href="/">
+        <img src={logo} width="100" height="auto" />
+      </Link>
+      <Link href="mailto:marilia@bognandiphotography.com">
+        <span className="font-light">KONTAKT</span>
+      </Link>
     </div>
   );
 }
 
-function MobileMenu() {
+function MobileMenu({ logo = "" }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="flex justify-between items-center lg:hidden py-4">
       <Link href="/">
-        <div className="grid">
-          <h6 className="font-bold text-xl md:text-2xl cursor-pointer leading-tight md:leading-tight">
-            BOGNANDI
-          </h6>
-          <h6 className="text-xl md:text-2xl cursor-pointer leading-tight md:leading-tight font-thin">
-            PHOTOGRAPHY
-          </h6>
-        </div>
+        <img src={logo} width="50" height="auto" />
       </Link>
       <button
         style={{ width: "1.5rem", height: "1.375rem" }}
@@ -65,12 +58,12 @@ function MobileMenu() {
           }`}
         ></div>
       </button>
-      <MobileMenuBody isOpen={isOpen} />
+      <MobileMenuBody isOpen={isOpen} logo={logo} />
     </div>
   );
 }
 
-function MobileMenuBody({ isOpen }) {
+function MobileMenuBody({ isOpen = false, logo = "" }) {
   return (
     <div
       className={`bg-beige-light h-full w-full absolute top-0 left-0 p-4 z-10 transform transition duration-500 ease-in-out ${
@@ -79,14 +72,7 @@ function MobileMenuBody({ isOpen }) {
     >
       <div className="flex flex-col justify-between h-full">
         <Link href="/">
-          <div className="grid">
-            <h6 className="font-bold text-xl md:text-2xl cursor-pointer leading-tight md:leading-tight">
-              BOGNANDI
-            </h6>
-            <h6 className="text-xl md:text-2xl cursor-pointer leading-tight md:leading-tight font-thin">
-              PHOTOGRAPHY
-            </h6>
-          </div>
+          <img src={logo} width="50" height="auto" />
         </Link>
         <div className="flex flex-col gap-y-4 items-center">
           <p>Se mer</p>
@@ -110,12 +96,12 @@ function MobileMenuBody({ isOpen }) {
   );
 }
 
-export default function Navbar() {
+export default function Navbar({ data }) {
   return (
     <nav>
       <Container>
-        <DesktopMenu />
-        <MobileMenu />
+        <DesktopMenu logo={data?.favicon[3]?.attributes?.href} />
+        <MobileMenu logo={data?.favicon[3]?.attributes?.href} />
       </Container>
     </nav>
   );
