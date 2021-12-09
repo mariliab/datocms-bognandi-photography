@@ -1,14 +1,13 @@
 import Container from "./container";
 import BlockTitle from "./block-title";
 
-export default function Footer() {
+export default function Footer({ logo }) {
   return (
-    <footer className="bg-beige-darkest text-beige-light">
+    <footer className="bg-beige-light text-beige-darkest">
       <Container>
         <div className="py-28 flex flex-col flex-col-reverse lg:flex-row lg:items-center">
           <div className="flex flex-col w-1/3">
-            <h6 className="font-bold leading-tight text-2xl">BOGNANDI</h6>{" "}
-            <h6 className="leading-tight text-2xl">PHOTOGRAPHY</h6>
+            <img src={logo} width="200" height="auto" />
           </div>
           <div className="flex flex-col mb-8 lg:mb-0">
             <BlockTitle
@@ -30,8 +29,8 @@ export default function Footer() {
           </div>
         </div>
       </Container>
-      <div className="bg-beige-darkest text-center py-4 border-t-2 border-beige-dark">
-        <p className="text-white">© 2021 Bognandi Photography</p>
+      <div className="bg-beige-light text-center py-4 border-t-1 border-beige-darkest">
+        <p className="text-beige-darkest">© 2021 Bognandi Photography</p>
       </div>
     </footer>
   );

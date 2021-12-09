@@ -104,7 +104,7 @@ export default function Index({ subscription }) {
 
   return (
     <>
-      <Layout preview={subscription.preview}>
+      <Layout preview={subscription.preview} data={site}>
         <Head>{renderMetaTags(metaTags)}</Head>
         <Navbar data={site} />
         <Hero
@@ -115,7 +115,6 @@ export default function Index({ subscription }) {
         <PhotographyServices data={allPhotoServicesPages} />
         <ImageGallery data={startpage?.gallery} />
         <Testamonials data={allTestamonials} />
-        {allPosts.length > 0 && <MoreStories posts={allPosts} />}
       </Layout>
     </>
   );
