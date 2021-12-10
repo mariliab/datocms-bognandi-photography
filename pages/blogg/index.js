@@ -1,6 +1,6 @@
 import { request } from "../../lib/datocms";
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
-import { responsiveImageFragment } from "../../lib/fragments";
+import { responsiveImageFragment, metaTagsFragment } from "../../lib/fragments";
 import Layout from "../../components/layout";
 import Navbar from "../../components/navbar";
 import Blogg from "../../components/blogg";
@@ -10,6 +10,11 @@ export async function getStaticProps({ preview = false }) {
   const graphqlRequest = {
     query: `
       {
+        site: _site {
+          favicon: faviconMetaTags {
+            ...metaTagsFragment
+          }
+        }
         allPosts(orderBy: date_DESC, first: 20) {
           title
           slug
@@ -28,6 +33,7 @@ export async function getStaticProps({ preview = false }) {
           }
         }
       }
+      ${metaTagsFragment}
       ${responsiveImageFragment}
     `,
     preview,
@@ -51,11 +57,12 @@ export async function getStaticProps({ preview = false }) {
 
 function Blog({ subscription }) {
   const {
-    data: { allPosts },
+    data: { allPosts, site },
   } = useQuerySubscription(subscription);
+
   return (
     <Layout>
-      <Navbar />
+      <Navbar data={site} />
       <Blogg posts={allPosts.length > 0 && allPosts} />
     </Layout>
   );
