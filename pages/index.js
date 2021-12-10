@@ -8,6 +8,7 @@ import PhotographyServices from "../components/photography-services";
 import Testamonials from "../components/testamonials";
 import ImageGallery from "../components/image-gallery";
 import Hero from "../components/hero";
+import AboutMe from "../components/about-me";
 import Navbar from "../components/navbar";
 
 export async function getStaticProps({ preview }) {
@@ -24,7 +25,7 @@ export async function getStaticProps({ preview }) {
             ...metaTagsFragment
           }
           backgroundImage {
-            responsiveImage(imgixParams: {fm: jpg, fit: max, w: 400, h: 600 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: max, w: 1600, h: 900, q: 100 }) {
               ...responsiveImageFragment
             }
           }
@@ -36,6 +37,13 @@ export async function getStaticProps({ preview }) {
               ...responsiveImageFragment
             }
           }
+          portrait {
+            responsiveImage(imgixParams: {fm: jpg, w: 400, h: 600, fit: max }) {
+              ...responsiveImageFragment
+            }
+          }
+          heading
+          subHeading
         }
         allPhotoServicesPages(orderBy: _createdAt_ASC) { 
           slug
@@ -97,7 +105,7 @@ export async function getStaticProps({ preview }) {
 
 export default function Index({ subscription }) {
   const {
-    data: { allPosts, site, startpage, allPhotoServicesPages, allTestamonials },
+    data: { site, startpage, allPhotoServicesPages, allTestamonials },
   } = useQuerySubscription(subscription);
 
   const metaTags = startpage.seo.concat(site.favicon);
@@ -113,6 +121,11 @@ export default function Index({ subscription }) {
           image={startpage?.backgroundImage?.responsiveImage}
         />
         <PhotographyServices data={allPhotoServicesPages} />
+        <AboutMe
+          title={startpage?.heading}
+          text={startpage?.subHeading}
+          image={startpage?.portrait.responsiveImage}
+        />
         <ImageGallery data={startpage?.gallery} />
         <Testamonials data={allTestamonials} />
       </Layout>
