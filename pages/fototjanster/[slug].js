@@ -101,7 +101,7 @@ export default function PhotoService({ subscription, preview }) {
   return (
     <Layout>
       <Head>{renderMetaTags(metaTags)}</Head>
-      <Navbar />
+      <Navbar data={site} />
       <section className="bg-beige-lightest relative text-beige-darkest">
         <Image
           data={{
@@ -174,9 +174,8 @@ export default function PhotoService({ subscription, preview }) {
         </div>
       </Container>
       <div
-        className="py-12"
         style={{
-          background: "linear-gradient(0deg, #ffffff 20%, #ddcdc1 20%)",
+          background: "linear-gradient(0deg, #ffffff 30%, #ddcdc1 30%)",
         }}
       >
         <PhotographyServices data={allPhotoServicesPages} />
