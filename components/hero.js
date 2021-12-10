@@ -4,7 +4,6 @@ import Container from "./container";
 import { createMarkup } from "../utils/help";
 
 export default function Hero({ title = "", text = "", image }) {
-  console.log("Hero image:! ", image);
   return (
     <section>
       <div className="flex items-center">
