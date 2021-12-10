@@ -5,12 +5,7 @@ import Link from "next/link";
 
 export default function PhotographyServices({ data }) {
   return (
-    <section
-      className="text-beige-darkest relative"
-      style={{
-        background: "linear-gradient(0deg, #ffffff 20%, #ddcdc1 20%)",
-      }}
-    >
+    <section className="text-beige-darkest relative py-12 lg:py-24">
       <Container>
         <div className="block lg:hidden">
           <BlockTitle
