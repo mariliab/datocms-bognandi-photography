@@ -8,16 +8,9 @@ body {
   font-family: "Josefin Sans", sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-button {
+.font-playfair {
   font-family: "Playfair Display", serif;
 }
-
 .post-body a {
   color: #ac8266;
 }
