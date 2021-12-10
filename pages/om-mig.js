@@ -78,7 +78,7 @@ function Om({ subscription }) {
   return (
     <Layout>
       <Head>{renderMetaTags(metaTags)}</Head>
-      <Navbar />
+      <Navbar data={site} />
       <About data={page} />
     </Layout>
   );
