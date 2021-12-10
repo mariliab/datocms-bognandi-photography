@@ -6,7 +6,7 @@ function DesktopMenu({ logo = "" }) {
   return (
     <div className="hidden lg:flex justify-around items-center py-4">
       <div className="flex gap-x-4">
-        <Link href="/om-mig">
+        <Link href="/">
           <span className="font-light">PORTFOLIO</span>
         </Link>
         <Link href="/om-mig">
