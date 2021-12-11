@@ -11,6 +11,9 @@ body {
 .font-playfair {
   font-family: "Playfair Display", serif;
 }
+a:hover {
+  cursor: pointer;
+}
 .post-body a {
   color: #ac8266;
 }
