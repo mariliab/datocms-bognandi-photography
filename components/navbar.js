@@ -6,14 +6,14 @@ function DesktopMenu({ logo = "" }) {
   return (
     <div className="hidden lg:flex justify-around items-center py-4">
       <div className="flex flex-1 gap-x-4">
-        <Link href="/">
-          <span className="font-light">PORTFOLIO</span>
+        <Link href="/" passHref>
+          <a className="font-light">PORTFOLIO</a>
         </Link>
-        <Link href="/om-mig">
-          <span className="font-light">OM MIG</span>
+        <Link href="/om-mig" passHref>
+          <a className="font-light">OM MIG</a>
         </Link>
-        <Link href="/blogg">
-          <span className="font-light">BLOGG</span>
+        <Link href="/blogg" passHref>
+          <a className="font-light">BLOGG</a>
         </Link>
       </div>
       <div>
@@ -22,8 +22,8 @@ function DesktopMenu({ logo = "" }) {
         </Link>
       </div>
       <div className="flex flex-1 justify-end">
-        <Link href="mailto:marilia@bognandiphotography.com">
-          <span className="font-light">KONTAKT</span>
+        <Link href="mailto:marilia@bognandiphotography.com" passHref>
+          <a className="font-light">KONTAKT</a>
         </Link>
       </div>
     </div>
@@ -79,21 +79,30 @@ function MobileMenuBody({ isOpen = false, logo = "" }) {
           <img src={logo} width="50" height="auto" />
         </Link>
         <div className="flex flex-col gap-y-4 items-center">
-          <p>Se mer</p>
-          <Link href="/om-mig">Om mig</Link>
-          <Link href="/blogg">Blogg</Link>
-          <p className="mt-4">Fototjänster</p>
-          <Link href="/fototjanster/portratt">Porträtt</Link>
-          <Link href="/fototjanster/produkter">Produkter</Link>
-          <Link href="/fototjanster/foretag">Företag</Link>
+          <p className="font-light">SE MER</p>
+          <Link href="/om-mig" passHref>
+            <a>Om mig</a>
+          </Link>
+          <Link href="/blogg" passHref>
+            <a>Blogg</a>
+          </Link>
+          <p className="mt-4 font-light">FOTOTJÄNSTER</p>
+          <Link href="/fototjanster/portratt" passHref>
+            <a>Porträtt</a>
+          </Link>
+          <Link href="/fototjanster/produkter" passHref>
+            <a>Produkter</a>
+          </Link>
+          <Link href="/fototjanster/foretag" passHref>
+            <a>Företag</a>
+          </Link>
         </div>
         <div className="py-0 sm:py-4 flex">
-          <a
-            href="mailto:marilia@bognandiphotography.com"
-            className="py-4 text-xs tracking-widest font-bold text-center bg-beige-darkest hover:bg-beige-light text-white hover:text-beige-darkest flex-1 rounded-full"
-          >
-            KONTAKTA MIG
-          </a>
+          <Link href="mailto:marilia@bognandiphotography.com" passHref>
+            <a className="py-4 text-xs tracking-widest font-bold text-center bg-beige-darkest hover:bg-beige-light text-white hover:text-beige-darkest flex-1 rounded-full">
+              KONTAKTA MIG
+            </a>
+          </Link>
         </div>
       </div>
     </div>
