@@ -5,7 +5,7 @@ export default function Footer({ logo }) {
   return (
     <footer className="bg-beige-light text-beige-darkest">
       <Container>
-        <div className="py-28 flex flex-col flex-col-reverse lg:flex-row lg:items-center">
+        <div className="py-12 flex flex-col flex-col-reverse lg:flex-row lg:items-center">
           <div className="flex flex-col w-1/3">
             <img src={logo} width="200" height="auto" />
           </div>
