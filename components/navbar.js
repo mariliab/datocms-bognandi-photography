@@ -5,7 +5,7 @@ import { useState } from "react";
 function DesktopMenu({ logo = "" }) {
   return (
     <div className="hidden lg:flex justify-around items-center py-4">
-      <div className="flex gap-x-4">
+      <div className="flex flex-1 gap-x-4">
         <Link href="/">
           <span className="font-light">PORTFOLIO</span>
         </Link>
@@ -16,12 +16,16 @@ function DesktopMenu({ logo = "" }) {
           <span className="font-light">BLOGG</span>
         </Link>
       </div>
-      <Link href="/">
-        <img src={logo} width="100" height="auto" />
-      </Link>
-      <Link href="mailto:marilia@bognandiphotography.com">
-        <span className="font-light">KONTAKT</span>
-      </Link>
+      <div>
+        <Link href="/">
+          <img src={logo} width="100" height="auto" />
+        </Link>
+      </div>
+      <div className="flex flex-1 justify-end">
+        <Link href="mailto:marilia@bognandiphotography.com">
+          <span className="font-light">KONTAKT</span>
+        </Link>
+      </div>
     </div>
   );
 }
