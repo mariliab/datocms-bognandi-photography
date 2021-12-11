@@ -5,21 +5,16 @@ import Link from "next/link";
 
 export default function PhotographyServices({ data }) {
   return (
-    <section className="text-beige-darkest relative py-12 lg:py-24">
+    <section className="text-beige-darkest relative py-12 lg:py-24 mx-auto">
       <Container>
-        <div className="block lg:hidden">
+        <div>
           <BlockTitle
             title="Fototjänster"
             subtitle="Jag erbjuder tre olika typer av fotograferingar. Detaljbilder på dina produkter, streetstyle, porträtt, eller behöver du kanske en professionell bild tagen i din arbetsmiljö? Oavsett ditt behov hjälper jag dig att förverkliga din vision!"
+            centered
           />
         </div>
-        <div className="grid grid-cols-3 md:grid-cols-4 gap-x-1 gap-y-1 md:gap-x-4 md:gap-y-4">
-          <div className="hidden lg:block pr-4">
-            <BlockTitle
-              title="Fototjänster"
-              subtitle="Jag erbjuder tre olika typer av fotograferingar. Detaljbilder på dina produkter, streetstyle, porträtt, eller behöver du kanske en professionell bild tagen i din arbetsmiljö? Oavsett ditt behov hjälper jag dig att förverkliga din vision!"
-            />
-          </div>
+        <div className="grid grid-cols-3 gap-x-1 gap-y-1 md:gap-x-4 md:gap-y-4">
           {data.map((item, index) => {
             return (
               <Link href={`/fototjanster/${item.slug}`} key={index}>

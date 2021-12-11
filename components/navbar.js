@@ -17,13 +17,17 @@ function DesktopMenu({ logo = "" }) {
         </Link>
       </div>
       <div>
-        <Link href="/">
-          <img src={logo} width="100" height="auto" />
+        <Link href="/" passHref>
+          <a>
+            <img src={logo} width="100" height="auto" />
+          </a>
         </Link>
       </div>
       <div className="flex flex-1 justify-end">
         <Link href="mailto:marilia@bognandiphotography.com" passHref>
-          <a className="font-light">KONTAKT</a>
+          <a className="font-light px-6 pt-3 pb-2 border-1 border-black hover:bg-beige-lightest transition-all duration-200">
+            KONTAKT
+          </a>
         </Link>
       </div>
     </div>
