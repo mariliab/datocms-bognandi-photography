@@ -17,7 +17,7 @@ function TestamonialItem({ data }) {
       {!isLongText && (
         <button
           onClick={() => setIsLongText(true)}
-          className="text-xs uppercase font-bold hover:text-beige-light"
+          className="text-xs uppercase font-bold hover:text-beige-dark"
         >
           läs mer
         </button>

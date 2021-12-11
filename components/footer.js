@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="flex flex-col">
             <a
               href="mailto:marilia@bognandiphotography.com"
-              className="text-base lg:text-4xl text-white hover:text-beige-light flex items-center"
+              className="text-base lg:text-4xl text-white hover:text-beige-lightest flex items-center"
             >
               marilia@bognandiphotography.com
             </a>
