@@ -112,7 +112,7 @@ export default function Index({ subscription }) {
 
   return (
     <>
-      <Layout preview={subscription.preview} data={site}>
+      <Layout preview={subscription.preview}>
         <Head>{renderMetaTags(metaTags)}</Head>
         <Navbar data={site} />
         <Hero
@@ -127,6 +127,14 @@ export default function Index({ subscription }) {
           image={startpage?.portrait.responsiveImage}
         />
         <ImageGallery data={startpage?.gallery} />
+        <div className="pb-12 lg:pb-24">
+          <img
+            src={site?.favicon[3]?.attributes?.href}
+            width="200"
+            height="auto"
+            className="mx-auto"
+          />
+        </div>
         <Testamonials data={allTestamonials} />
       </Layout>
     </>
