@@ -11,6 +11,9 @@ body {
 .font-playfair {
   font-family: "Playfair Display", serif;
 }
+.font-montagu {
+  font-family: "Montagu Slab", serif;
+}
 a:hover {
   cursor: pointer;
 }
