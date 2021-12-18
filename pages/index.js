@@ -122,7 +122,7 @@ export default function Index({ subscription }) {
           text={startpage?.text}
           image={startpage?.backgroundImage?.responsiveImage}
         />
-        <PhotographyServices data={allPhotoServicesPages} />
+        <PhotographyServices data={allPhotoServicesPages} isStartpage />
         <AboutMe
           title={startpage?.heading}
           text={startpage?.subHeading}

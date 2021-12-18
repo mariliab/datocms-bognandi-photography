@@ -3,17 +3,31 @@ import Container from "./container";
 import { Image } from "react-datocms";
 import Link from "next/link";
 
-export default function PhotographyServices({ data }) {
+export default function PhotographyServices({
+  data = [],
+  isStartpage = false,
+}) {
   return (
     <section className="relative py-12 lg:py-24 mx-auto bg-beige-lightest">
       <Container>
-        <div>
-          <BlockTitle
-            title="Fototjänster"
-            subtitle="Jag erbjuder tre olika typer av fotograferingar. Behöver du detaljbilder på dina produkter, streetstyle porträtt, eller kanske en professionell bild tagen i din arbetsmiljö? Oavsett ditt behov hjälper jag dig att förverkliga din vision!"
-            centered
-          />
-        </div>
+        {isStartpage ? (
+          <div>
+            <p
+              className="text-center uppercase mb-2"
+              style={{ fontSize: "10px" }}
+            >
+              Välkommen till
+            </p>
+            <BlockTitle
+              title="Bognandi photography"
+              subtitle="Jag erbjuder tre olika typer av fotograferingar. Behöver du detaljbilder på dina produkter, streetstyle porträtt, eller kanske en professionell bild tagen i din arbetsmiljö? Oavsett ditt behov hjälper jag dig att förverkliga din vision!"
+              centered
+            />
+          </div>
+        ) : (
+          <div className="mb-4 uppercase">Se mer</div>
+        )}
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-1 gap-y-4 md:gap-x-4">
           {data.map((item, index) => {
             return (
