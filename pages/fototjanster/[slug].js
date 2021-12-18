@@ -114,10 +114,9 @@ export default function PhotoService({ subscription, preview }) {
         <div className="hidden lg:flex justify-center items-center absolute top-0 w-full h-full">
           <Container>
             <div className="w-1/3 bg-beige-lightest p-8">
-              <h1 className="text-3xl md:text-6xl leading-none text-black uppercase font-bold w-min mb-4 md:mb-8">
+              <h1 className="text-3xl md:text-6xl leading-none text-black uppercase font-light mb-4">
                 {title}
               </h1>
-              <div className="text-current bg-current h-1 w-24 border-2 border-beige mb-4 lg:mb-8 rounded-full"></div>
               <h2 className="mt-4 text-xl leading-relaxed font-light">
                 {description}
               </h2>
@@ -126,10 +125,9 @@ export default function PhotoService({ subscription, preview }) {
         </div>
         <div className="py-12 lg:hidden">
           <Container>
-            <h1 className="text-3xl md:text-6xl leading-none text-black uppercase font-bold w-min mb-4 md:mb-8">
+            <h1 className="font-light text-3xl md:text-6xl leading-none text-black uppercase mb-4">
               {title}
             </h1>
-            <div className="text-current bg-current h-1 w-24 border-2 border-beige mb-4 lg:mb-8 rounded-full"></div>
             <h2 className="mt-4 text-xl leading-relaxed font-light">
               {description}
             </h2>

@@ -4,7 +4,6 @@ import { Image } from "react-datocms";
 import Link from "next/link";
 
 export default function PhotographyServices({ data }) {
-  console.log("Data: ", data);
   return (
     <section className="relative py-12 lg:py-24 mx-auto bg-beige-lightest">
       <Container>
