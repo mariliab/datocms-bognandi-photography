@@ -1,9 +1,10 @@
 import BlockTitle from "../components/block-title";
 import Container from "./container";
-import Image from "next/image";
+import { Image } from "react-datocms";
 import Link from "next/link";
 
 export default function PhotographyServices({ data }) {
+  console.log("Data: ", data);
   return (
     <section className="relative py-12 lg:py-24 mx-auto bg-beige-lightest">
       <Container>
@@ -14,26 +15,20 @@ export default function PhotographyServices({ data }) {
             centered
           />
         </div>
-        <div className="grid grid-cols-3 gap-x-1 gap-y-1 md:gap-x-4 md:gap-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-1 gap-y-4 md:gap-x-4">
           {data.map((item, index) => {
             return (
               <Link href={`/fototjanster/${item.slug}`} key={index}>
-                <div className="flex justify-center items-center relative bg-black cursor-pointer overflow:hidden">
-                  <img
-                    src={item.featuredImage.url}
-                    className="filter opacity-75 transform transition duration-300 ease-in-out hover:opacity-100 hover:scale-101"
+                <div className="flex flex-col justify-center items-center cursor-pointer overflow:hidden">
+                  <Image
+                    data={{
+                      ...item?.featuredImage?.responsiveImage,
+                      alt: item?.featuredImage?.responsiveImage?.title,
+                    }}
+                    className="transform transition duration-300 ease-in-out hover:opacity-100 hover:scale-101"
                   />
-                  <p className="text-white text-xs lg:text-xl font-bold absolute uppercase tracking-widest pointer-events-none">
+                  <div className="mt-4 font-normal px-6 pt-3 pb-2 border-1 border-black hover:bg-white transition-all duration-200">
                     {item.title}
-                  </p>
-                  <div className="text-xs absolute bottom-4 right-4">
-                    {/* change to import {Image} from "react-datocms"; */}
-                    <Image
-                      src="/images/arrow-thin-right-white.svg"
-                      alt="se mer"
-                      width="14"
-                      height="14"
-                    />
                   </div>
                 </div>
               </Link>

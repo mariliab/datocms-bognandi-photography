@@ -33,7 +33,9 @@ export async function getStaticProps({ params, preview = false }) {
           slug
           title
           featuredImage {
-            url
+            responsiveImage(imgixParams: {fm: jpg, w: 400, h: 600, fit: max }) {
+              ...responsiveImageFragment
+            }
           }
         }
         photoServicesPage(filter: {slug: {eq: $slug}}) {
@@ -163,16 +165,6 @@ export default function PhotoService({ subscription, preview }) {
           </Container>
         </section>
       )}
-      <Container>
-        <div className="my-8 text-right">
-          <p>
-            Behöver du hjälp med att ta liknande bilder?{" "}
-            <Link href="mailto:marilia@bognandiphotography.com">
-              Kontakta mig
-            </Link>
-          </p>
-        </div>
-      </Container>
       <div
         style={{
           background: "linear-gradient(0deg, #ffffff 30%, #ddcdc1 30%)",

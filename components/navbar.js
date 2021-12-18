@@ -25,8 +25,8 @@ function DesktopMenu({ logo = "" }) {
       </div>
       <div className="flex flex-1 justify-end">
         <Link href="mailto:marilia@bognandiphotography.com" passHref>
-          <a className="font-light px-6 pt-3 pb-2 border-1 border-black hover:bg-beige-lightest transition-all duration-200">
-            KONTAKT
+          <a className="font-normal px-6 pt-3 pb-2 border-1 border-black hover:bg-beige-lightest transition-all duration-200">
+            Kontakt
           </a>
         </Link>
       </div>

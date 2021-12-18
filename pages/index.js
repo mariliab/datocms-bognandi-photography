@@ -49,7 +49,9 @@ export async function getStaticProps({ preview }) {
           slug
           title
           featuredImage {
-            url
+            responsiveImage(imgixParams: {fm: jpg, w: 400, h: 600, fit: max }) {
+              ...responsiveImageFragment
+            }
           }
         }
         allTestamonials {
