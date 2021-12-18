@@ -9,7 +9,7 @@ export default function BlockTitle({
     <div className="mb-8">
       {centered ? (
         <div className="max-w-screen-sm text-center mx-auto">
-          <h2 className="text-3xl lg:text-3xl mb-2 leading-tight break-words lg:break-normal font-extralight uppercase">
+          <h2 className="text-2xl lg:text-3xl mb-2 leading-tight break-words lg:break-normal font-light uppercase">
             {title}
           </h2>
           {subtitle && (

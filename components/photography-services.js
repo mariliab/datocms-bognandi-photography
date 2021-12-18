@@ -5,12 +5,12 @@ import Link from "next/link";
 
 export default function PhotographyServices({ data }) {
   return (
-    <section className="text-beige-darkest relative py-12 lg:py-24 mx-auto">
+    <section className="relative py-12 lg:py-24 mx-auto bg-beige-lightest">
       <Container>
         <div>
           <BlockTitle
             title="Fototjänster"
-            subtitle="Jag erbjuder tre olika typer av fotograferingar. Detaljbilder på dina produkter, streetstyle, porträtt, eller behöver du kanske en professionell bild tagen i din arbetsmiljö? Oavsett ditt behov hjälper jag dig att förverkliga din vision!"
+            subtitle="Jag erbjuder tre olika typer av fotograferingar. Behöver du detaljbilder på dina produkter, streetstyle porträtt, eller kanske en professionell bild tagen i din arbetsmiljö? Oavsett ditt behov hjälper jag dig att förverkliga din vision!"
             centered
           />
         </div>

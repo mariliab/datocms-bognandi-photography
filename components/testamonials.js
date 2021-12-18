@@ -29,7 +29,7 @@ function TestamonialItem({ data }) {
         />
         <div className="ml-4">
           <p className="leading-tight">{data.name},</p>
-          <h6 className="font-thin leading-tight text-xs">{data.title}</h6>
+          <h6 className="font-light leading-tight text-xs">{data.title}</h6>
         </div>
       </div>
     </div>

@@ -20,7 +20,7 @@ export default function AboutMe({ title = "", text = "", image = null }) {
               <div className="text-8xl font-montagu font-thin leading-3">"</div>
               <h1 className="mb-2 text-2xl mb-4">{title}</h1>
               <p className="font-light mb-4">{text}</p>
-              <p className="font-light italic">/Marilia Bognandi</p>
+              <p className="font-normal italic">/Marilia Bognandi</p>
             </div>
           </div>
         </div>
