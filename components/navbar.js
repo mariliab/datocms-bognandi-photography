@@ -19,7 +19,12 @@ function DesktopMenu({ logo = "" }) {
       <div>
         <Link href="/" passHref>
           <a>
-            <img src={logo} width="100" height="auto" />
+            <img
+              src={logo}
+              width="100"
+              height="auto"
+              alt="Bognandi Photography logga"
+            />
           </a>
         </Link>
       </div>
@@ -42,7 +47,12 @@ function MobileMenu({ logo = "" }) {
   return (
     <div className="flex justify-between items-center lg:hidden py-4">
       <Link href="/">
-        <img src={logo} width="50" height="auto" />
+        <img
+          src={logo}
+          width="50"
+          height="auto"
+          alt="Bognandi Photography logga"
+        />
       </Link>
       <button
         style={{ width: "1.5rem", height: "1.375rem" }}

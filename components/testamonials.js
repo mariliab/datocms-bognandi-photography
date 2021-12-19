@@ -26,10 +26,13 @@ function TestamonialItem({ data }) {
         <img
           className="w-14 h-14 min-w-14 rounded-full bg-cover filter grayscale"
           src={data.image.url}
+          width="56"
+          height="56"
+          alt={data.name}
         />
         <div className="ml-4">
           <p className="leading-tight">{data.name},</p>
-          <h6 className="font-light leading-tight text-xs">{data.title}</h6>
+          <p className="font-light leading-tight text-xs">{data.title}</p>
         </div>
       </div>
     </div>
