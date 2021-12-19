@@ -16,6 +16,7 @@ export default function Footer() {
             <a
               href="mailto:marilia@bognandiphotography.com"
               className="text-base lg:text-4xl text-white hover:text-beige-lightest flex items-center"
+              target="_blank"
             >
               marilia@bognandiphotography.com
             </a>
