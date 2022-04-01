@@ -22,13 +22,13 @@ export default function BlogPostPreview({
             responsiveImage={coverImage.responsiveImage}
           />
           <div className="p-4">
-            <h3 className="text-2xl md:text-3xl mb-4 leading-tight break-words">
+            <h3 className="text-lg md:text-xl mb-4 leading-tight break-words">
               <p className="hover:underline">{title}</p>
             </h3>
             <div className="text-xs mb-4 uppercase">
               <Date dateString={date} />
             </div>
-            <p className="text-md mb-4 font-light">{excerpt}</p>
+            <p className="text-sm mb-4 font-light">{excerpt}</p>
             <Avatar name={author.name} picture={author.picture} />
           </div>
           <div className="text-xs absolute bottom-4 right-4">
