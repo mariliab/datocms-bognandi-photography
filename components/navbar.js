@@ -45,7 +45,10 @@ function MobileMenu({ logo = "" }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="grid grid-cols-3 lg:hidden py-4">
+    <div
+      className="lg:hidden py-4"
+      style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}
+    >
       <div className="flex items-center">
         <button
           style={{ width: "1.5rem", height: "1.375rem" }}
