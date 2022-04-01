@@ -45,40 +45,53 @@ function MobileMenu({ logo = "" }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex justify-between items-center lg:hidden py-4">
-      <Link href="/">
-        <img
-          src={logo}
-          width="50"
-          height="auto"
-          alt="Bognandi Photography logga"
-        />
-      </Link>
-      <button
-        style={{ width: "1.5rem", height: "1.375rem" }}
-        className="flex flex-col gap-1 justify-around focus:outline-none z-20"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <div
-          style={{ width: "1.5rem", height: "0.15rem" }}
-          className={`bg-black relative transform transition duration-300 ease-in-out rounded-full origin-bottom-left ${
-            isOpen && "rotate-45"
-          }`}
-        ></div>
-        <div
-          style={{ width: "1.5rem", height: "0.15rem" }}
-          className={`bg-black relative transform transition duration-300 ease-in-out rounded-full origin-center ${
-            isOpen && "opacity-0"
-          }`}
-        ></div>
-        <div
-          style={{ width: "1.5rem", height: "0.15rem" }}
-          className={`bg-black relative transform transition duration-300 ease-in-out rounded-full origin-top-left ${
-            isOpen && "-rotate-45"
-          }`}
-        ></div>
-      </button>
-      <MobileMenuBody isOpen={isOpen} logo={logo} />
+    <div className="grid grid-cols-3 lg:hidden py-4">
+      <div className="flex items-center">
+        <button
+          style={{ width: "1.5rem", height: "1.375rem" }}
+          className="flex flex-col gap-1 justify-around focus:outline-none z-20"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <div
+            style={{ width: "1.5rem", height: "0.15rem" }}
+            className={`bg-black relative transform transition duration-300 ease-in-out rounded-full origin-bottom-left ${
+              isOpen && "rotate-45"
+            }`}
+          ></div>
+          <div
+            style={{ width: "1.5rem", height: "0.15rem" }}
+            className={`bg-black relative transform transition duration-300 ease-in-out rounded-full origin-center ${
+              isOpen && "opacity-0"
+            }`}
+          ></div>
+          <div
+            style={{ width: "1.5rem", height: "0.15rem" }}
+            className={`bg-black relative transform transition duration-300 ease-in-out rounded-full origin-top-left ${
+              isOpen && "-rotate-45"
+            }`}
+          ></div>
+        </button>
+      </div>
+      <div className="flex justify-center items-center">
+        <Link href="/">
+          <img
+            src={logo}
+            width="50"
+            height="auto"
+            alt="Bognandi Photography logga"
+          />
+        </Link>
+      </div>
+      <div className="flex justify-end items-center">
+        <a
+          href="mailto:marilia@bognandiphotography.com"
+          className="font-normal hover:bg-beige-lightest transition-all duration-200"
+          target="_blank"
+        >
+          Kontakt
+        </a>
+        <MobileMenuBody isOpen={isOpen} logo={logo} />
+      </div>
     </div>
   );
 }
@@ -91,9 +104,11 @@ function MobileMenuBody({ isOpen = false, logo = "" }) {
       }`}
     >
       <div className="flex flex-col justify-between h-full">
-        <Link href="/">
-          <img src={logo} width="50" height="auto" />
-        </Link>
+        <div className="flex justify-center">
+          <Link href="/">
+            <img src={logo} width="50" height="auto" />
+          </Link>
+        </div>
         <div className="flex flex-col gap-y-4 items-center">
           <p className="font-light">SE MER</p>
           <Link href="/om-mig" passHref>
