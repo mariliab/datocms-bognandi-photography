@@ -29,7 +29,7 @@ export async function getStaticProps({ params, preview = false }) {
             ...metaTagsFragment
           }
         }
-        allPhotoServicesPages(orderBy: _createdAt_ASC) { 
+        allPhotoServicesPages(filter: {slug: {neq: $slug}}, orderBy: _createdAt_ASC) { 
           slug
           title
           featuredImage {
