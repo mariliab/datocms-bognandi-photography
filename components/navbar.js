@@ -45,55 +45,54 @@ function MobileMenu({ logo = "" }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div
-      className="lg:hidden py-4"
-      style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}
-    >
-      <div className="flex items-center">
-        <button
-          style={{ width: "1.5rem", height: "1.375rem" }}
-          className="flex flex-col gap-1 justify-around focus:outline-none z-20"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <div
-            style={{ width: "1.5rem", height: "0.15rem" }}
-            className={`bg-black relative transform transition duration-300 ease-in-out rounded-full origin-bottom-left ${
-              isOpen && "rotate-45"
-            }`}
-          ></div>
-          <div
-            style={{ width: "1.5rem", height: "0.15rem" }}
-            className={`bg-black relative transform transition duration-300 ease-in-out rounded-full origin-center ${
-              isOpen && "opacity-0"
-            }`}
-          ></div>
-          <div
-            style={{ width: "1.5rem", height: "0.15rem" }}
-            className={`bg-black relative transform transition duration-300 ease-in-out rounded-full origin-top-left ${
-              isOpen && "-rotate-45"
-            }`}
-          ></div>
-        </button>
-      </div>
-      <div className="flex justify-center items-center">
-        <Link href="/">
-          <img
-            src={logo}
-            width="50"
-            height="auto"
-            alt="Bognandi Photography logga"
-          />
-        </Link>
-      </div>
-      <div className="flex justify-end items-center">
-        <a
-          href="mailto:marilia@bognandiphotography.com"
-          className="font-normal hover:bg-beige-lightest transition-all duration-200"
-          target="_blank"
-        >
-          Kontakt
-        </a>
-        <MobileMenuBody isOpen={isOpen} logo={logo} />
+    <div className="lg:hidden py-4">
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
+        <div className="flex items-center">
+          <button
+            style={{ width: "1.5rem", height: "1.375rem" }}
+            className="flex flex-col gap-1 justify-around focus:outline-none z-20"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <div
+              style={{ width: "1.5rem", height: "0.15rem" }}
+              className={`bg-black relative transform transition duration-300 ease-in-out rounded-full origin-bottom-left ${
+                isOpen && "rotate-45"
+              }`}
+            ></div>
+            <div
+              style={{ width: "1.5rem", height: "0.15rem" }}
+              className={`bg-black relative transform transition duration-300 ease-in-out rounded-full origin-center ${
+                isOpen && "opacity-0"
+              }`}
+            ></div>
+            <div
+              style={{ width: "1.5rem", height: "0.15rem" }}
+              className={`bg-black relative transform transition duration-300 ease-in-out rounded-full origin-top-left ${
+                isOpen && "-rotate-45"
+              }`}
+            ></div>
+          </button>
+        </div>
+        <div className="flex justify-center items-center">
+          <Link href="/">
+            <img
+              src={logo}
+              width="50"
+              height="auto"
+              alt="Bognandi Photography logga"
+            />
+          </Link>
+        </div>
+        <div className="flex justify-end items-center">
+          <a
+            href="mailto:marilia@bognandiphotography.com"
+            className="font-normal hover:bg-beige-lightest transition-all duration-200"
+            target="_blank"
+          >
+            Kontakt
+          </a>
+          <MobileMenuBody isOpen={isOpen} logo={logo} />
+        </div>
       </div>
     </div>
   );
