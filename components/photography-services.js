@@ -23,31 +23,55 @@ export default function PhotographyServices({
               subtitle="Jag erbjuder tre olika typer av fotograferingar. Behöver du detaljbilder på dina produkter, streetstyle porträtt, eller kanske en professionell bild tagen i din arbetsmiljö? Oavsett ditt behov hjälper jag dig att förverkliga din vision!"
               centered
             />
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-1 gap-y-4 md:gap-x-4">
+              {data.map((item, index) => {
+                return (
+                  <Link href={`/fototjanster/${item.slug}`} key={index}>
+                    <div className="flex flex-col justify-center items-center cursor-pointer overflow:hidden">
+                      <Image
+                        data={{
+                          ...item?.featuredImage?.responsiveImage,
+                          alt: item?.featuredImage?.responsiveImage?.title,
+                        }}
+                        className="transform transition duration-300 ease-in-out hover:opacity-100 hover:scale-101"
+                      />
+                      <div className="mt-4 font-normal px-6 pt-3 pb-2 border-1 border-black hover:bg-white transition-all duration-200">
+                        {item.title}
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         ) : (
-          <div className="mb-4 uppercase">Se mer</div>
-        )}
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-1 gap-y-4 md:gap-x-4">
-          {data.map((item, index) => {
-            return (
-              <Link href={`/fototjanster/${item.slug}`} key={index}>
-                <div className="flex flex-col justify-center items-center cursor-pointer overflow:hidden">
-                  <Image
-                    data={{
-                      ...item?.featuredImage?.responsiveImage,
-                      alt: item?.featuredImage?.responsiveImage?.title,
-                    }}
-                    className="transform transition duration-300 ease-in-out hover:opacity-100 hover:scale-101"
-                  />
-                  <div className="mt-4 font-normal px-6 pt-3 pb-2 border-1 border-black hover:bg-white transition-all duration-200">
-                    {item.title}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-1 gap-y-4 md:gap-x-4">
+            <div className="mr-0 md:mr-12">
+              <BlockTitle
+                title="Se mer"
+                subtitle="Jag erbjuder tre olika typer av fotograferingar. Behöver du detaljbilder på dina produkter, streetstyle porträtt, eller kanske en professionell bild tagen i din arbetsmiljö? Oavsett ditt behov hjälper jag dig att förverkliga din vision!"
+              />
+            </div>
+            {data.map((item, index) => {
+              return (
+                <Link href={`/fototjanster/${item.slug}`} key={index}>
+                  <div className="flex flex-col justify-center items-center cursor-pointer overflow:hidden">
+                    <Image
+                      data={{
+                        ...item?.featuredImage?.responsiveImage,
+                        alt: item?.featuredImage?.responsiveImage?.title,
+                      }}
+                      className="transform transition duration-300 ease-in-out hover:opacity-100 hover:scale-101"
+                    />
+                    <div className="mt-4 font-normal px-6 pt-3 pb-2 border-1 border-black hover:bg-white transition-all duration-200">
+                      {item.title}
+                    </div>
                   </div>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+                </Link>
+              );
+            })}
+          </div>
+        )}
       </Container>
     </section>
   );
