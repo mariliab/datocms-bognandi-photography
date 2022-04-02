@@ -129,10 +129,10 @@ export default function Index({ subscription }) {
           image={startpage?.portrait.responsiveImage}
         />
         <ImageGallery data={startpage?.gallery} />
-        <div className="pb-12 lg:pb-24">
+        <div className="pb-12 lg:pb-24 bg-white">
           <img
             src={site?.favicon[3]?.attributes?.href}
-            width="200"
+            width="100"
             height="auto"
             className="mx-auto"
           />
