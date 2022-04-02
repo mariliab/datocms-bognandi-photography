@@ -5,7 +5,7 @@ import { createMarkup } from "../utils/help";
 
 export default function Hero({ title = "", text = "", image }) {
   return (
-    <section>
+    <section className="sticky top-0 -z-1">
       <div className="flex items-center max-w-screen-2xl mx-auto">
         <Image
           data={{

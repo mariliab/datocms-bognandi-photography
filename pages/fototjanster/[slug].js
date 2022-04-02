@@ -104,16 +104,20 @@ export default function PhotoService({ subscription, preview }) {
     <Layout>
       <Head>{renderMetaTags(metaTags)}</Head>
       <Navbar data={site} />
-      <section className="bg-beige-lightest relative text-beige-darkest">
-        <Image
-          data={{
-            ...featuredImage.responsiveImage,
-            alt: featuredImage.responsiveImage.title,
-          }}
-        />
-        <div className="hidden lg:flex justify-center items-center absolute top-0 w-full h-full">
+
+      {/* DESKTOP */}
+      <section className="hidden lg:flex relative text-beige-darkest sticky top-0 -z-1">
+        <div className="mx-auto">
+          <Image
+            data={{
+              ...featuredImage.responsiveImage,
+              alt: featuredImage.responsiveImage.title,
+            }}
+          />
+        </div>
+        <div className="flex justify-center items-center absolute top-0 w-full h-full">
           <Container>
-            <div className="w-1/3 bg-beige-lightest p-8">
+            <div className="w-1/3 bg-beige-lightest p-8 bg-beige-lightest">
               <h1 className="text-3xl md:text-6xl leading-none text-black uppercase font-light mb-4">
                 {title}
               </h1>
@@ -123,7 +127,18 @@ export default function PhotoService({ subscription, preview }) {
             </div>
           </Container>
         </div>
-        <div className="py-12 lg:hidden">
+      </section>
+      {/* MOBILE */}
+      <section className="relative text-beige-darkest lg:hidden">
+        <div className="sticky top-0 -z-1">
+          <Image
+            data={{
+              ...featuredImage.responsiveImage,
+              alt: featuredImage.responsiveImage.title,
+            }}
+          />
+        </div>
+        <div className="py-12 bg-beige-lightest">
           <Container>
             <h1 className="font-light text-3xl md:text-6xl leading-none text-black uppercase mb-4">
               {title}
@@ -135,7 +150,7 @@ export default function PhotoService({ subscription, preview }) {
         </div>
       </section>
       {gallery.length > 0 && (
-        <section className="py-12 lg:py-24 text-beige-darkest">
+        <section className="py-12 lg:py-24 bg-white text-beige-darkest">
           <Container>
             <div className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-1 md:gap-4">
               {gallery.map((image, index) => {
