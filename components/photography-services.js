@@ -16,7 +16,7 @@ export default function PhotographyServices({
               className="text-center uppercase mb-2"
               style={{ fontSize: "10px" }}
             >
-              Välkommen till
+              Fotograf i Stockholm
             </p>
             <BlockTitle
               title="Bognandi photography"
