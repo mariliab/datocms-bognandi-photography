@@ -6,6 +6,9 @@ module.exports = {
       1: "1px",
     },
     extend: {
+      zIndex: {
+        "-1": "-1",
+      },
       colors: {
         "accent-1": "#FAFAFA",
         "accent-2": "#EAEAEA",
