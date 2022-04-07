@@ -1,7 +1,30 @@
+import { useRef, useState, useEffect } from "react";
 import { Image } from "react-datocms";
 import Container from "./container";
 
 export default function AboutMe({ title = "", text = "", image = null }) {
+  const containerRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const callbackFunction = (entries) => {
+    const [entry] = entries;
+    setIsVisible(entry.isIntersecting);
+  };
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.33,
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(callbackFunction, options);
+    if (containerRef.current) observer.observe(containerRef.current);
+
+    return () => {
+      if (containerRef.current) observer.unobserve(containerRef.current);
+    };
+  }, [containerRef, options]);
+
   return (
     <section className="bg-beige-light py-12 sm:py-24 text-beige-darkest">
       <Container>
@@ -16,7 +39,12 @@ export default function AboutMe({ title = "", text = "", image = null }) {
             />
           </div>
           <div className="bg-white p-4 lg:p-12 flex flex-col justify-center w-full lg:w-1/2">
-            <div>
+            <div
+              ref={containerRef}
+              className={`opacity-0 ${
+                isVisible && " transition-opacity duration-1000 opacity-100"
+              }`}
+            >
               <div className="text-8xl font-montagu font-thin leading-3">"</div>
               <h1 className="mb-2 text-2xl mb-4">{title}</h1>
               <p className="font-light mb-4">{text}</p>
