@@ -11,6 +11,7 @@ export default function BlogPostPreview({
   excerpt,
   author,
   slug,
+  category,
 }) {
   return (
     <div className="bg-white text-beige-darkest relative">
@@ -22,6 +23,7 @@ export default function BlogPostPreview({
             responsiveImage={coverImage.responsiveImage}
           />
           <div className="p-4">
+            <p className="text-xs mb-4 uppercase">{category.name}</p>
             <h3 className="text-lg md:text-xl mb-4 leading-tight break-words">
               <p className="hover:underline">{title}</p>
             </h3>
