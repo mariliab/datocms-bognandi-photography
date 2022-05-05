@@ -4,12 +4,19 @@ import CoverImage from "../components/cover-image";
 import PageTitle from "../components/page-title";
 import Container from "../components/container";
 
-export default function PostHeader({ title, coverImage, date, author }) {
+export default function PostHeader({
+  title,
+  coverImage,
+  date,
+  category,
+  author,
+}) {
   return (
     <>
       <div className="bg-beige-lightest mb-8">
         <div className="flex flex-col-reverse lg:flex-row justify-between items-center">
           <div className="p-4 lg:p-12 w-full lg:w-1/2">
+            <p className="text-xs mb-4 uppercase">{category?.name}</p>
             <PageTitle title={title} />
             <div className="mb-4">
               <Date dateString={date} />

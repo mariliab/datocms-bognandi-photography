@@ -33,6 +33,9 @@ export async function getStaticProps({ params, preview = false }) {
           }
           title
           slug
+          category {
+            name
+          }
           content {
             value
             blocks {
@@ -69,6 +72,9 @@ export async function getStaticProps({ params, preview = false }) {
           slug
           excerpt
           date
+          category {
+            name
+          }
           coverImage {
             responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 600, h: 400 }) {
               ...responsiveImageFragment
@@ -124,6 +130,7 @@ export default function Post({ subscription, preview }) {
           title={post.title}
           coverImage={post.coverImage}
           date={post.date}
+          category={post.category}
           author={post.author}
         />
         <Container>

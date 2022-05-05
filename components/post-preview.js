@@ -11,6 +11,7 @@ export default function PostPreview({
   excerpt,
   author,
   slug,
+  category,
 }) {
   return (
     <div className="bg-white w-1/2 lg:w-1/3 text-beige-darkest relative">
@@ -23,6 +24,7 @@ export default function PostPreview({
           />
           <div className="p-4">
             <div>
+              <p className="text-xs mb-4 uppercase">{category.name}</p>
               <h3 className="w-40 lg:w-full min-w-full text-2xl md:text-3xl mb-4 leading-tight line-clamp-6 lg:line-clamp-3 hover:underline break-words">
                 {title}
               </h3>
