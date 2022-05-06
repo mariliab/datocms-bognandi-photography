@@ -29,13 +29,15 @@ export default function PhotographyServices({
                 return (
                   <Link href={`/fototjanster/${item.slug}`} key={index}>
                     <div className="flex flex-row lg:flex-col justify-center items-center cursor-pointer overflow:hidden gap-4">
-                      <Image
-                        data={{
-                          ...item?.featuredImage?.responsiveImage,
-                          alt: item?.featuredImage?.responsiveImage?.title,
-                        }}
-                        className="w-1/2 lg:w-full transform transition duration-300 ease-in-out hover:opacity-100 hover:scale-101"
-                      />
+                      <div className="w-1/2 lg:w-full">
+                        <Image
+                          data={{
+                            ...item?.featuredImage?.responsiveImage,
+                            alt: item?.featuredImage?.responsiveImage?.title,
+                          }}
+                          className="transform transition duration-300 ease-in-out hover:opacity-100 hover:scale-101"
+                        />
+                      </div>
                       <div className="flex flex-1 justify-center items-center font-normal px-6 pt-3 pb-2 border-1 border-black hover:bg-white transition-all duration-200">
                         {item.title}
                         <div className="flex lg:hidden text-xs leading-none ml-2">
