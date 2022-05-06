@@ -49,6 +49,15 @@ export async function getStaticProps({ params, preview = false }) {
                 }
               },
               __typename
+              ...on ImagegalleryRecord {
+                id
+                images {
+                  responsiveImage(imgixParams: {fm: jpg, fit: max, w: 800, h: 600 }) {
+                    ...responsiveImageFragment
+                  }
+                }
+              },
+              __typename
               ...on BehindTheScenesVideoRecord {
                 id
                 video {

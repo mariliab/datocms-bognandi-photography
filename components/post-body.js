@@ -22,6 +22,31 @@ export default function PostBody({ content }) {
                   </div>
                 );
               }
+              case "ImagegalleryRecord": {
+                return (
+                  <div className="grid gap-1 md:gap-4 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4">
+                    {record.images.map((item, index) => {
+                      return (
+                        <div
+                          key={index}
+                          className={
+                            index % 5 == 0
+                              ? "col-span-2 md:col-span-1"
+                              : "col-span-1"
+                          }
+                        >
+                          <Image
+                            data={{
+                              ...item?.responsiveImage,
+                              alt: item?.responsiveImage.title,
+                            }}
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              }
               case "BehindTheScenesVideoRecord": {
                 const playerRef = useRef(null);
                 const videoJsOptions = {
