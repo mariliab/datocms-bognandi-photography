@@ -28,7 +28,7 @@ export default function PhotographyServices({
               {data.map((item, index) => {
                 return (
                   <Link href={`/fototjanster/${item.slug}`} key={index}>
-                    <div className="flex lg:flex-col justify-center items-center cursor-pointer overflow:hidden gap-4">
+                    <div className="flex flex-row lg:flex-col justify-center items-center cursor-pointer overflow:hidden gap-4">
                       <Image
                         data={{
                           ...item?.featuredImage?.responsiveImage,
@@ -36,9 +36,9 @@ export default function PhotographyServices({
                         }}
                         className="w-1/2 lg:w-full transform transition duration-300 ease-in-out hover:opacity-100 hover:scale-101"
                       />
-                      <div className="flex flex-1 justify-center items-center gap-2 font-normal px-6 pt-3 pb-2 border-1 border-black hover:bg-white transition-all duration-200">
+                      <div className="flex flex-1 justify-center items-center font-normal px-6 pt-3 pb-2 border-1 border-black hover:bg-white transition-all duration-200">
                         {item.title}
-                        <div className="flex lg:hidden text-xs leading-none">
+                        <div className="flex lg:hidden text-xs leading-none ml-2">
                           <NextImage
                             src="/images/arrow-thin-right-black.svg"
                             alt="se mer"
