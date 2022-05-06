@@ -63,11 +63,14 @@ export async function getStaticProps({ preview }) {
           text
           title
         }
-        allPosts(orderBy: date_DESC, first: 3) {
+        firstPosts: allPosts(orderBy: date_DESC, first: 3) {
           title
           slug
           excerpt
           date
+          category {
+            name
+          }
           coverImage {
             responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 600, h: 400 }) {
               ...responsiveImageFragment
@@ -107,7 +110,13 @@ export async function getStaticProps({ preview }) {
 
 export default function Index({ subscription }) {
   const {
-    data: { site, startpage, allPhotoServicesPages, allTestamonials },
+    data: {
+      site,
+      startpage,
+      allPhotoServicesPages,
+      allTestamonials,
+      firstPosts,
+    },
   } = useQuerySubscription(subscription);
 
   const metaTags = startpage.seo.concat(site.favicon);
@@ -138,6 +147,7 @@ export default function Index({ subscription }) {
           />
         </div>
         <Testamonials data={allTestamonials} />
+        {firstPosts.length > 0 && <MoreStories posts={firstPosts} />}
       </Layout>
     </>
   );
