@@ -1,13 +1,13 @@
-import Head from "next/head";
+import { request } from "../../lib/datocms";
+import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
+import Head from "next/head";
 import Layout from "../../components/layout";
 import Container from "../../components/container";
 import MoreStories from "../../components/more-stories";
 import PostBody from "../../components/post-body";
 import PostHeader from "../../components/post-header";
 import Navbar from "../../components/navbar";
-import { request } from "../../lib/datocms";
-import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
 
 export async function getStaticPaths() {
   const data = await request({ query: `{ allPosts { slug } }` });
@@ -45,6 +45,16 @@ export async function getStaticProps({ params, preview = false }) {
                 image {
                   responsiveImage(imgixParams: {fm: jpg, fit: max, w: 800, h: 600 }) {
                     ...responsiveImageFragment
+                  }
+                }
+              },
+              __typename
+              ...on BehindTheScenesVideoRecord {
+                id
+                video {
+                  title
+                  video {
+                    streamingUrl
                   }
                 }
               }
