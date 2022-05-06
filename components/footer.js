@@ -30,7 +30,9 @@ export default function Footer() {
         </div>
       </Container>
       <div className="bg-beige-light text-center py-4 border-t-1 border-beige-darkest">
-        <p className="text-beige-darkest">© 2021 Bognandi Photography</p>
+        <p className="text-beige-darkest">
+          © {new Date().getFullYear()} Bognandi Photography
+        </p>
       </div>
     </footer>
   );
