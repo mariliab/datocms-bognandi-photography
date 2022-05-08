@@ -8,6 +8,7 @@ import MoreStories from "../../components/more-stories";
 import PostBody from "../../components/post-body";
 import PostHeader from "../../components/post-header";
 import Navbar from "../../components/navbar";
+import AboutAuthor from "../../components/about-author";
 
 export async function getStaticPaths() {
   const data = await request({ query: `{ allPosts { slug } }` });
@@ -69,6 +70,12 @@ export async function getStaticProps({ params, preview = false }) {
               }
             }
           }
+          aboutAuthorText(markdown: true)
+          profileImage {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 600, h: 400 }) {
+              ...responsiveImageFragment
+            }
+          }
           date
           ogImage: coverImage{
             url(imgixParams: {fm: jpg, fit: crop, w: 1600, h: 1200 })
@@ -85,7 +92,6 @@ export async function getStaticProps({ params, preview = false }) {
             }
           }
         }
-
         morePosts: allPosts(orderBy: date_DESC, first: 3, filter: {slug: {neq: $slug}}) {
           title
           slug
@@ -155,6 +161,12 @@ export default function Post({ subscription, preview }) {
         <Container>
           <PostBody content={post.content} />
         </Container>
+        {post?.aboutAuthorText && (
+          <AboutAuthor
+            aboutAuthorText={post?.aboutAuthorText || {}}
+            image={post?.profileImage?.responsiveImage || {}}
+          />
+        )}
       </article>
       {morePosts.length > 0 && <MoreStories posts={morePosts} />}
     </Layout>
