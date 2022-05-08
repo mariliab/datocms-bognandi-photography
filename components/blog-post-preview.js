@@ -33,14 +33,14 @@ export default function BlogPostPreview({
             <p className="text-sm mb-4 font-light">{excerpt}</p>
             <Avatar name={author.name} picture={author.picture} />
           </div>
-          <div className="text-xs absolute bottom-4 right-4">
+          {/* <div className="text-xs absolute bottom-4 right-4">
             <Image
               src="/images/arrow-thin-right-black.svg"
               alt="se mer"
               width="14"
               height="14"
             />
-          </div>
+          </div> */}
         </div>
       </Link>
     </div>

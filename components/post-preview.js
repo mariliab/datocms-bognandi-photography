@@ -14,9 +14,9 @@ export default function PostPreview({
   category,
 }) {
   return (
-    <div className="bg-white w-1/2 lg:w-1/3 text-beige-darkest relative">
+    <div className="bg-white w-48 lg:w-1/3 text-beige-darkest relative overflow:hidden">
       <Link as={`/blogg/${slug}`} href="/blogg/[slug]">
-        <div className="cursor-pointer">
+        <div className="cursor-pointer w-48 lg:w-full">
           <CoverImage
             slug={slug}
             title={title}
@@ -36,14 +36,14 @@ export default function PostPreview({
               </p>
               <Avatar name={author.name} picture={author.picture} />
             </div>
-            <div className="text-xs absolute bottom-4 right-4">
+            {/* <div className="text-xs absolute bottom-4 right-4">
               <Image
                 src="/images/arrow-thin-right-black.svg"
                 alt="se mer"
                 width="14"
                 height="14"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </Link>

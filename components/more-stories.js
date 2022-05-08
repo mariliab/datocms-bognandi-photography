@@ -1,6 +1,5 @@
 import PostPreview from "../components/post-preview";
 import BlockTitle from "../components/block-title";
-import Container from "../components/container";
 
 export default function MoreStories({ posts }) {
   return (
@@ -9,6 +8,8 @@ export default function MoreStories({ posts }) {
         <BlockTitle
           title="Blogg"
           subtitle="Intresserad av att veta mer om mig, mina tidigare jobb och olika fototips? Bläddra igenom mina blogginlägg för att hålla dig uppdaterad och för att veta mer om den kreativa fotovärlden."
+          linkPath="blogg"
+          linkText="Se alla inlägg"
         />
         <div className="flex gap-x-4 overflow-x-scroll">
           {posts.map((post) => (
