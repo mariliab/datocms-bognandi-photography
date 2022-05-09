@@ -11,9 +11,9 @@ export default function PostPreview({
   category,
 }) {
   return (
-    <div className="bg-white w-48 lg:w-1/3 text-beige-darkest relative overflow:hidden">
+    <div className="bg-white w-64 lg:w-1/3 text-beige-darkest relative overflow:hidden">
       <Link as={`/blogg/${slug}`} href="/blogg/[slug]">
-        <div className="cursor-pointer w-48 lg:w-full">
+        <div className="cursor-pointer w-64 lg:w-full">
           <CoverImage
             slug={slug}
             title={title}
