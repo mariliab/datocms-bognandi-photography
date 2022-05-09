@@ -18,7 +18,7 @@ export default function PostHeader({
           <div className="p-4 lg:p-12 w-full lg:w-1/2">
             <p className="text-xs mb-4 uppercase">{category?.name}</p>
             <PageTitle title={title} />
-            <div className="mb-4">
+            <div className="text-xs mb-4 uppercase">
               <Date dateString={date} />
             </div>
             <Avatar name={author.name} picture={author.picture} />
