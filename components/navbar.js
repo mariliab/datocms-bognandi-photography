@@ -1,20 +1,31 @@
 import Container from "./container";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
-function DesktopMenu({ logo = "" }) {
+function DesktopMenu({ logo = "", activeRoute = "" }) {
+  const routes = [
+    { path: "/", name: "Portfolio" },
+    { path: "/om-mig", name: "Om mig" },
+    { path: "/blogg", name: "Blogg" },
+  ];
+
   return (
     <div className="hidden lg:flex justify-around items-center py-4">
       <div className="flex flex-1 gap-x-4">
-        <Link href="/" passHref>
-          <a className="font-light">PORTFOLIO</a>
-        </Link>
-        <Link href="/om-mig" passHref>
-          <a className="font-light">OM MIG</a>
-        </Link>
-        <Link href="/blogg" passHref>
-          <a className="font-light">BLOGG</a>
-        </Link>
+        {routes.map((route) => {
+          return (
+            <Link href={route.path} key={route.path} passHref>
+              <a
+                className={`${
+                  activeRoute === route.path && "font-normal underline"
+                } font-light uppercase hover:underline`}
+              >
+                {route.name}
+              </a>
+            </Link>
+          );
+        })}
       </div>
       <div>
         <Link href="/" passHref>
@@ -143,10 +154,14 @@ function MobileMenuBody({ isOpen = false, logo = "" }) {
 }
 
 export default function Navbar({ data }) {
+  const router = useRouter();
   return (
     <nav>
       <Container>
-        <DesktopMenu logo={data?.favicon[3]?.attributes?.href} />
+        <DesktopMenu
+          logo={data?.favicon[3]?.attributes?.href}
+          activeRoute={router.route}
+        />
         <MobileMenu logo={data?.favicon[3]?.attributes?.href} />
       </Container>
     </nav>
