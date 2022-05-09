@@ -15,6 +15,11 @@ export async function getStaticProps({ preview = false }) {
             ...metaTagsFragment
           }
         }
+        allCategories {
+          id
+          slug
+          name
+        }
         allPosts(orderBy: date_DESC, first: 20) {
           title
           slug
@@ -22,6 +27,7 @@ export async function getStaticProps({ preview = false }) {
           date
           category {
             name
+            slug
           }
           coverImage {
             responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 800, h: 450 }) {
@@ -60,13 +66,16 @@ export async function getStaticProps({ preview = false }) {
 
 function Blog({ subscription }) {
   const {
-    data: { allPosts, site },
+    data: { allCategories, allPosts, site },
   } = useQuerySubscription(subscription);
 
   return (
     <Layout>
       <Navbar data={site} />
-      <Blogg posts={allPosts.length > 0 && allPosts} />
+      <Blogg
+        posts={allPosts.length > 0 && allPosts}
+        categories={allCategories}
+      />
     </Layout>
   );
 }
