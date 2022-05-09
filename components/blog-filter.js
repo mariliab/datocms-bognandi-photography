@@ -38,7 +38,7 @@ export default function BlogFilter({
 
   return (
     <section className="py-4 relative mb-2">
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap space-x-4">
         {allFilters.map((filterItem) => {
           return (
             <div

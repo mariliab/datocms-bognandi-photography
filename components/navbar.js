@@ -12,7 +12,7 @@ function DesktopMenu({ logo = "", activeRoute = "" }) {
 
   return (
     <div className="hidden lg:flex justify-around items-center py-4">
-      <div className="flex flex-1 gap-x-4">
+      <div className="flex flex-1 space-x-4">
         {routes.map((route) => {
           return (
             <Link href={route.path} key={route.path} passHref>

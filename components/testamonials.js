@@ -43,7 +43,7 @@ export default function Testamonials({ data }) {
   return (
     <section className="bg-beige-light py-12 relative border-b-1 border-beige-darkest">
       <div className="container mx-auto pl-5 md:px-4">
-        <div className="flex gap-x-8 gap-y-8 text-beige-darkest overflow-x-scroll">
+        <div className="flex space-x-8 space-y-8 text-beige-darkest overflow-x-scroll">
           <div className="min-w-1/3 md:min-w-0 w-2/4 md:w-1/3 lg:w-1/3">
             <BlockTitle title="Vad mina kunder säger" />
           </div>

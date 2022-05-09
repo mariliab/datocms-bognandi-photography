@@ -11,7 +11,7 @@ export default function MoreStories({ posts }) {
           linkPath="blogg"
           linkText="Se alla inlägg"
         />
-        <div className="flex gap-x-4 overflow-x-scroll">
+        <div className="flex space-x-4 overflow-x-scroll">
           {posts.map((post) => (
             <PostPreview
               key={post.slug}

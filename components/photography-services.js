@@ -28,7 +28,7 @@ export default function PhotographyServices({
               {data.map((item, index) => {
                 return (
                   <Link href={`/fototjanster/${item.slug}`} key={index}>
-                    <div className="flex flex-row lg:flex-col justify-center items-center cursor-pointer overflow:hidden gap-4">
+                    <div className="flex flex-row lg:flex-col justify-center items-center cursor-pointer overflow:hidden space-y-4 space-x-4">
                       <div className="w-1/2 lg:w-full">
                         <Image
                           data={{
