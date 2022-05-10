@@ -38,7 +38,7 @@ export default function BlogFilter({
 
   return (
     <section className="py-4 relative mb-2">
-      <div className="flex flex-wrap space-x-4">
+      <div className="flex flex-wrap space-x-4 space-y-4 items-end">
         {allFilters.map((filterItem) => {
           return (
             <div
@@ -47,7 +47,7 @@ export default function BlogFilter({
               onClick={() => onFilterClick(filterItem)}
               className={`${
                 isActive(filterItem) && "font-bold bg-beige-light-hover"
-              } border-1 border-black px-6 text-xs uppercase pt-2 pb-1 cursor-pointer hover:bg-beige-light-hover transition-all duration-200`}
+              } border-1 border-black px-6 text-xs uppercase pt-2 pb-1 cursor-pointer hover:font-bold transition-all duration-200`}
             >
               {filterItem.name}
             </div>
