@@ -21,7 +21,9 @@ export default function PostPreview({
           />
           <div className="p-4">
             <div>
-              <p className="text-xs mb-4 uppercase">{category.name}</p>
+              <p className="text-xs mb-4 uppercase">
+                {category.name && category.name}
+              </p>
               <h3 className="text-lg md:text-xl mb-4 leading-tight break-words">
                 {title}
               </h3>
