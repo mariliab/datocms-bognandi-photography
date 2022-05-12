@@ -29,10 +29,18 @@ export default function Footer() {
           </div>
         </div>
       </Container>
-      <div className="bg-beige-light text-center py-4 border-t-1 border-beige-darkest">
-        <p className="text-beige-darkest">
-          © {new Date().getFullYear()} Bognandi Photography
-        </p>
+      <div className="bg-beige-light py-4 border-t-1 border-beige-darkest text-beige-darkest text-xs">
+        <Container>
+          <div className="flex justify-between space-x-4 items-center">
+            <div className="justify-self-center">
+              © {new Date().getFullYear()} Bognandi Photography
+            </div>
+            <div className="self-end max-w-xs text-right italic">
+              This website was built by M. Bognandi using React.js, Next.js,
+              Tailwind css, Dato cms, Vercel
+            </div>
+          </div>
+        </Container>
       </div>
     </footer>
   );
