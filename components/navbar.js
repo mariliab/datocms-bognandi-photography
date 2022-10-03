@@ -44,6 +44,7 @@ function DesktopMenu({ logo = "", activeRoute = "" }) {
           href="mailto:marilia@bognandiphotography.com"
           className="font-normal px-6 pt-3 pb-2 border-1 border-black hover:bg-beige-lightest transition-all duration-200"
           target="_blank"
+          rel="noreferrer"
         >
           Kontakt
         </a>
@@ -99,6 +100,7 @@ function MobileMenu({ logo = "" }) {
             href="mailto:marilia@bognandiphotography.com"
             className="font-normal hover:bg-beige-lightest transition-all duration-200"
             target="_blank"
+            rel="noreferrer"
           >
             Kontakt
           </a>

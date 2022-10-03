@@ -3,6 +3,7 @@ import VideoPlayer from "../components/video-player";
 import { useRef } from "react";
 
 export default function PostBody({ content }) {
+  const playerRef = useRef(null);
   return (
     <div className="max-w-2xl mx-auto mb-8 lg:mb-24">
       <div className="prose prose-lg prose-blue post-body">
@@ -48,7 +49,6 @@ export default function PostBody({ content }) {
                 );
               }
               case "BehindTheScenesVideoRecord": {
-                const playerRef = useRef(null);
                 const videoJsOptions = {
                   autoplay: true,
                   controls: true,
@@ -81,10 +81,10 @@ export default function PostBody({ content }) {
               }
               default:
                 return (
-                  <>
-                    <p>Don't know how to render a block!</p>
+                  <div>
+                    <p>Dont know how to render a block!</p>
                     <pre>{JSON.stringify(record, null, 2)}</pre>
-                  </>
+                  </div>
                 );
             }
           }}
