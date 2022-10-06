@@ -152,17 +152,15 @@ export default function PhotoService({ subscription, preview }) {
       {gallery.length > 0 && (
         <section className="py-12 lg:py-24 bg-white text-beige-darkest">
           <Container>
-            <div className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-1 md:gap-4">
+            <div className="grid grid-cols-masonry-xs md:grid-cols-masonry-lg justify-center gap-1 md:gap-4">
               {gallery.map((image, index) => {
                 return (
                   <div
                     key={index}
                     className={
                       image.responsiveImage.width > image.responsiveImage.height
-                        ? "col-span-2 md:col-span-1"
-                        : index % 3 == 0
-                        ? "col-span-2 md:col-span-1"
-                        : "col-span-1"
+                        ? "row-span-1"
+                        : "row-span-2"
                     }
                   >
                     <Image

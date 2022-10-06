@@ -60,6 +60,10 @@ module.exports = {
       scale: {
         101: "1.01",
       },
+      gridTemplateColumns: {
+        "masonry-lg": "repeat(auto-fill, 400px)",
+        "masonry-xs": "repeat(auto-fill, 375px)",
+      },
     },
     minWidth: {
       "1/4": "25%",
