@@ -1,3 +1,6 @@
+#### Live site
+https://www.bognandiphotography.com/
+
 # A Blog example using Next.js and DatoCMS
 
 This example showcases a Next.js Blog using [DatoCMS](https://www.datocms.com/) as the data source. It fully supports [Preview Mode](https://www.datocms.com/docs/next-js/setting-up-next-js-preview-mode) with [DatoCMS real-time updates](https://www.datocms.com/docs/next-js/real-time-updates).
@@ -80,6 +83,3 @@ http://localhost:3000/api/preview?secret=<secret>
 - `<slug>` should be the post's `slug` attribute (you can check on DatoCMS).
 
 You should now be able to see the updated title. To exit the preview mode, you can click **Click here to exit preview mode** at the top.
-
-#### Live site
-https://www.bognandiphotography.com/
