@@ -19,6 +19,7 @@ export default function InstagramFeed({ posts = [] }) {
         <a
           href="https://www.instagram.com/bognandiphotography/"
           target="_blank"
+          rel="noreferrer"
         >
           <div className="grid grid-cols-3 md:grid-cols-6 xl:grid-cols-9">
             {filteredList.length > 0 ? (
