@@ -10,6 +10,7 @@ import ImageGallery from "../components/image-gallery";
 import Hero from "../components/hero";
 import AboutMe from "../components/about-me";
 import Navbar from "../components/navbar";
+import InstagramFeed from "../components/instagram-feed";
 
 export async function getStaticProps({ preview }) {
   const graphqlRequest = {
@@ -91,6 +92,10 @@ export async function getStaticProps({ preview }) {
     preview,
   };
 
+  const INSTAGRAM_FEED_API_URL = `https://graph.instagram.com/me/media?fields=id,caption,media_url,media_type&access_token=${process.env.INSTAGRAM_FEED_ACCESS_TOKEN}`;
+  const response = await fetch(INSTAGRAM_FEED_API_URL);
+  const posts = await response.json();
+
   return {
     props: {
       subscription: preview
@@ -104,11 +109,12 @@ export async function getStaticProps({ preview }) {
             enabled: false,
             initialData: await request(graphqlRequest),
           },
+      posts: posts.data,
     },
   };
 }
 
-export default function Index({ subscription }) {
+export default function Index({ subscription, posts }) {
   const {
     data: {
       site,
@@ -148,6 +154,7 @@ export default function Index({ subscription }) {
         </div>
         <Testamonials data={allTestamonials} />
         {firstPosts.length > 0 && <MoreStories posts={firstPosts} />}
+        <InstagramFeed posts={posts || []} />
       </Layout>
     </>
   );
