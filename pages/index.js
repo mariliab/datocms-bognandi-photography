@@ -92,9 +92,9 @@ export async function getStaticProps({ preview }) {
     preview,
   };
 
-  const INSTAGRAM_FEED_API_URL = `https://graph.instagram.com/me/media?fields=id,caption,media_url,media_type&access_token=${process.env.INSTAGRAM_FEED_ACCESS_TOKEN}`;
-  const response = await fetch(INSTAGRAM_FEED_API_URL);
-  const posts = await response.json();
+  // const INSTAGRAM_FEED_API_URL = `https://graph.instagram.com/me/media?fields=id,caption,media_url,media_type&access_token=${process.env.INSTAGRAM_FEED_ACCESS_TOKEN}`;
+  // const response = await fetch(INSTAGRAM_FEED_API_URL);
+  // const posts = await response.json();
 
   return {
     props: {
@@ -109,7 +109,7 @@ export async function getStaticProps({ preview }) {
             enabled: false,
             initialData: await request(graphqlRequest),
           },
-      posts: posts.data,
+      // posts: posts.data,
     },
   };
 }
@@ -154,7 +154,7 @@ export default function Index({ subscription, posts }) {
         </div>
         <Testamonials data={allTestamonials} />
         {firstPosts.length > 0 && <MoreStories posts={firstPosts} />}
-        <InstagramFeed posts={posts || []} />
+        {/* <InstagramFeed posts={posts || []} /> */}
       </Layout>
     </>
   );
