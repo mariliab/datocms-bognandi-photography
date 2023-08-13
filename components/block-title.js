@@ -12,7 +12,7 @@ export default function BlockTitle({
     <div className="mb-8">
       {centered ? (
         <div className="max-w-screen-sm text-center mx-auto">
-          <h2 className="text-2xl lg:text-3xl mb-2 leading-tight break-words lg:break-normal font-light uppercase">
+          <h2 className="text-2xl lg:text-6xl mb-2 lg:mb-18 leading-tight break-words lg:break-normal font-thin uppercase">
             {title} {linkText}
           </h2>
 
@@ -29,7 +29,7 @@ export default function BlockTitle({
           <div className="flex justify-between items-center mr-4 lg:mr-0">
             <h2
               id={title.toLowerCase()}
-              className="text-3xl lg:text-3xl mb-2 leading-tight break-words lg:break-normal font-extralight uppercase"
+              className="text-3xl lg:text-6xl mb-2 leading-tight break-words lg:break-normal font-extralight uppercase"
             >
               {title}
             </h2>

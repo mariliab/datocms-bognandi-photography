@@ -31,7 +31,7 @@ export async function getStaticProps({ preview }) {
             }
           }
           title
-          text(markdown: true)
+          subtitle
           gallery {
             url
             responsiveImage(imgixParams: {fm: jpg, fit: max, w: 600 }) {
@@ -49,6 +49,7 @@ export async function getStaticProps({ preview }) {
         allPhotoServicesPages(orderBy: _createdAt_ASC) { 
           slug
           title
+          subtitle
           featuredImage {
             responsiveImage(imgixParams: {fm: jpg, w: 400, h: 600, fit: max }) {
               ...responsiveImageFragment
@@ -134,25 +135,16 @@ export default function Index({ subscription, posts }) {
         <Navbar data={site} />
         <Hero
           title={startpage?.title}
-          text={startpage?.text}
+          subtitle={startpage?.subtitle}
           image={startpage?.backgroundImage?.responsiveImage}
         />
         <PhotographyServices data={allPhotoServicesPages} isStartpage />
+        <Testamonials data={allTestamonials} />
         <AboutMe
           title={startpage?.heading}
           text={startpage?.subHeading}
           image={startpage?.portrait.responsiveImage}
         />
-        <ImageGallery data={startpage?.gallery} />
-        <div className="pb-12 lg:pb-24 bg-white">
-          <img
-            src={site?.favicon[3]?.attributes?.href}
-            width="100"
-            height="auto"
-            className="mx-auto"
-          />
-        </div>
-        <Testamonials data={allTestamonials} />
         {firstPosts.length > 0 && <MoreStories posts={firstPosts} />}
         {/* <InstagramFeed posts={posts || []} /> */}
       </Layout>

@@ -7,7 +7,7 @@ export default function MoreStories({ posts }) {
       <div className="container mx-auto pl-4 lg:px-4">
         <BlockTitle
           title="Blogg"
-          subtitle="Intresserad av att veta mer om mig, mina tidigare jobb och olika fototips? Bläddra igenom mina blogginlägg för att hålla dig uppdaterad och för att veta mer om den kreativa fotovärlden."
+          subtitle="Intresserad av att veta mer om mig, mina tidigare jobb och olika tips? Bläddra igenom mina blogginlägg för att hålla dig uppdaterad och för att veta mer om vår kreativa värld."
           linkPath="blogg"
           linkText="Se alla inlägg"
         />

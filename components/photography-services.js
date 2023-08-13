@@ -9,27 +9,27 @@ export default function PhotographyServices({
   isStartpage = false,
 }) {
   return (
-    <section className="relative py-12 lg:py-24 mx-auto bg-beige-lightest">
+    <section className="relative py-12 lg:py-24 mx-auto bg-beige-lightest border-b-1 border-beige-darkest">
       <Container>
         {isStartpage ? (
           <div>
-            <p
-              className="text-center uppercase mb-2"
-              style={{ fontSize: "10px" }}
-            >
-              Fotograf i Stockholm
-            </p>
             <BlockTitle
-              title="Bognandi photography"
-              subtitle="Jag erbjuder olika typer av fotograferingar. Behöver du detaljbilder på dina produkter, streetstyle porträtt, eller kanske en professionell bild tagen i din arbetsmiljö? Oavsett ditt behov hjälper jag dig att förverkliga din vision!"
+              title="SÅHÄR kan vi hjälpa dig"
               centered
             />
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-1 gap-y-4 md:gap-x-4 transform">
+            <div className="flex flex-col gap-4 lg:gap-12">
               {data.map((item, index) => {
                 return (
                   <Link href={`/fototjanster/${item.slug}`} key={index}>
-                    <div className="flex flex-row lg:flex-col justify-center items-center cursor-pointer overflow:hidden space-y-4 space-x-4">
-                      <div className="w-1/2 lg:w-full">
+                    <div className="cursor-pointer overflow:hidden space-y-4 space-x-4">
+                      <div className="bg-white py-8 px-4 lg:py-12 lg:px-12">
+                        <div className="flex flex-col lg:flex-row justify-between items-center">
+                          <div className="w-full lg:w-1/2 mb-8">
+                            <h2 className="text-xl lg:text-6xl uppercase mb-2 lg:mb-12">{item.title}</h2>
+                            <p className="mb-8 text-4xl font-thin">{item.subtitle}</p>
+                            <button className="font-normal px-12 pt-4 pb-3 bg-beige-dark text-white hover:bg-beige-lightest hover:text-beige-darkest transition-all duration-200">JAG VILL VETA MER
+                            </button>
+                          </div>
                         <Image
                           data={{
                             ...item?.featuredImage?.responsiveImage,
@@ -37,16 +37,6 @@ export default function PhotographyServices({
                           }}
                           className="transform transition duration-300 ease-in-out hover:opacity-100 hover:scale-101"
                         />
-                      </div>
-                      <div className="flex flex-1 justify-center items-center font-normal px-6 pt-3 pb-2 border-1 border-black hover:bg-white transition-all duration-200">
-                        {item.title}
-                        <div className="flex lg:hidden text-xs leading-none ml-2">
-                          <NextImage
-                            src="/images/arrow-thin-right-black.svg"
-                            alt="se mer"
-                            width="12"
-                            height="12"
-                          />
                         </div>
                       </div>
                     </div>
@@ -59,8 +49,7 @@ export default function PhotographyServices({
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-1 gap-y-4 md:gap-x-4">
             <div className="mr-0 md:mr-12">
               <BlockTitle
-                title="Se mer"
-                subtitle="Jag erbjuder olika typer av fotograferingar. Behöver du detaljbilder på dina produkter, streetstyle porträtt, eller kanske en professionell bild tagen i din arbetsmiljö? Oavsett ditt behov hjälper jag dig att förverkliga din vision!"
+                title="Utforska mer"
               />
             </div>
             {data.map((item, index) => {

@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 function DesktopMenu({ logo = "", activeRoute = "" }) {
   const routes = [
-    { path: "/", name: "Portfolio" },
+    { path: "/", name: "Start" },
     { path: "/om-mig", name: "Om mig" },
     { path: "/blogg", name: "Blogg" },
   ];
