@@ -15,28 +15,24 @@ function DesktopMenu({ logo = "", activeRoute = "" }) {
       <div className="flex flex-1 space-x-4">
         {routes.map((route) => {
           return (
-            <Link href={route.path} key={route.path} passHref>
-              <a
+            <Link href={route.path} key={route.path}
                 className={`${
                   activeRoute === route.path && "font-normal underline"
                 } font-light uppercase hover:underline`}
               >
                 {route.name}
-              </a>
             </Link>
           );
         })}
       </div>
       <div>
-        <Link href="/" passHref>
-          <a>
+        <Link href="/">
             <img
               src={logo}
               width="100"
               height="auto"
               alt="Bognandi Photography logga"
             />
-          </a>
         </Link>
       </div>
       <div className="flex flex-1 justify-end">
@@ -126,28 +122,26 @@ function MobileMenuBody({ isOpen = false, logo = "" }) {
         </div>
         <div className="flex flex-col gap-y-4 items-center">
           <p className="font-light">SE MER</p>
-          <Link href="/om-mig" passHref>
-            <a>Om mig</a>
+          <Link href="/om-mig">
+            Om mig
           </Link>
-          <Link href="/blogg" passHref>
-            <a>Blogg</a>
+          <Link href="/blogg">
+            Blogg
           </Link>
           <p className="mt-4 font-light">FOTOTJÄNSTER</p>
-          <Link href="/fototjanster/portratt" passHref>
-            <a>Porträtt</a>
+          <Link href="/fototjanster/portratt">
+            Porträtt
           </Link>
-          <Link href="/fototjanster/produkter" passHref>
-            <a>Produkter</a>
+          <Link href="/fototjanster/produkter">
+            Produkter
           </Link>
-          <Link href="/fototjanster/foretag" passHref>
-            <a>Företag</a>
+          <Link href="/fototjanster/foretag">
+            Företag
           </Link>
         </div>
         <div className="py-0 sm:py-4 flex">
-          <Link href="mailto:marilia@bognandiphotography.com" passHref>
-            <a className="py-4 text-xs tracking-widest font-bold text-center bg-beige-darkest hover:bg-beige-light text-white hover:text-beige-darkest flex-1 rounded-full">
+          <Link href="mailto:marilia@bognandiphotography.com" className="py-4 text-xs tracking-widest font-bold text-center bg-beige-darkest hover:bg-beige-light text-white hover:text-beige-darkest flex-1 rounded-full">
               KONTAKTA MIG
-            </a>
           </Link>
         </div>
       </div>

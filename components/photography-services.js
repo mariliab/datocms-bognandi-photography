@@ -20,15 +20,15 @@ export default function PhotographyServices({
             <div className="flex flex-col gap-4 lg:gap-12">
               {data.map((item, index) => {
                 return (
-                  <Link href={`/fototjanster/${item.slug}`} key={index}>
-                    <div className="cursor-pointer overflow:hidden space-y-4 space-x-4">
+                  <div key={item.title}>
+                    <div className="overflow:hidden space-y-4 space-x-4">
                       <div className="bg-white py-8 px-4 lg:py-12 lg:px-12">
                         <div className="flex flex-col lg:flex-row justify-between items-center">
                           <div className="w-full lg:w-1/2 mb-8">
                             <h2 className="text-xl lg:text-6xl uppercase mb-2 lg:mb-12">{item.title}</h2>
                             <p className="mb-8 text-4xl font-thin">{item.subtitle}</p>
-                            <button className="font-normal px-12 pt-4 pb-3 bg-beige-dark text-white hover:bg-beige-lightest hover:text-beige-darkest transition-all duration-200">JAG VILL VETA MER
-                            </button>
+                            <Link href={`/fototjanster/${item.slug}`} className="font-normal px-12 pt-4 pb-3 bg-beige-dark text-white hover:bg-beige-lightest hover:text-beige-darkest transition-all duration-200">JAG VILL VETA MER
+                            </Link>
                           </div>
                         <Image
                           data={{
@@ -40,7 +40,7 @@ export default function PhotographyServices({
                         </div>
                       </div>
                     </div>
-                  </Link>
+                  </div>
                 );
               })}
             </div>
