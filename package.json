@@ -8,6 +8,9 @@
     "export": "next build && next export",
     "lint": "next lint"
   },
+  "engines": {
+    "node": "18"
+  },
   "dependencies": {
     "classnames": "2.3.1",
     "date-fns": "2.21.1",
