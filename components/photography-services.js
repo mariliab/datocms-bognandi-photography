@@ -9,7 +9,7 @@ export default function PhotographyServices({
   isStartpage = false,
 }) {
   return (
-    <section className="relative py-12 lg:py-24 mx-auto bg-beige-lightest border-b-1 border-beige-darkest">
+    <section className="relative py-12 lg:py-24 mx-auto">
       <Container>
         {isStartpage ? (
           <div>
@@ -20,10 +20,7 @@ export default function PhotographyServices({
             <div className="flex flex-col gap-4 lg:gap-12">
               {data.map((item, index) => {
                 return (
-                  <div key={item.title}>
-                    <div className="overflow:hidden space-y-4 space-x-4">
-                      <div className="bg-white py-8 px-4 lg:py-12 lg:px-12">
-                        <div className="flex flex-col lg:flex-row justify-between items-center">
+                  <div key={item.title} className="flex flex-col lg:flex-row lg:items-center lg:justify-center">
                           <div className="w-full lg:w-1/2 mb-8">
                             <h2 className="text-xl lg:text-6xl uppercase mb-2 lg:mb-12">{item.title}</h2>
                             <p className="mb-8 text-4xl font-thin">{item.subtitle}</p>
@@ -42,9 +39,6 @@ export default function PhotographyServices({
                           }}
                           className="transform transition duration-300 ease-in-out hover:opacity-100 hover:scale-101"
                         />
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 );
               })}
