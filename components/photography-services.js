@@ -27,7 +27,12 @@ export default function PhotographyServices({
                           <div className="w-full lg:w-1/2 mb-8">
                             <h2 className="text-xl lg:text-6xl uppercase mb-2 lg:mb-12">{item.title}</h2>
                             <p className="mb-8 text-4xl font-thin">{item.subtitle}</p>
-                            <Link href={`/fototjanster/${item.slug}`} className="font-normal px-12 pt-4 pb-3 bg-beige-dark text-white hover:bg-beige-lightest hover:text-beige-darkest transition-all duration-200">JAG VILL VETA MER
+                            <Link href={`/fototjanster/${item.slug}`}>
+                              <div className="flex">
+                                <div className="flex-none font-normal px-12 pt-4 pb-3 bg-beige-dark text-white hover:bg-beige-lightest hover:text-beige-darkest transition-all duration-200">
+                                  JAG VILL VETA MER
+                                </div>
+                              </div>
                             </Link>
                           </div>
                         <Image
