@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 
   return {
     paths: data.allPhotoServicesPages.map(
-      (page) => `/fototjanster/${page.slug}`
+      (page) => `/services/${page.slug}`
     ),
     fallback: false,
   };

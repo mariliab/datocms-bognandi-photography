@@ -129,10 +129,10 @@ function MobileMenuBody({ isOpen = false, logo = "" }) {
             Blogg
           </Link>
           <p className="mt-4 font-light">Jag hjälper dig med</p>
-          <Link href="/fototjanster/personal-branding">
+          <Link href="/services/personal-branding">
             Personal branding
           </Link>
-          <Link href="/fototjanster/produkter">
+          <Link href="/services/produkter">
             Produktbranding
           </Link>
         </div>
