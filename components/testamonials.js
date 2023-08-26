@@ -19,13 +19,16 @@ function TestamonialItem({ data }) {
           <p className="leading-tight">{data.name},</p>
           <p className="font-light leading-tight text-xs">{data.title}</p>
         </div>
-      <p
-        className={`text-sm lg:text-base font-light text-justify ${
-          !isLongText && "line-clamp-6"
-        }`}
-      >
-        {data.text}
-      </p>
+      <div className="relative">
+        {/* <div className="text-8xl font-montagu font-thin leading-3 text-center absolute right-0 left-0 top-12 z-0 text-white">
+          &quot;
+        </div> */}
+        <div>
+          <p className={`text-sm lg:text-base font-light text-justify ${
+            !isLongText && "line-clamp-6"
+          }`}>{data.text}</p>
+        </div>
+      </div>
       {!isLongText && (
         <button
           onClick={() => setIsLongText(true)}
@@ -40,7 +43,7 @@ function TestamonialItem({ data }) {
 
 export default function Testamonials({ data }) {
   return (
-    <section className="bg-beige-light py-12 lg:py-24 relative border-b-1 border-beige-darkest">
+    <section className="bg-beige-light border-b-1 border-beige-darkest py-12 lg:py-24 relative">
       <div className="container mx-auto pl-5 md:px-4">
         <BlockTitle title="Vad mina kunder säger" />
         <div className="flex gap-8 text-beige-darkest overflow-x-scroll">

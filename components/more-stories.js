@@ -3,7 +3,7 @@ import BlockTitle from "../components/block-title";
 
 export default function MoreStories({ posts }) {
   return (
-    <section className="py-12 lg:py-24 relative bg-beige-light text-beige-darkest border-b-1 border-beige-darkest">
+    <section className="py-12 lg:py-24 relative bg-beige-light border-b-1 border-beige-darkest text-beige-darkest">
       <div className="container mx-auto pl-4 lg:px-4">
         <BlockTitle
           title="Blogg"

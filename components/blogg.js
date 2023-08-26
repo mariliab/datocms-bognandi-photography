@@ -4,7 +4,7 @@ import BlogPosts from "../components/blog-posts";
 
 export default function Blogg({ posts, categories = [] }) {
   return (
-    <section className="bg-beige-light text-beige-darkest py-12 lg:py-24 relative border-b-1 border-beige-darkest">
+    <section className="bg-beige-light border-b-1 border-beige-darkest text-beige-darkest py-12 lg:py-24 relative">
       <Container>
         <PageTitle
           title="Blogg"

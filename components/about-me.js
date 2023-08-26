@@ -27,7 +27,7 @@ export default function AboutMe({ title = "", text = "", image = null }) {
   }, [containerRef, options]);
 
   return (
-    <section className="bg-beige-light py-12 sm:py-24 text-beige-darkest border-b-1 border-beige-darkest">
+    <section className="bg-beige-light border-b-1 border-beige-darkest py-12 sm:py-24 text-beige-darkest">
       <Container>
         <div className="flex-col-reverse flex flex-col lg:flex-row gap-4 items-stretch max-w-screen-md mx-auto">
           <div className="w-full lg:w-1/2">
@@ -46,9 +46,6 @@ export default function AboutMe({ title = "", text = "", image = null }) {
                 isVisible && " transition-opacity duration-1000 opacity-100"
               }`}
             >
-              <div className="text-8xl font-montagu font-thin leading-3">
-                &quot;
-              </div>
               <h1 className="mb-2 text-2xl mb-4">{title}</h1>
               <p className="font-light mb-4">{text}</p>
               <p className="font-normal italic mb-4">/Marilia Bognandi</p>

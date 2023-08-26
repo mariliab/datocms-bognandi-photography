@@ -9,21 +9,20 @@ export default function PhotographyServices({
   isStartpage = false,
 }) {
   return (
-    <section className="relative py-12 lg:py-24 mx-auto">
+    <section className="bg-beige-light border-b-1 border-beige-darkest relative py-12 lg:py-24 mx-auto">
       <Container>
         {isStartpage ? (
           <div>
             <BlockTitle
-              title="SÅHÄR kan vi hjälpa dig"
-              centered
+              title="Såhär kan vi hjälpa dig"
             />
             <div className="flex flex-col gap-4 lg:gap-12">
               {data.map((item, index) => {
                 return (
                   <div key={item.title} className="flex flex-col lg:flex-row lg:items-center lg:justify-center">
-                          <div className="w-full lg:w-1/2 mb-8">
+                          <div className="bg-white w-full lg:w-1/2 p-4 lg:p-12">
                             <h2 className="text-xl lg:text-6xl uppercase mb-2 lg:mb-12">{item.title}</h2>
-                            <p className="mb-8 text-4xl font-thin">{item.subtitle}</p>
+                            <p className="mb-4 text-base lg:text-4xl font-light">{item.subtitle}</p>
                             <Link href={`/services/${item.slug}`}>
                               <div className="flex">
                                 <div className="flex-none font-normal px-12 pt-4 pb-3 bg-beige-dark text-white hover:bg-beige-lightest hover:text-beige-darkest transition-all duration-200">
@@ -32,13 +31,15 @@ export default function PhotographyServices({
                               </div>
                             </Link>
                           </div>
-                        <Image
-                          data={{
+                          <div className="bg-white p-4 lg:p-0">
+                          <Image
+                            data={{
                             ...item?.featuredImage?.responsiveImage,
                             alt: item?.featuredImage?.responsiveImage?.title,
-                          }}
-                          className="transform transition duration-300 ease-in-out hover:opacity-100 hover:scale-101"
-                        />
+                            }}
+                            className="transform transition duration-300 ease-in-out hover:opacity-100 hover:scale-101"
+                          />
+                        </div>
                   </div>
                 );
               })}
