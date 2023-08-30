@@ -151,7 +151,7 @@ function Packages({ subscription }) {
             <div>
             <p className="mt-4 font-bold">Investment: {packageItem.investment}</p>
             <br></br>
-            <a href="mailto:marilia@bognandiphotography.com" className="font-normal px-12 pt-4 pb-3 bg-beige-dark text-white hover:bg-beige-lightest hover:text-beige-darkest transition-all duration-200" target="_blank" rel="noreferrer">I'm ready to book</a>
+            <a href="mailto:marilia@bognandiphotography.com" className="font-normal px-12 pt-4 pb-3 bg-beige-dark text-white hover:bg-beige-lightest hover:text-beige-darkest transition-all duration-200" target="_blank" rel="noreferrer">I am ready to book</a>
             </div>
           </div>
         ))}
