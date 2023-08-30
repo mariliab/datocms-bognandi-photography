@@ -69,47 +69,47 @@ export async function getStaticProps({ preview }) {
 }
 
 const packagesData = {
-    pageTitle: "Personal Branding Photography Packages",
+    pageTitle: "Fotopaket för Personal Branding",
     generalFeatures: [
-      "Flexible styling assistance available upon request to ensure your brand's visual cohesiveness.",
-      "Expert location recommendations provided to match your unique brand identity.",
-      "All packages include natural and authentic high-resolution images that showcase your true essence.",
-      "Photoshoots are done within central Stockholm, outside of that taxi round trip is added."
+      "Flexibel stylinghjälp finns tillgänglig vid förfrågan för att säkerställa ditt varumärkes visuella sammanhang.",
+      "Platsrekommendationer ges för att passa din unika identitet.",
+      "Alla paket inkluderar naturliga och autentiska högupplösta bilder som visar ditt sanna jag.",
+      "Fotograferingar genomförs inom centrala Stockholm, utanför tillkommer en kostnad för t&r.",
     ],
     packageList: [
       {
-        title: "1. Brief Brand Boost",
-        description: "Perfect for updating your personal brand visuals.",
+        title: "1. Brand Boost",
+        description: "Perfekt för att uppdatera dina profilbilder.",
         features: [
-          "Includes images for 1 month daily social media updates",
-          "Natural and authentic high-resolution photos.",
-          "Ideal for updating profile pictures, feature images, about me pages, and more.",
+          "Inkluderar bilder för 1 månads daglig sociala medieuppdateringar.",
+          "Naturliga och autentiska högupplösta bilder.",
+          "Perfekt för att uppdatera profilbilder, bakgrundsbilder bilder, om mig-sidor m.m.",
         ],
-        investment: "10000 kr",
+        investment: "10 000 kr",
       },
       {
-        title: "2. Branding Makeover",
-        description: "For those who post daily or several times per week on social media and want content for 3 months.",
+        title: "2. Branding bildbank",
+        description: "För de som publicerar dagligen eller flera gånger per vecka på sociala medier och vill ha content för 3 månader.",
         features: [
-          "Professionally edited high-resolution photos.",
-          "Includes images for 3 months daily social media updates",
-          "Access a versatile 'Image Bank' that captures your brand's essence.",
-          "Personalized consultation to tailor the shoot to your brand's vibe.",
+          "Professionellt redigerade högupplösta bilder.",
+          "Inkluderar bilder för 3 månaders daglig sociala medieuppdateringar.",
+          "Tillgång till en mångsidig 'bildbank' som fångar din varumärkesessens.",
+          "Personlig konsultation för att anpassa fotograferingen till ditt varumärkes känsla.",
         ],
-        investment: "15000 kr",
+        investment: "15 000 kr",
       },
       {
-        title: "3. Branding ALL IN",
-        description: "For those who post daily or several times per week on social media and want content for 6+ months.",
+        title: "3. ALL IN - Branding Bildbank",
+        description: "För de som publicerar dagligen eller flera gånger per vecka på sociala medier och vill ha content för 6+ månader.",
         features: [
-          "Receive ALL professionally edited high-res photos from the shoot. (200+ images)",
-          "Access a versatile 'Image Bank' that captures your brand's essence.",
-          "Say goodbye to impersonal stock images—have your own to maintain authenticity.",
-          "Personalized consultation to tailor the shoot to your brand's vibe.",
-          "Bonus: Fill out a brand survey to guide the shoot's creative direction.",
-          "Special Offer: Refer a friend and receive 10% off your next session!",
+          "Få ALLA professionellt redigerade högupplösta bilder från fotograferingen. (200+ bilder)",
+          "Tillgång till en mångsidig 'bildbank' som fångar din varumärkesessens.",
+          "Säg Bye Bye till opersonliga stockbilder - ha dina egna för att utstråla autencitet.",
+          "Personlig konsultation för att anpassa fotograferingen till ditt varumärkes känsla.",
+          "Bonus: Fyll i en brandundersökning för att guida fotograferingens kreativa riktning.",
+          "Specialerbjudande: Hänvisa oss till en vän och få 10% rabatt på din nästa session!",
         ],
-        investment: "25000 kr",
+        investment: "25 000 kr",
       },
     ],
   };
@@ -131,7 +131,7 @@ function Packages({ subscription }) {
       <Container>
       <h1 className="text-3xl font-semibold mb-6">{packagesData.pageTitle}</h1>
       <div>
-        <h2 className="text-xl font-semibold mb-4">General Features:</h2>
+        <h2 className="text-xl font-semibold mb-4">Generell information:</h2>
         <ul className="list-none list-inside mb-6">
           {packagesData.generalFeatures.map((feature, index) => (
             <li key={index}><span>-</span> {feature}</li>
@@ -151,14 +151,14 @@ function Packages({ subscription }) {
             </ul>
             </div>
             <div>
-            <p className="mt-4 font-bold">Investment: {packageItem.investment}</p>
+            <p className="mt-4 font-bold">Investering: {packageItem.investment}</p>
             <br></br>
-            <a href="mailto:marilia@bognandiphotography.com" className="font-normal px-12 pt-4 pb-3 bg-beige-dark text-white hover:bg-beige-lightest hover:text-beige-darkest transition-all duration-200" target="_blank" rel="noreferrer">I am ready to book</a>
+            <a href="mailto:marilia@bognandiphotography.com" className="font-normal px-12 pt-4 pb-3 bg-beige-dark text-white hover:bg-beige-lightest hover:text-beige-darkest transition-all duration-200" target="_blank" rel="noreferrer">Jag är redo att boka</a>
             </div>
           </div>
         ))}
       </div>
-      <p className="text-center text-xs mt-4">Prices are ex. VAT</p>
+      <p className="text-center text-xs mt-4">Priser visas ex. moms</p>
     </Container>
     </div>
     </Layout>
