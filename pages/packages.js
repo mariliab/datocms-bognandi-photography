@@ -1,12 +1,11 @@
 import Head from "next/head";
-import { renderMetaTags, useQuerySubscription } from "react-datocms";
+import { useQuerySubscription } from "react-datocms";
 import { request } from "../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
 import Layout from "../components/layout";
 import Container from "../components/container";
 import Navbar from "../components/navbar";
-import PageTitle from "../components/page-title";
-import About from "../components/about";
+import Testamonials from "../components/testamonials";
 
 export async function getStaticProps({ preview }) {
   const graphqlRequest = {
@@ -16,6 +15,18 @@ export async function getStaticProps({ preview }) {
           favicon: faviconMetaTags {
             ...metaTagsFragment
           }
+        }
+        allTestamonials {
+            id
+            image {
+              url
+              responsiveImage(imgixParams: {fm: jpg, w: 400, h: 600, fit: max }) {
+                ...responsiveImageFragment
+              }
+            }
+            name
+            text
+            title
         }
         page(filter: {slug: {eq: "personal-branding-packages"}}) {
           seo: _seoMetaTags {
@@ -116,7 +127,7 @@ const packagesData = {
 
 function Packages({ subscription }) {
   const {
-    data: { site, page },
+    data: { site, page, allTestamonials },
   } = useQuerySubscription(subscription);
 
 //   const metaTags = page.seo.concat(site.favicon);
@@ -161,6 +172,7 @@ function Packages({ subscription }) {
       <p className="text-center text-xs mt-4">Priser visas ex. moms</p>
     </Container>
     </div>
+    <Testamonials data={allTestamonials} />
     </Layout>
   );
 }
