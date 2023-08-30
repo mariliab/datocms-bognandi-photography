@@ -81,26 +81,28 @@ const packagesData = {
         title: "1. Brief Brand Boost",
         description: "Perfect for updating your personal brand visuals.",
         features: [
-          "Includes 15 natural and authentic high-resolution photos.",
+          "Includes images for 1 month daily social media updates",
+          "Natural and authentic high-resolution photos.",
           "Ideal for updating profile pictures, feature images, about me pages, and more.",
         ],
-        investment: "8000 kr",
+        investment: "10000 kr",
       },
       {
         title: "2. Branding Makeover",
         description: "For those who post daily or several times per week on social media and want content for 3 months.",
         features: [
-          "Receive 30 professionally edited high-resolution photos.",
+          "Professionally edited high-resolution photos.",
+          "Includes images for 3 months daily social media updates",
           "Access a versatile 'Image Bank' that captures your brand's essence.",
           "Personalized consultation to tailor the shoot to your brand's vibe.",
         ],
-        investment: "12500 kr",
+        investment: "15000 kr",
       },
       {
         title: "3. Branding ALL IN",
         description: "For those who post daily or several times per week on social media and want content for 6+ months.",
         features: [
-          "Receive ALL professionally edited high-res photos from the shoot.",
+          "Receive ALL professionally edited high-res photos from the shoot. (200+ images)",
           "Access a versatile 'Image Bank' that captures your brand's essence.",
           "Say goodbye to impersonal stock images—have your own to maintain authenticity.",
           "Personalized consultation to tailor the shoot to your brand's vibe.",
