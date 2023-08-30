@@ -104,8 +104,8 @@ const packagesData = {
         features: [
           "Professionellt redigerade högupplösta bilder.",
           "Inkluderar bilder för 3 månaders daglig sociala medieuppdateringar.",
-          "Tillgång till en mångsidig 'bildbank' som fångar din varumärkesessens.",
-          "Personlig konsultation för att anpassa fotograferingen till ditt varumärkes känsla.",
+          "Du får tillgång till en mångsidig 'bildbank' som fångar DITT personliga varumärke.",
+          "Personlig konsultation för att anpassa fotograferingen till ditt personliga varumärkes känsla.",
         ],
         investment: "15 000 kr",
       },
@@ -114,9 +114,9 @@ const packagesData = {
         description: "För de som publicerar dagligen eller flera gånger per vecka på sociala medier och vill ha content för 6+ månader.",
         features: [
           "Få ALLA professionellt redigerade högupplösta bilder från fotograferingen. (200+ bilder)",
-          "Tillgång till en mångsidig 'bildbank' som fångar din varumärkesessens.",
+          "Du får tillgång till en mångsidig 'bildbank' som fångar DITT personliga varumärke.",
           "Säg Bye Bye till opersonliga stockbilder - ha dina egna för att utstråla autencitet.",
-          "Personlig konsultation för att anpassa fotograferingen till ditt varumärkes känsla.",
+          "Personlig konsultation för att anpassa fotograferingen till ditt personliga varumärkes känsla.",
           "Bonus: Fyll i en brandundersökning för att guida fotograferingens kreativa riktning.",
           "Specialerbjudande: Hänvisa oss till en vän och få 10% rabatt på din nästa session!",
         ],
