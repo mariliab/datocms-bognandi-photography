@@ -142,7 +142,7 @@ function Packages({ subscription }) {
       <Container>
       <h1 className="text-3xl font-semibold mb-6">{packagesData.pageTitle}</h1>
       <div>
-        <h2 className="text-xl font-semibold mb-4">Generell information:</h2>
+        <h2 className="text-xl font-semibold mb-8">Generell information:</h2>
         <ul className="list-none list-inside mb-6">
           {packagesData.generalFeatures.map((feature, index) => (
             <li key={index}><span>-</span> {feature}</li>
@@ -153,17 +153,16 @@ function Packages({ subscription }) {
         {packagesData.packageList.map((packageItem, index) => (
           <div key={index} className="bg-white p-4 lg:p-12 flex flex-col justify-between">
             <div>
-            <h2 className="uppercase text-xl font-semibold mb-2">{packageItem.title}</h2>
-            <p className="mb-4 font-bold">{packageItem.description}</p>
+            <h2 className="uppercase text-xl font-semibold mb-8">{packageItem.title}</h2>
+            <p className="mb-8 font-bold leading-loose">{packageItem.description}</p>
             <ul className="list-none list-inside">
               {packageItem.features.map((feature, index) => (
-                <li key={index} className="mb-4"><span>-</span> {feature}</li>
+                <li key={index} className="mb-8"><span>-</span> {feature}</li>
               ))}
             </ul>
             </div>
             <div>
-            <p className="mt-4 font-bold">Investering: {packageItem.investment}</p>
-            <br></br>
+            <p className="font-bold mb-8">Investering: {packageItem.investment}</p>
             <a href="mailto:marilia@bognandiphotography.com" className="font-normal px-12 pt-4 pb-3 bg-beige-dark text-white hover:bg-beige-lightest hover:text-beige-darkest transition-all duration-200" target="_blank" rel="noreferrer">Jag är redo att boka</a>
             </div>
           </div>
