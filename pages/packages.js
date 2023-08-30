@@ -74,40 +74,38 @@ const packagesData = {
       "Flexible styling assistance available upon request to ensure your brand's visual cohesiveness.",
       "Expert location recommendations provided to match your unique brand identity.",
       "All packages include natural and authentic high-resolution images that showcase your true essence.",
+      "Photoshoots are done within central Stockholm, outside of that taxi round trip is added."
     ],
     packageList: [
       {
-        title: "Brief Brand Boost Session",
+        title: "1. Brief Brand Boost",
         description: "Perfect for updating your personal brand visuals.",
         features: [
           "Includes 15 natural and authentic high-resolution photos.",
-          "Ideal for profile pictures, feature images, about me pages, and more.",
+          "Ideal for updating profile pictures, feature images, about me pages, and more.",
         ],
         investment: "8000 kr",
       },
       {
-        title: "Makeover Branding Photoshoot",
-        description: "Level up your branding with a comprehensive photoshoot.",
+        title: "2. Branding Makeover",
+        description: "For those who post daily or several times per week on social media and want content for 3 months.",
         features: [
-          "Content for 2-3 months of consistent 2-3 times per week posting.",
           "Receive 30 professionally edited high-resolution photos.",
-          "Showcase your brand's evolution with a testimonial and before-and-after example.",
-          "Flexible styling assistance available upon request.",
-          "Expert location recommendations if needed.",
-          "Special Offer: Refer a friend and receive 10% off your next session!",
+          "Access a versatile 'Image Bank' that captures your brand's essence.",
+          "Personalized consultation to tailor the shoot to your brand's vibe.",
         ],
         investment: "12500 kr",
       },
       {
-        title: "ALL IN Package",
-        description: "For those who post daily or several times per week on social media.",
+        title: "3. Branding ALL IN",
+        description: "For those who post daily or several times per week on social media and want content for 6+ months.",
         features: [
-          "Content for up to 6 months of daily posting.",
+          "Receive ALL professionally edited high-res photos from the shoot.",
           "Access a versatile 'Image Bank' that captures your brand's essence.",
           "Say goodbye to impersonal stock images—have your own to maintain authenticity.",
-          "Receive all professionally edited high-res photos from the shoot.",
           "Personalized consultation to tailor the shoot to your brand's vibe.",
           "Bonus: Fill out a brand survey to guide the shoot's creative direction.",
+          "Special Offer: Refer a friend and receive 10% off your next session!",
         ],
         investment: "25000 kr",
       },
@@ -143,7 +141,7 @@ function Packages({ subscription }) {
           <div key={index} className="bg-white p-4 lg:p-12 flex flex-col justify-between">
             <div>
             <h2 className="uppercase text-xl font-semibold mb-2">{packageItem.title}</h2>
-            <p className="mb-4">{packageItem.description}</p>
+            <p className="mb-4 font-bold">{packageItem.description}</p>
             <ul className="list-none list-inside">
               {packageItem.features.map((feature, index) => (
                 <li key={index} className="mb-4"><span>-</span> {feature}</li>
