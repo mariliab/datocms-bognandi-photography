@@ -25,7 +25,7 @@ export default function PhotographyServices({
                             <p className="mb-4 text-base lg:text-4xl font-light">{item.subtitle}</p>
                             <Link href={`/services/${item.slug}`}>
                               <div className="flex">
-                                <div className="flex-none font-normal px-12 pt-4 pb-3 bg-beige-dark text-white hover:bg-beige-lightest hover:text-beige-darkest transition-all duration-200">
+                                <div className="flex-none font-normal text-xs px-12 pt-4 pb-3 bg-beige-dark text-white hover:bg-beige-lightest hover:text-beige-darkest transition-all duration-200">
                                   JAG VILL VETA MER
                                 </div>
                               </div>
@@ -63,7 +63,7 @@ export default function PhotographyServices({
                       }}
                       className="transform transition duration-300 ease-in-out hover:opacity-100 hover:scale-101"
                     />
-                    <div className="mt-4 font-normal px-6 pt-3 pb-2 border-1 border-black hover:bg-white transition-all duration-200">
+                    <div className="mt-4 uppercase text-xs font-normal px-6 pt-3 pb-2 border-1 border-black hover:bg-white transition-all duration-200">
                       {item.title}
                     </div>
                   </div>

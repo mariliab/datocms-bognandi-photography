@@ -29,14 +29,14 @@ export default function AboutMe({ title = "", text = "", image = null }) {
   return (
     <section className="bg-beige-light border-b-1 border-beige-darkest py-12 sm:py-24 text-beige-darkest">
       <Container>
-        <div className="flex-col-reverse flex flex-col lg:flex-row gap-4 items-stretch max-w-screen-md mx-auto">
+        <div className="flex-col-reverse flex flex-col lg:flex-row items-stretch max-w-screen-md mx-auto">
           <div className="w-full lg:w-1/2">
             <Image
               data={{
                 ...image,
                 alt: image?.title,
               }}
-              className="object-cover w-full filter grayscale"
+              className="object-cover w-full"
             />
           </div>
           <div className="bg-white p-4 lg:p-12 flex flex-col justify-center w-full lg:w-1/2">
@@ -51,7 +51,7 @@ export default function AboutMe({ title = "", text = "", image = null }) {
               <p className="font-normal italic mb-4">/Marilia Bognandi</p>
               <Link href="/om-mig">
                 <div className="flex">
-                  <div className="flex-none font-normal px-12 pt-4 pb-3 bg-beige-dark text-white hover:bg-beige-lightest hover:text-beige-darkest transition-all duration-200">MER OM MIG</div>
+                  <div className="flex-none text-xs font-normal px-12 pt-4 pb-3 bg-beige-dark text-white hover:bg-beige-lightest hover:text-beige-darkest transition-all duration-200">MER OM MIG</div>
                 </div>
               </Link>
             </div>

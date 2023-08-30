@@ -13,6 +13,10 @@ body {
   font-weight: 400 !important;
 }
 
+h1,h2,h3 {
+  font-family: "Playfair Display", serif;
+}
+
 .font-playfair {
   font-family: "Playfair Display", serif;
 }
