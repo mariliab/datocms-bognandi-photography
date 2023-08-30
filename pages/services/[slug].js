@@ -6,7 +6,6 @@ import Navbar from "../../components/navbar";
 import Container from "../../components/container";
 import PhotographyServices from "../../components/photography-services";
 import { Image } from "react-datocms";
-import Link from "next/link";
 import Head from "next/head";
 
 export async function getStaticPaths() {
