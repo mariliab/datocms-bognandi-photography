@@ -19,8 +19,8 @@ export default function PhotographyServices({
             <div className="flex flex-col gap-4 lg:gap-12">
               {data.map((item, index) => {
                 return (
-                  <div key={item.title} className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                          <div className="bg-white w-full lg:w-1/2 p-4 lg:p-24">
+                  <div key={item.title} className="bg-white flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                          <div className="w-full lg:w-1/2 px-4 py-8 lg:px-16 lg:py-16">
                             <h2 className="text-xl lg:text-6xl uppercase leading-tight mb-2 lg:mb-12">{item.title}</h2>
                             <p className="mb-4 lg:mb-8 text-base lg:text-4xl font-light">{item.subtitle}</p>
                             <Link href={`/services/${item.slug}`}>
@@ -31,7 +31,7 @@ export default function PhotographyServices({
                               </div>
                             </Link>
                           </div>
-                          <div className="bg-white p-4 lg:p-0 w-full lg:w-1/2">
+                          <div className="w-full lg:w-1/2">
                           <Image
                             data={{
                             ...item?.featuredImage?.responsiveImage,

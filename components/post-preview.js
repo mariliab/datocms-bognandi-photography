@@ -19,7 +19,7 @@ export default function PostPreview({
             title={title}
             responsiveImage={coverImage.responsiveImage}
           />
-          <div className="p-4">
+          <div className="px-4 py-8 lg:px-8">
             <div>
               <p className="text-xs mb-4 uppercase">
                 {category.name && category.name}

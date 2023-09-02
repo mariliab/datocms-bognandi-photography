@@ -39,7 +39,7 @@ export default function AboutMe({ title = "", text = "", image = null }) {
               className="object-cover w-full"
             />
           </div>
-          <div className="bg-white p-4 lg:p-12 flex flex-col justify-center w-full lg:w-1/2">
+          <div className="bg-white px-4 py-8 lg:px-8 flex flex-col justify-center w-full lg:w-1/2">
             <div
               ref={containerRef}
               className={`opacity-0 ${
