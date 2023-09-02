@@ -19,10 +19,10 @@ export default function PhotographyServices({
             <div className="flex flex-col gap-4 lg:gap-12">
               {data.map((item, index) => {
                 return (
-                  <div key={item.title} className="flex flex-col lg:flex-row lg:items-center lg:justify-center">
-                          <div className="bg-white w-full lg:w-1/2 p-4 lg:p-12">
-                            <h2 className="text-xl lg:text-6xl uppercase mb-2 lg:mb-12">{item.title}</h2>
-                            <p className="mb-4 text-base lg:text-4xl font-light">{item.subtitle}</p>
+                  <div key={item.title} className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                          <div className="bg-white w-full lg:w-1/2 p-4 lg:p-24">
+                            <h2 className="text-xl lg:text-6xl uppercase leading-tight mb-2 lg:mb-12">{item.title}</h2>
+                            <p className="mb-4 lg:mb-8 text-base lg:text-4xl font-light">{item.subtitle}</p>
                             <Link href={`/services/${item.slug}`}>
                               <div className="flex">
                                 <div className="flex-none font-normal text-xs px-12 pt-4 pb-3 bg-beige-dark text-white hover:bg-beige-lightest hover:text-beige-darkest transition-all duration-200">
@@ -31,7 +31,7 @@ export default function PhotographyServices({
                               </div>
                             </Link>
                           </div>
-                          <div className="bg-white p-4 lg:p-0">
+                          <div className="bg-white p-4 lg:p-0 w-full lg:w-1/2">
                           <Image
                             data={{
                             ...item?.featuredImage?.responsiveImage,

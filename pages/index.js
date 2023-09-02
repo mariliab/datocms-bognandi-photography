@@ -51,7 +51,7 @@ export async function getStaticProps({ preview }) {
           title
           subtitle
           featuredImage {
-            responsiveImage(imgixParams: {fm: jpg, w: 400, h: 600, fit: max }) {
+            responsiveImage(imgixParams: {fm: jpg, w: 800, fit: max }) {
               ...responsiveImageFragment
             }
           }

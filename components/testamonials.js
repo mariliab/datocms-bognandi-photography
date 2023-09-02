@@ -6,7 +6,7 @@ function TestamonialItem({ data }) {
   const [isLongText, setIsLongText] = useState(false);
 
   return (
-    <div className="min-w-1/2 md:min-w-1/4 w-3/4 md:w-1/3 lg:w-1/3 flex flex-col content-center items-center">
+    <div className="bg-white p-4 min-w-1/2 md:min-w-1/4 w-3/4 md:w-1/3 lg:w-1/3 flex flex-col content-center items-center">
       <div className="w-32">
         <Image className="rounded-full bg-cover filter grayscale mb-4"
         data={{
@@ -46,7 +46,7 @@ export default function Testamonials({ data }) {
     <section className="bg-beige-light border-b-1 border-beige-darkest py-12 lg:py-24 relative">
       <div className="container mx-auto pl-5 md:px-4">
         <BlockTitle title="Vad mina kunder säger" />
-        <div className="flex gap-8 text-beige-darkest overflow-x-scroll">
+        <div className="flex gap-4 text-beige-darkest overflow-x-scroll">
           {data.map((item, index) => {
             return <TestamonialItem data={item} key={index} />;
           })}
