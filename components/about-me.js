@@ -27,7 +27,7 @@ export default function AboutMe({ title = "", text = "", image = null }) {
   }, [containerRef, options]);
 
   return (
-    <section className="bg-beige-light border-b-1 border-beige-darkest py-12 sm:py-24 text-beige-darkest">
+    <section className="bg-beige-light py-12 sm:py-24 text-beige-darkest">
       <Container>
         <div className="flex-col-reverse flex flex-col lg:flex-row items-stretch max-w-screen-md mx-auto">
           <div className="w-full lg:w-1/2">

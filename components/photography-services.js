@@ -9,7 +9,7 @@ export default function PhotographyServices({
   isStartpage = false,
 }) {
   return (
-    <section className="bg-beige-light border-b-1 border-beige-darkest relative py-12 lg:py-24 mx-auto">
+    <section className="bg-beige-light relative py-12 lg:py-24 mx-auto">
       <Container>
         {isStartpage ? (
           <div>

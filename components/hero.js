@@ -3,7 +3,7 @@ import Container from "./container";
 export default function Hero({ title = "", subtitle = "", image }) {
 
   return (
-    <section className="bg-beige-light border-b-1 border-beige-darkest py-12 sm:py-24 text-beige-darkest">
+    <section className="bg-beige-light py-12 sm:py-24 text-beige-darkest">
       <Container>
           <p className="text-xs mb-2">FOTOGRAF I STOCKHOLM</p>
           <h1 className="text-6xl xl:text-8xl xl:max-w-4xl leading-tight mb-4">{title}</h1>
