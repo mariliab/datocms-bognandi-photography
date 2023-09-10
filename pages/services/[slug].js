@@ -7,14 +7,13 @@ import Container from "../../components/container";
 import PhotographyServices from "../../components/photography-services";
 import { Image } from "react-datocms";
 import Head from "next/head";
+import CtaBlock from "../../components/cta-block";
 
 export async function getStaticPaths() {
   const data = await request({ query: `{ allPhotoServicesPages { slug } }` });
 
   return {
-    paths: data.allPhotoServicesPages.map(
-      (page) => `/services/${page.slug}`
-    ),
+    paths: data.allPhotoServicesPages.map((page) => `/services/${page.slug}`),
     fallback: false,
   };
 }
@@ -45,7 +44,7 @@ export async function getStaticProps({ params, preview = false }) {
           title
           description
           featuredImage {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, crop: focalpoint, w: 1600, h: 900 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1600 }) {
               srcSet
               webpSrcSet
               sizes
@@ -105,49 +104,31 @@ export default function PhotoService({ subscription, preview }) {
       <Navbar data={site} />
 
       {/* DESKTOP */}
-      <section className="hidden lg:flex relative text-beige-darkest sticky top-0 -z-1">
-        <div className="mx-auto">
-          <Image
-            data={{
-              ...featuredImage.responsiveImage,
-              alt: featuredImage.responsiveImage.title,
-            }}
-          />
-        </div>
-        <div className="flex justify-center items-center absolute top-0 w-full h-full">
-          <Container>
-            <div className="w-1/3 bg-beige-lightest p-8 bg-beige-lightest">
-              <h1 className="text-3xl md:text-6xl leading-none text-black uppercase font-light mb-4">
-                {title}
-              </h1>
-              <h2 className="mt-4 text-xl leading-relaxed font-light">
-                {description}
-              </h2>
+      <section className="text-beige-darkest bg-beige-lightest">
+        <Container>
+          <div className="flex flex-col lg:flex-row">
+            <div className="mx-auto w-full lg:w-1/2">
+              <Image
+                data={{
+                  ...featuredImage.responsiveImage,
+                  alt: featuredImage.responsiveImage.title,
+                }}
+              />
             </div>
-          </Container>
-        </div>
+            <div className="flex justify-center items-center w-full lg:w-1/2">
+              <div className="px-0 py-8 lg:px-8 bg-beige-lightest">
+                <h1 className="text-3xl md:text-6xl leading-none text-black uppercase font-light mb-4">
+                  {title}
+                </h1>
+                <h2 className="mt-4 text-xl leading-relaxed font-light">
+                  {description}
+                </h2>
+              </div>
+            </div>
+          </div>
+        </Container>
       </section>
-      {/* MOBILE */}
-      <section className="relative text-beige-darkest lg:hidden">
-        <div className="sticky top-0 -z-1">
-          <Image
-            data={{
-              ...featuredImage.responsiveImage,
-              alt: featuredImage.responsiveImage.title,
-            }}
-          />
-        </div>
-        <div className="py-12 bg-beige-lightest">
-          <Container>
-            <h1 className="font-light text-3xl md:text-6xl leading-none text-black uppercase mb-4">
-              {title}
-            </h1>
-            <h2 className="mt-4 text-xl leading-relaxed font-light">
-              {description}
-            </h2>
-          </Container>
-        </div>
-      </section>
+
       {gallery.length > 0 && (
         <section className="py-12 lg:py-24 bg-white text-beige-darkest">
           <Container>
@@ -175,6 +156,7 @@ export default function PhotoService({ subscription, preview }) {
           </Container>
         </section>
       )}
+      <CtaBlock />
       <div
         style={{
           background: "linear-gradient(0deg, #ffffff 30%, #ddcdc1 30%)",

@@ -53,7 +53,7 @@ export default function PhotographyServices({
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-1 gap-y-4 md:gap-x-4">
             <div className="mr-0 md:mr-12">
-              <BlockTitle title="Utforska mer" />
+              <BlockTitle title="Eller letade du efter.." />
             </div>
             {data.map((item, index) => {
               return (
@@ -66,7 +66,7 @@ export default function PhotographyServices({
                       }}
                       className="transform transition duration-300 ease-in-out hover:opacity-100 hover:scale-101"
                     />
-                    <div className="mt-4 uppercase text-xs font-normal px-6 pt-3 pb-2 border-1 border-black hover:bg-white transition-all duration-200">
+                    <div className="mt-4 font-normal uppercase text-xs px-12 pt-4 pb-3 bg-green-olive text-white hover:bg-green-darkest transition-all duration-200">
                       {item.title}
                     </div>
                   </div>
