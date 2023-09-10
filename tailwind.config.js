@@ -27,6 +27,22 @@ module.exports = {
           dark: "#5B4B3F",
           darkest: "#2d251f",
         },
+        green: {
+          lightest: "#f2f5f2",
+          lighter: "#d9e3d8",
+          DEFAULT: "#c1d1bf",
+          olive: "#25291c",
+          darker: "#737d72",
+          darkest: "#262926",
+        },
+        red: {
+          lightest: "#f9f4f3",
+          default: "#e5c8c5",
+          darker: "##897876",
+          darkest: "#330f0a",
+          bold: "#8c1c13",
+          pop: "#ff101f",
+        },
       },
       spacing: {
         28: "7rem",

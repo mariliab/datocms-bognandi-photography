@@ -20,7 +20,9 @@ export default function BlogPostPreview({
             responsiveImage={coverImage.responsiveImage}
           />
           <div className="p-4">
-            <p className="text-xs mb-4 uppercase">{category.name}</p>
+            <p className="text-xs mb-4 uppercase bg-green-darker text-white pt-2 pb-1 px-3 w-fit">
+              {category.name}
+            </p>
             <h3 className="text-lg md:text-xl mb-4 leading-tight break-words">
               <p className="hover:underline">{title}</p>
             </h3>

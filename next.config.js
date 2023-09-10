@@ -17,20 +17,20 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/fototjanster/foretag',
-        destination: '/services/personal-branding',
+        source: "/fototjanster/foretag",
+        destination: "/services/personal-branding",
         permanent: true,
       },
       {
-        source: '/fototjanster/portratt',
-        destination: '/services/personal-branding',
+        source: "/fototjanster/portratt",
+        destination: "/services/personal-branding",
         permanent: true,
       },
       {
-        source: '/fototjanster/produkter',
-        destination: '/services/produkter',
+        source: "/fototjanster/produkter",
+        destination: "/services/produkter",
         permanent: true,
       },
-    ]
+    ];
   },
 };

@@ -45,9 +45,9 @@ export default function BlogFilter({
               key={filterItem.slug}
               href={`blogg/${filterItem.slug}`}
               onClick={() => onFilterClick(filterItem)}
-              className={`${
-                isActive(filterItem) && "font-bold bg-beige-light-hover"
-              } border-1 border-black px-6 text-xs uppercase pt-2 pb-1 cursor-pointer hover:font-bold transition-all duration-200`}
+              className={`text-xs uppercase bg-green-darker text-white pt-2 pb-1 px-3 cursor-pointer transition-all duration-200 ${
+                isActive(filterItem) && "font-bold bg-green-olive"
+              } `}
             >
               {filterItem.name}
             </div>

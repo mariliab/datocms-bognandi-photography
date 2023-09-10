@@ -23,7 +23,7 @@ export default function TextAndImageBlock({ data }) {
             <div className="py-4 flex">
               <a
                 href={cta}
-                className="py-4 text-xs tracking-widest font-bold text-center bg-beige-darkest hover:bg-beige-light text-white hover:text-beige-darkest flex-1 rounded-full"
+                className="font-normal px-12 pt-4 pb-3 bg-green-olive text-white hover:bg-green-olive transition-all duration-200"
               >
                 KONTAKTA MIG
               </a>

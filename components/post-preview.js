@@ -21,7 +21,7 @@ export default function PostPreview({
           />
           <div className="px-4 py-8 lg:px-8">
             <div>
-              <p className="text-xs mb-4 uppercase">
+              <p className="text-xs mb-4 uppercase bg-green-darker text-white pt-2 pb-1 px-3 w-fit">
                 {category.name && category.name}
               </p>
               <h3 className="text-lg md:text-xl mb-4 leading-tight break-words">
