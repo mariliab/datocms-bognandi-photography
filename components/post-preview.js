@@ -12,7 +12,7 @@ export default function PostPreview({
 }) {
   return (
     <div className="bg-white w-64 lg:w-1/3 text-beige-darkest relative overflow:hidden">
-      <Link as={`/blogg/${slug}`} href="/blogg/[slug]">
+      <Link as={`/blog/${slug}`} href="/blog/[slug]">
         <div className="cursor-pointer w-64 lg:w-full">
           <CoverImage
             slug={slug}

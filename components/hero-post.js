@@ -23,7 +23,7 @@ export default function HeroPost({
       <div className="md:grid md:grid-cols-3 md:gap-x-4 lg:gap-x-8 mb-20 md:mb-28">
         <div>
           <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
-            <Link as={`/blogg/${slug}`} href="/blogg/[slug]">
+            <Link as={`/blog/${slug}`} href="/blog/[slug]">
               {title}
             </Link>
           </h3>

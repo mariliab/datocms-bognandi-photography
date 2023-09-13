@@ -7,7 +7,7 @@ function DesktopMenu({ logo = "", activeRoute = "" }) {
   const routes = [
     { path: "/", name: "Start" },
     { path: "/about", name: "About" },
-    { path: "/blogg", name: "Blog" },
+    { path: "/blog", name: "Blog" },
   ];
 
   return (

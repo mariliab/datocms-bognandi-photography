@@ -43,7 +43,7 @@ export default function BlogFilter({
           return (
             <div
               key={filterItem.slug}
-              href={`blogg/${filterItem.slug}`}
+              href={`blog/${filterItem.slug}`}
               onClick={() => onFilterClick(filterItem)}
               className={`text-xs uppercase bg-green-darker text-white pt-2 pb-1 px-3 cursor-pointer transition-all duration-200 ${
                 isActive(filterItem) && "font-bold bg-green-olive"
