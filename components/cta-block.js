@@ -1,9 +1,9 @@
 import Container from "./container";
 
 export default function CtaBlock({
-  title = "Gillar du vad du ser?",
-  text = "Hör av dig om du har några frågor eller funderingar kring en fotografering, eller är redo att veta mer.",
-  ctaText = "Jag vill boka fotografering",
+  title = "Like what you see?",
+  text = "Get in touch if you have any questions or concerns about a photo shoot, or are ready to know more.",
+  ctaText = "I wanna book a photoshooot",
 }) {
   return (
     <section className="bg-beige-lightest py-12 lg:py-24 relative text-beige-darkest">

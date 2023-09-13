@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import isInView from "../lib/isInView";
 
 export default function BlockTitle({
   title = "",
@@ -8,11 +9,23 @@ export default function BlockTitle({
   linkPath = "",
   linkText = "",
 }) {
+  const { targetRef, isVisible } = isInView({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.33,
+  });
+
   return (
     <div className="mb-8">
       {centered ? (
         <div className="max-w-screen-sm text-center mx-auto">
-          <h2 className="text-3xl xl:text-6xl xl:max-w-3xl xl:leading-snug mb-4">
+          <h2
+            ref={targetRef}
+            className={`opacity-0 -translate-x-6 text-3xl xl:text-6xl xl:max-w-3xl xl:leading-snug mb-4 ${
+              isVisible &&
+              "transition-all duration-1000 transform-none opacity-100"
+            }`}
+          >
             {title} {linkText}
           </h2>
 
@@ -29,7 +42,11 @@ export default function BlockTitle({
           <div className="flex justify-between items-center mr-4 lg:mr-0">
             <h2
               id={title.toLowerCase()}
-              className="text-3xl xl:text-6xl xl:max-w-3xl xl:leading-snug mb-4"
+              ref={targetRef}
+              className={`opacity-0 -translate-x-6 text-3xl xl:text-6xl xl:max-w-3xl xl:leading-snug mb-4 ${
+                isVisible &&
+                "transition-all duration-2000 transform-none opacity-100"
+              }`}
             >
               {title}
             </h2>

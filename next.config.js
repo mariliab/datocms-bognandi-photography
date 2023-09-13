@@ -17,6 +17,16 @@ module.exports = {
   async redirects() {
     return [
       {
+        source: "/blogg",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/om-mig",
+        destination: "/about",
+        permanent: true,
+      },
+      {
         source: "/fototjanster/foretag",
         destination: "/services/personal-branding",
         permanent: true,
@@ -29,6 +39,24 @@ module.exports = {
       {
         source: "/fototjanster/produkter",
         destination: "/services/produkter",
+        permanent: true,
+      },
+      {
+        source: "/blog/produktlansering-for-accessoarvarumarket-bybanoo",
+        destination: "blog/campaign-product-launch-by-banoo-business-bag",
+        permanent: true,
+      },
+      {
+        source:
+          "/blog/behind-the-scenes-fotografering-med-affiner-fine-jewelry",
+        destination: "blog/campaign-product-launch-by-banoo-business-bag",
+        permanent: true,
+      },
+      {
+        source:
+          "/blog/objektivguide-sa-vaeljer-du-raett-beroende-pa-dina-behov",
+        destination:
+          "blog/studio-shoot-with-jewelry-brand-affiner-fine-jewelry",
         permanent: true,
       },
     ];

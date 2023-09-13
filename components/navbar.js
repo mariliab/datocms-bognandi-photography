@@ -6,8 +6,8 @@ import { useRouter } from "next/router";
 function DesktopMenu({ logo = "", activeRoute = "" }) {
   const routes = [
     { path: "/", name: "Start" },
-    { path: "/om-mig", name: "Om mig" },
-    { path: "/blogg", name: "Blogg" },
+    { path: "/about", name: "About" },
+    { path: "/blogg", name: "Blog" },
   ];
 
   return (
@@ -15,24 +15,26 @@ function DesktopMenu({ logo = "", activeRoute = "" }) {
       <div className="flex flex-1 space-x-4">
         {routes.map((route) => {
           return (
-            <Link href={route.path} key={route.path}
-                className={`${
-                  activeRoute === route.path && "font-normal underline"
-                } font-light uppercase hover:underline`}
-              >
-                {route.name}
+            <Link
+              href={route.path}
+              key={route.path}
+              className={`${
+                activeRoute === route.path && "font-normal underline"
+              } font-light uppercase hover:underline`}
+            >
+              {route.name}
             </Link>
           );
         })}
       </div>
       <div>
         <Link href="/">
-            <img
-              src={logo}
-              width="100"
-              height="auto"
-              alt="Bognandi Photography logga"
-            />
+          <img
+            src={logo}
+            width="100"
+            height="auto"
+            alt="Bognandi Photography logga"
+          />
         </Link>
       </div>
       <div className="flex flex-1 justify-end">
@@ -42,7 +44,7 @@ function DesktopMenu({ logo = "", activeRoute = "" }) {
           target="_blank"
           rel="noreferrer"
         >
-          Kontakt
+          Contact
         </a>
       </div>
     </div>
@@ -68,7 +70,7 @@ function MobileMenu({ logo = "" }) {
               }`}
             ></div>
             <div
-              style={{ width: "1.5rem", height: "0.15rem" }}
+              style={{ width: "1rem", height: "0.15rem" }}
               className={`bg-black relative transform transition duration-300 ease-in-out rounded-full origin-center ${
                 isOpen && "opacity-0"
               }`}
@@ -98,7 +100,7 @@ function MobileMenu({ logo = "" }) {
             target="_blank"
             rel="noreferrer"
           >
-            Kontakt
+            Contact
           </a>
           <MobileMenuBody isOpen={isOpen} logo={logo} />
         </div>
@@ -121,24 +123,19 @@ function MobileMenuBody({ isOpen = false, logo = "" }) {
           </Link>
         </div>
         <div className="flex flex-col gap-y-4 items-center">
-          <p className="font-light">SE MER</p>
-          <Link href="/om-mig">
-            Om mig
-          </Link>
-          <Link href="/blogg">
-            Blogg
-          </Link>
-          <p className="mt-4 font-light">Jag hjälper dig med</p>
-          <Link href="/services/personal-branding">
-            Personal branding
-          </Link>
-          <Link href="/services/produkter">
-            Produktbranding
-          </Link>
+          <p className="font-light">SEE MORE</p>
+          <Link href="/about">About</Link>
+          <Link href="/blogg">Blog</Link>
+          <p className="mt-4 font-light">We help you with</p>
+          <Link href="/services/personal-branding">Personal branding</Link>
+          <Link href="/services/produkter">Product branding</Link>
         </div>
         <div className="py-0 sm:py-4 flex">
-          <Link href="mailto:marilia@bognandiphotography.com" className="py-4 text-xs tracking-widest font-bold text-center bg-beige-darkest hover:bg-beige-light text-white hover:text-beige-darkest flex-1 rounded-full">
-              KONTAKTA MIG
+          <Link
+            href="mailto:marilia@bognandiphotography.com"
+            className="py-4 text-xs tracking-widest font-bold text-center bg-beige-darkest hover:bg-beige-light text-white hover:text-beige-darkest flex-1 rounded-full"
+          >
+            CONTACT ME
           </Link>
         </div>
       </div>

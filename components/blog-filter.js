@@ -10,7 +10,7 @@ export default function BlogFilter({
       (filterItem) => filterItem.slug === item.slug
     );
 
-    if (item.slug.toLowerCase() === "alla") {
+    if (item.slug.toLowerCase() === "all") {
       if (activeFilters.length > 0) {
         onSelectFilters([]);
       }
@@ -20,7 +20,7 @@ export default function BlogFilter({
           ...prevItem.filter((filterItem) => filterItem.slug !== item.slug),
         ]);
       } else {
-        if (item.slug.toLowerCase() === "alla") {
+        if (item.slug.toLowerCase() === "all") {
           onSelectFilters([]);
         } else {
           onSelectFilters((prevItem) => [...prevItem, item]);
@@ -30,7 +30,7 @@ export default function BlogFilter({
   };
 
   const isActive = (item) => {
-    if (item.slug.toLowerCase() === "alla" && activeFilters.length < 1) {
+    if (item.slug.toLowerCase() === "all" && activeFilters.length < 1) {
       return true;
     }
     return activeFilters.find((x) => x.slug.toLowerCase() === item.slug);

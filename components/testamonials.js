@@ -50,7 +50,7 @@ export default function Testamonials({ data }) {
   return (
     <section className="bg-beige-light py-12 lg:py-24 relative">
       <div className="container mx-auto pl-5 md:px-4">
-        <BlockTitle title="Vad mina kunder säger" />
+        <BlockTitle title="What my clients say" />
         <div className="flex gap-4 text-beige-darkest overflow-x-scroll">
           {data.map((item, index) => {
             return <TestamonialItem data={item} key={index} />;

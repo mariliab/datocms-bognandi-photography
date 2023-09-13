@@ -7,8 +7,8 @@ export default function Blogg({ posts, categories = [] }) {
     <section className="bg-beige-light text-beige-darkest py-12 lg:py-24 relative">
       <Container>
         <PageTitle
-          title="Blogg"
-          subtitle="Intresserad av att veta mer om mig, mina tidigare jobb och olika fototips? Bläddra igenom mina blogginlägg för att hålla dig uppdaterad och för att veta mer om den kreativa fotovärlden."
+          title="Blog"
+          subtitle="Interested in knowing more about me, my previous jobs and different photography tips? Browse through my blog posts to stay updated and to know more about the creative world of photography."
         />
         <BlogPosts posts={posts} categories={categories} />
       </Container>

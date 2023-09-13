@@ -8,8 +8,8 @@ export default function Footer() {
         <div className="py-12 flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-12">
           <div className="flex flex-col w-full lg:w-1/4 gap-4 lg:gap-12">
             <BlockTitle
-              title="Kontakt"
-              subtitle="Är du intresserad av att boka mig och mina tjänster, eller har du några frågor och funderingar? Tveka inte på att höra av dig!"
+              title="Contact"
+              subtitle="Are you interested in booking me and my services, or do you have any questions or concerns? Don't hesitate to get in touch!"
             />
           </div>
           <div className="flex flex-col">
@@ -22,7 +22,7 @@ export default function Footer() {
               marilia@bognandiphotography.com
             </a>
             <p className="mt-8">
-              Kolla in min{" "}
+              Or say hi via{" "}
               <a href="https://www.instagram.com/bognandiphotography/">
                 Instagram
               </a>

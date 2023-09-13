@@ -25,7 +25,7 @@ export default function TextAndImageBlock({ data }) {
                 href={cta}
                 className="font-normal px-12 pt-4 pb-3 bg-green-olive text-white hover:bg-green-olive transition-all duration-200"
               >
-                KONTAKTA MIG
+                Contact me
               </a>
             </div>
           )}

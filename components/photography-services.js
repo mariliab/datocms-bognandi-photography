@@ -13,7 +13,7 @@ export default function PhotographyServices({
       <Container>
         {isStartpage ? (
           <div>
-            <BlockTitle title="Såhär kan vi hjälpa dig" />
+            <BlockTitle title="We help you with" />
             <div className="flex flex-col gap-4 lg:gap-12">
               {data.map((item, index) => {
                 return (
@@ -31,7 +31,7 @@ export default function PhotographyServices({
                       <Link href={`/services/${item.slug}`}>
                         <div className="flex">
                           <div className="flex-none font-normal text-xs px-12 pt-4 pb-3 bg-green-olive text-white hover:bg-green-darkest transition-all duration-200">
-                            JAG VILL VETA MER
+                            I WANT TO KNOW MORE
                           </div>
                         </div>
                       </Link>
@@ -53,7 +53,7 @@ export default function PhotographyServices({
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-1 gap-y-4 md:gap-x-4">
             <div className="mr-0 md:mr-12">
-              <BlockTitle title="Eller letade du efter.." />
+              <BlockTitle title="Or were you looking for.." />
             </div>
             {data.map((item, index) => {
               return (

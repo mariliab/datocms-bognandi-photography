@@ -21,7 +21,7 @@ export default function BlogPosts({ posts, categories }) {
     <section className="text-beige-darkest">
       <BlogFilter
         activeFilters={activeFilters}
-        allFilters={[{ slug: "alla", name: "Alla" }, ...categories]}
+        allFilters={[{ slug: "All", name: "All" }, ...categories]}
         onSelectFilters={setActiveFilters}
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

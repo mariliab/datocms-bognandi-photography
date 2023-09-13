@@ -1,30 +1,14 @@
-import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { Image } from "react-datocms";
 import Container from "./container";
+import isInView from "../lib/isInView";
 
 export default function AboutMe({ title = "", text = "", image = null }) {
-  const containerRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  const callbackFunction = (entries) => {
-    const [entry] = entries;
-    setIsVisible(entry.isIntersecting);
-  };
-  const options = {
+  const { targetRef, isVisible } = isInView({
     root: null,
     rootMargin: "0px",
     threshold: 0.33,
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction, options);
-    if (containerRef.current) observer.observe(containerRef.current);
-
-    return () => {
-      if (containerRef.current) observer.unobserve(containerRef.current);
-    };
-  }, [containerRef, options]);
+  });
 
   return (
     <section className="bg-beige-light py-12 sm:py-24 text-beige-darkest">
@@ -41,7 +25,7 @@ export default function AboutMe({ title = "", text = "", image = null }) {
           </div>
           <div className="bg-white px-4 py-8 lg:px-8 flex flex-col justify-center w-full lg:w-1/2">
             <div
-              ref={containerRef}
+              ref={targetRef}
               className={`opacity-0 ${
                 isVisible && " transition-opacity duration-1000 opacity-100"
               }`}
@@ -49,10 +33,10 @@ export default function AboutMe({ title = "", text = "", image = null }) {
               <h1 className="mb-2 text-2xl mb-4">{title}</h1>
               <p className="font-light mb-4">{text}</p>
               <p className="font-normal italic mb-4">/Marilia Bognandi</p>
-              <Link href="/om-mig">
+              <Link href="/about">
                 <div className="flex">
                   <div className="flex-none text-xs font-normal px-12 pt-4 pb-3 bg-green-olive text-white hover:bg-green-darkest transition-all duration-200">
-                    MER OM MIG
+                    MORE ABOUT ME
                   </div>
                 </div>
               </Link>

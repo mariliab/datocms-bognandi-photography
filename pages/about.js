@@ -17,7 +17,7 @@ export async function getStaticProps({ preview }) {
             ...metaTagsFragment
           }
         }
-        page(filter: {slug: {eq: "om-mig"}}) {
+        page(filter: {slug: {eq: "about"}}) {
           seo: _seoMetaTags {
             ...metaTagsFragment
           }
