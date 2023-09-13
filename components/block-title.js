@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import isInView from "../lib/isInView";
+import useIsInView from "../lib/useIsInView";
 
 export default function BlockTitle({
   title = "",
@@ -9,7 +9,7 @@ export default function BlockTitle({
   linkPath = "",
   linkText = "",
 }) {
-  const { targetRef, isVisible } = isInView({
+  const { targetRef, isVisible } = useIsInView({
     root: null,
     rootMargin: "0px",
     threshold: 0.33,

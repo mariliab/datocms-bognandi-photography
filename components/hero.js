@@ -1,9 +1,8 @@
 import Container from "./container";
-import isInView from "../lib/isInView";
+import useIsInView from "../lib/useIsInView";
 
 export default function Hero({ title = "", subtitle = "", image }) {
-  // const isVisible = isInView(elementRef);
-  const { targetRef, isVisible } = isInView({
+  const { targetRef, isVisible } = useIsInView({
     root: null,
     rootMargin: "0px",
     threshold: 0.33,

@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { Image } from "react-datocms";
 import Container from "./container";
-import isInView from "../lib/isInView";
+import useIsInView from "../lib/useIsInView";
 
 export default function AboutMe({ title = "", text = "", image = null }) {
-  const { targetRef, isVisible } = isInView({
+  const { targetRef, isVisible } = useIsInView({
     root: null,
     rootMargin: "0px",
     threshold: 0.33,
