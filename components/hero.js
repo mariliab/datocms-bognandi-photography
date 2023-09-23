@@ -17,7 +17,7 @@ export default function Hero({ title = "", subtitle = "", image }) {
             isVisible && " transition-opacity duration-3000 opacity-100"
           }`}
         >
-          <p className="text-xs mb-2">EMPOWERING WOMEN IN BUSINESS BY</p>
+          <p className="text-xs mb-2">EMPOWERING YOU IN YOUR BUSINESS BY</p>
           <h1 className="text-4xl xl:text-8xl leading-tight mb-4">{title}</h1>
           <p className="text-base lg:text-2xl leading-normal font-light mb-8 lg:mb-12">
             {subtitle}

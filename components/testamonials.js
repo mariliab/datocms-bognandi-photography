@@ -39,7 +39,7 @@ function TestamonialItem({ data }) {
           onClick={() => setIsLongText(true)}
           className="text-xs uppercase font-bold text-green-dark hover:text-green-darkest mt-2 hover:underline"
         >
-          läs mer
+          read more
         </button>
       )}
     </div>
