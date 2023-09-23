@@ -1,6 +1,7 @@
 import { hotjar } from "react-hotjar";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { Analytics } from "@vercel/analytics/react";
 import * as ga from "../lib/ga";
 import "../styles/index.css";
 
@@ -22,7 +23,12 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router.events]);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+    </>
+  );
 }
 
 export default MyApp;
