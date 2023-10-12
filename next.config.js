@@ -38,7 +38,12 @@ module.exports = {
       },
       {
         source: "/fototjanster/produkter",
-        destination: "/services/produkter",
+        destination: "/services/fashion-startup-branding",
+        permanent: true,
+      },
+      {
+        source: "/services/produkter",
+        destination: "/services/fashion-startup-branding",
         permanent: true,
       },
       {

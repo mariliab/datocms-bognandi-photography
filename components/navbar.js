@@ -128,7 +128,9 @@ function MobileMenuBody({ isOpen = false, logo = "" }) {
           <Link href="/blogg">Blog</Link>
           <p className="mt-4 font-light">We help you with</p>
           <Link href="/services/personal-branding">Personal branding</Link>
-          <Link href="/services/produkter">Product branding</Link>
+          <Link href="/services/fashion-startup-branding">
+            Fashion startup branding
+          </Link>
         </div>
         <div className="py-0 sm:py-4 flex">
           <Link
