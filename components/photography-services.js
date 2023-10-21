@@ -22,7 +22,7 @@ export default function PhotographyServices({
                     className="bg-white flex flex-col lg:flex-row lg:items-center lg:justify-between"
                   >
                     <div className="w-full lg:w-1/2 px-4 py-8 lg:px-16 lg:py-16">
-                      <h2 className="text-xl lg:text-6xl uppercase leading-tight mb-2 lg:mb-12">
+                      <h2 className="text-xl lg:text-6xl leading-tight mb-2 lg:mb-12">
                         {item.title}
                       </h2>
                       <p className="mb-4 lg:mb-8 text-base lg:text-4xl font-light">

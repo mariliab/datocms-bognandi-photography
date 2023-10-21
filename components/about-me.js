@@ -32,7 +32,7 @@ export default function AboutMe({ title = "", text = "", image = null }) {
             >
               <h1 className="mb-2 text-2xl mb-4">{title}</h1>
               <p className="font-light mb-4">{text}</p>
-              <p className="font-normal italic mb-4">/Marilia Bognandi</p>
+              <p className="font-light mb-4">/Marilia Bognandi</p>
               <Link href="/about">
                 <div className="flex">
                   <div className="flex-none text-xs font-normal px-12 pt-4 pb-3 bg-green-olive text-white hover:bg-green-darkest transition-all duration-200">
