@@ -4,6 +4,7 @@ import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
 import Layout from "../../components/layout";
 import Navbar from "../../components/navbar";
 import Container from "../../components/container";
+import { Clients } from "../../components/clients";
 import PhotographyServices from "../../components/photography-services";
 import { Image } from "react-datocms";
 import Head from "next/head";
@@ -57,6 +58,9 @@ export async function getStaticProps({ params, preview = false }) {
               base64
             }
           }
+          clients {
+            name
+          }
           gallery {
             responsiveImage(imgixParams: {fm: jpg, fit: crop, fit: max, w: 600 }) {
               ...responsiveImageFragment
@@ -96,13 +100,18 @@ export default function PhotoService({ subscription, preview }) {
 
   const metaTags = photoServicesPage.seo.concat(site.favicon);
 
-  const { title, description, featuredImage, gallery } = photoServicesPage;
+  const {
+    title,
+    description,
+    featuredImage,
+    gallery,
+    clients = [],
+  } = photoServicesPage;
 
   return (
     <Layout>
       <Head>{renderMetaTags(metaTags)}</Head>
       <Navbar data={site} />
-
       {/* DESKTOP */}
       <section className="text-beige-darkest bg-beige-lightest">
         <Container>
@@ -128,7 +137,13 @@ export default function PhotoService({ subscription, preview }) {
           </div>
         </Container>
       </section>
-
+      {clients.length > 0 && (
+        <section className="text-beige-darkest bg-beige-light text-center">
+          <Container>
+            <Clients clients={clients} />
+          </Container>
+        </section>
+      )}
       {gallery.length > 0 && (
         <section className="py-12 lg:py-24 bg-white text-beige-darkest">
           <Container>
