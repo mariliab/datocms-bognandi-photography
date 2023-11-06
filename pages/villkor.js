@@ -65,6 +65,7 @@ function Villkor({ subscription }) {
             <a
               href="https://www.sfoto.se/"
               target="_blank"
+              rel="noreferrer"
               classname="underline"
             >
               Svenska fotografers förbund
