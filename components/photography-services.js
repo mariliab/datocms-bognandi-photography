@@ -19,9 +19,9 @@ export default function PhotographyServices({
                 return (
                   <div
                     key={item.title}
-                    className="bg-white flex flex-col lg:flex-row lg:items-center lg:justify-between"
+                    className="flex flex-col lg:flex-row lg:items-center lg:justify-between"
                   >
-                    <div className="w-full lg:w-1/2 px-4 py-8 lg:px-16 lg:py-16">
+                    <div className="bg-white w-full lg:w-1/2 px-4 py-8 lg:px-16 lg:py-16">
                       <h2 className="text-xl lg:text-6xl leading-tight mb-2 lg:mb-12">
                         {item.title}
                       </h2>
