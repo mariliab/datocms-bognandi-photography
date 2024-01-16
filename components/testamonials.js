@@ -1,13 +1,13 @@
-import BlockTitle from "../components/block-title";
-import { Image } from "react-datocms";
 import React, { useState } from "react";
+import { Image } from "react-datocms";
+import BlockTitle from "../components/block-title";
 
 function TestamonialItem({ data }) {
   const [isLongText, setIsLongText] = useState(false);
 
   return (
     <div className="bg-white px-4 py-8 lg:px-8 min-w-1/2 md:min-w-1/4 w-3/4 md:w-1/3 lg:w-1/3 flex flex-col content-center items-center snap-start">
-      <div className="w-32">
+      <div className="w-32 h-32 aspect-square overflow-hidden rounded-full mb-4">
         <Image
           className="rounded-full bg-cover filter grayscale mb-4"
           data={{
@@ -26,7 +26,7 @@ function TestamonialItem({ data }) {
         </div> */}
         <div>
           <p
-            className={`text-sm lg:text-base font-light text-justify ${
+            className={`text-sm lg:text-base font-light ${
               !isLongText && "line-clamp-6"
             }`}
           >
